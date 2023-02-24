@@ -3,10 +3,11 @@ import * as UsersController from "../controllers/users";
 
 const router = express.Router();
 
-router.get("/", UsersController.getAllUsers);
+// To get authenticated user from session (Currently not needed)
+// router.get("/", UsersController.getAuthenticatedUser);
 
-router.get("/:userId", UsersController.getUser);
-
-router.post("/", UsersController.createUser);
+router.post("/signup", UsersController.signUp);
+router.post("/signin", UsersController.signIn);
+router.post("/signout", UsersController.signOut);
 
 export default router;

@@ -1,71 +1,155 @@
+import bcrypt from "bcrypt";
 import { RequestHandler } from "express";
 import createHttpError from "http-errors";
-import mongoose from "mongoose";
 import UserModel from "../models/user";
+// import session = require("express-session");
 
-// Get all users
-export const getAllUsers: RequestHandler = async (req, res, next) => {
-  try {
-    const users = await UserModel.find().exec();
-    res.status(200).json(users);
-  } catch (error) {
-    next(error);
-  }
-};
+// To get authenticated user from session (Currently not needed)
+// export const getAuthenticatedUser: RequestHandler = async (req, res, next) => {
+//   const authenticatedUserId = req.session.userId;
 
-// Get user by id
-export const getUser: RequestHandler = async (req, res, next) => {
-  const userId = req.params.userId;
-  try {
-    if (!mongoose.isValidObjectId(userId)) {
-      throw createHttpError(400, "Invalid user id");
-    }
+//   try {
+//     if (!authenticatedUserId) {
+//       throw createHttpError(401, "User not authenticated");
+//     }
 
-    const user = await UserModel.findById(userId).exec();
+//     const user = await UserModel.findById(authenticatedUserId).exec();
+//     res.status(200).json(user);
+//   } catch (error) {
+//     next(error);
+//   }
+// };
 
-    if (!user) {
-      throw createHttpError(404, "User not found");
-    }
-
-    res.status(200).json(user);
-  } catch (error) {
-    next(error);
-  }
-};
-
-interface CreateUserBody {
-  firstName?: string;
+// User Sign Up
+interface SignUpBody {
   username?: string;
   password?: string;
 }
 
-// Create a user
-export const createUser: RequestHandler<
+export const signUp: RequestHandler<
   unknown,
   unknown,
-  CreateUserBody,
+  SignUpBody,
   unknown
 > = async (req, res, next) => {
-  const firstName = req.body.firstName;
   const username = req.body.username;
-  const password = req.body.password;
+  const rawPassword = req.body.password;
 
   try {
-    if (!firstName || !username || !password) {
+    if (!username || !rawPassword) {
       throw createHttpError(
         400,
-        "User should have include the First Name, Username and Password"
+        "You have to include the Username and Password"
       );
     }
 
-    const newUser = await UserModel.create({
-      firstName: firstName,
+    if (username.length < 8 || rawPassword.length < 8) {
+      throw createHttpError(
+        400,
+        "Username and Password must be at least 8 characters"
+      );
+    }
+
+    const existingUsername = await UserModel.findOne({
       username: username,
-      password: password,
+    }).exec();
+
+    if (existingUsername) {
+      throw createHttpError(
+        409,
+        "Username already exists, please choose a different one or sign in instead"
+      );
+    }
+
+    const hashedPassword = await bcrypt.hash(rawPassword, 10);
+
+    const newUser = await UserModel.create({
+      username: username,
+      password: hashedPassword,
     });
+
+    // Setting up sessions to keep user logged in (Currently not needed)
+    // req.session.userId = newUser._id;
 
     res.status(201).json(newUser);
   } catch (error) {
     next(error);
   }
 };
+
+// User Sign in
+interface SignInBody {
+  username?: string;
+  password?: string;
+}
+
+export const signIn: RequestHandler<
+  unknown,
+  unknown,
+  SignInBody,
+  unknown
+> = async (req, res, next) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  try {
+    if (!username || !password) {
+      throw createHttpError(
+        400,
+        "You have to include the Username and Password"
+      );
+    }
+
+    const user = await UserModel.findOne({
+      username: username,
+    }).exec();
+
+    if (!user) {
+      throw createHttpError(401, "Invalid Username or Password");
+    }
+
+    const matchedPassword = await bcrypt.compare(password, user.password);
+
+    if (!matchedPassword) {
+      throw createHttpError(401, "Invalid Username or Password");
+    }
+
+    // Setting up sessions to keep user logged in (Currently not needed)
+    // req.session.userId = user._id;
+
+    res.status(201).json(user);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const signOut: RequestHandler = async (req, res, next) => {
+  const username = req.body.username;
+
+  try {
+    const user = await UserModel.findOne({
+      username: username,
+    }).exec();
+
+    res.status(200).json({
+      username: user?.username,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// Sign out by destorying the session (Currently not needed)
+// export const signOut: RequestHandler<unknown, unknown, SignInBody, unknown> = (
+//   req,
+//   res,
+//   next
+// ) => {
+//   req.session.destroy((error) => {
+//     if (error) {
+//       next(error);
+//     } else {
+//       res.sendStatus(200);
+//     }
+//   });
+// };
