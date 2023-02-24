@@ -3,7 +3,8 @@ import createHttpError from "http-errors";
 import mongoose from "mongoose";
 import UserModel from "../models/user";
 
-export const getUsers: RequestHandler = async (req, res, next) => {
+// Get all users
+export const getAllUsers: RequestHandler = async (req, res, next) => {
   try {
     const users = await UserModel.find().exec();
     res.status(200).json(users);
@@ -12,6 +13,7 @@ export const getUsers: RequestHandler = async (req, res, next) => {
   }
 };
 
+// Get user by id
 export const getUser: RequestHandler = async (req, res, next) => {
   const userId = req.params.userId;
   try {
@@ -37,6 +39,7 @@ interface CreateUserBody {
   password?: string;
 }
 
+// Create a user
 export const createUser: RequestHandler<
   unknown,
   unknown,
