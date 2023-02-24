@@ -1,8 +1,9 @@
-.App {
-  text-align: center;
+.AppLogo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-.AppLogo {
+.AppLogoSignedOut {
   height: 40vmin;
   pointer-events: none;
 }
