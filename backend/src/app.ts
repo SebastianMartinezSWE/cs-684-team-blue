@@ -1,8 +1,11 @@
+// import MongoStore from "connect-mongo";
 import "dotenv/config";
 import express, { NextFunction, Request, Response } from "express";
+// import session from "express-session";
 import createHttpError, { isHttpError } from "http-errors";
 import morgan from "morgan";
-import usersRoutes from "./routes/users";
+import userRoutes from "./routes/users";
+// import env from "./util/validateEnv";
 
 const app = express();
 
@@ -12,8 +15,24 @@ app.use(morgan("dev"));
 // For express to accept and send JSON
 app.use(express.json());
 
+// Session Middleware (Currently not needed)
+// app.use(
+//   session({
+//     secret: env.SESSION_SECRET,
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: {
+//       maxAge: 60 * 60 * 1000,
+//     },
+//     rolling: true,
+//     store: MongoStore.create({
+//       mongoUrl: env.MONGO_CONNECTION_STRING,
+//     }),
+//   })
+// );
+
 // All the routes pertaining to users
-app.use("/api/users", usersRoutes);
+app.use("/api/users", userRoutes);
 
 // Error Handling Middleware
 app.use((req, res, next) => {
