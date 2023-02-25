@@ -14,7 +14,7 @@ const SignedOutNavBar = ({
       <Button variant="dark" onClick={onSignUpClicked}>
         Sign Up
       </Button>
-      <Button variant="dark" onClick={onSignInClicked}>
+      <Button variant="outline-light" onClick={onSignInClicked}>
         Sign In
       </Button>
     </>
