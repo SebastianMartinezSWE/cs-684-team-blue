@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import * as UserApi from "./api/user";
 import SignInModal from "./components/modals/SignInModal";
 import SignUpModal from "./components/modals/SignUpModal";
-import DefaultNavbar from "./components/navbar/DefaultNavbar";
+import DefaultNavBar from "./components/navbar/DefaultNavBar";
 import SignedInView from "./components/views/SignedInView";
 import SignedOutView from "./components/views/SignedOutView";
 import { User } from "./models/user";
@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div>
-      <DefaultNavbar
+      <DefaultNavBar
         signedInUser={signedInUser}
         onSignInClicked={() => setShowSignInModal(true)}
         onSignUpClicked={() => setShowSignUpModal(true)}
