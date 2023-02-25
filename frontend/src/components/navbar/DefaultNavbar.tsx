@@ -1,21 +1,21 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { User } from "../../models/user";
-import SignedIn from "./SignedIn";
-import SignedOut from "./SignedOut";
+import SignedInNavBar from "./SignedInNavBar";
+import SignedOutNavBar from "./SignedOutNavBar";
 
-interface DefaultNavbarProps {
+interface DefaultNavBarProps {
   signedInUser: User | null;
   onSignUpClicked: () => void;
   onSignInClicked: () => void;
   onSignOutSuccessful: () => void;
 }
 
-const DefaultNavbar = ({
+const DefaultNavBar = ({
   signedInUser,
   onSignUpClicked,
   onSignInClicked,
   onSignOutSuccessful,
-}: DefaultNavbarProps) => {
+}: DefaultNavBarProps) => {
   return (
     <Navbar bg="dark" variant="dark" expand="sm" sticky="top">
       <Container>
@@ -24,12 +24,12 @@ const DefaultNavbar = ({
         <Navbar.Collapse id="main-navbar">
           <Nav className="ms-auto">
             {signedInUser ? (
-              <SignedIn
+              <SignedInNavBar
                 user={signedInUser}
                 onSignOutSuccessful={onSignOutSuccessful}
               />
             ) : (
-              <SignedOut
+              <SignedOutNavBar
                 onSignInClicked={onSignInClicked}
                 onSignUpClicked={onSignUpClicked}
               />
@@ -41,4 +41,4 @@ const DefaultNavbar = ({
   );
 };
 
-export default DefaultNavbar;
+export default DefaultNavBar;

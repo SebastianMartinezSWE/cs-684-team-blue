@@ -1,11 +1,14 @@
 import { Button } from "react-bootstrap";
 
-interface SignedOutProps {
+interface SignedOutNavBarProps {
   onSignUpClicked: () => void;
   onSignInClicked: () => void;
 }
 
-const SignedOut = ({ onSignUpClicked, onSignInClicked }: SignedOutProps) => {
+const SignedOutNavBar = ({
+  onSignUpClicked,
+  onSignInClicked,
+}: SignedOutNavBarProps) => {
   return (
     <>
       <Button variant="dark" onClick={onSignUpClicked}>
@@ -18,4 +21,4 @@ const SignedOut = ({ onSignUpClicked, onSignInClicked }: SignedOutProps) => {
   );
 };
 
-export default SignedOut;
+export default SignedOutNavBar;

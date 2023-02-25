@@ -2,12 +2,15 @@ import { Button, Navbar } from "react-bootstrap";
 import * as UserApi from "../../api/user";
 import { User } from "../../models/user";
 
-interface NavBarSignedInProps {
+interface SignedInNavBarInProps {
   user: User;
   onSignOutSuccessful: () => void;
 }
 
-const NavBarSignedIn = ({ user, onSignOutSuccessful }: NavBarSignedInProps) => {
+const SignedInNavBar = ({
+  user,
+  onSignOutSuccessful,
+}: SignedInNavBarInProps) => {
   async function signout() {
     try {
       await UserApi.signout();
@@ -28,4 +31,4 @@ const NavBarSignedIn = ({ user, onSignOutSuccessful }: NavBarSignedInProps) => {
   );
 };
 
-export default NavBarSignedIn;
+export default SignedInNavBar;
