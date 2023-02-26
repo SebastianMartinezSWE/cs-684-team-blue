@@ -23,7 +23,7 @@ const SignedInNavBar = ({
 
   return (
     <>
-      <Navbar.Text>Sign in as: {user.username}</Navbar.Text>
+      <Navbar.Text>Signed in as: {user.username}</Navbar.Text>
       <Button variant="dark" onClick={signout}>
         Sign Out
       </Button>
