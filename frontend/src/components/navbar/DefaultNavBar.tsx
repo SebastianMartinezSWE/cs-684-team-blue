@@ -18,7 +18,7 @@ const DefaultNavBar = ({
 }: DefaultNavBarProps) => {
   return (
     <Navbar bg="dark" variant="dark" expand="sm" sticky="top">
-      <Container>
+      <Container fluid>
         <Navbar.Brand>The Big Blue Theory</Navbar.Brand>
         <Navbar.Toggle aria-controls="main-navbar" />
         <Navbar.Collapse id="main-navbar">
@@ -37,6 +37,23 @@ const DefaultNavBar = ({
           </Nav>
         </Navbar.Collapse>
       </Container>
+      {/* <Navbar.Brand>The Big Blue Theory</Navbar.Brand>
+      <Navbar.Toggle aria-controls="main-navbar" />
+      <Navbar.Collapse id="main-navbar">
+        <Nav className="ms-auto">
+          {signedInUser ? (
+            <SignedInNavBar
+              user={signedInUser}
+              onSignOutSuccessful={onSignOutSuccessful}
+            />
+          ) : (
+            <SignedOutNavBar
+              onSignInClicked={onSignInClicked}
+              onSignUpClicked={onSignUpClicked}
+            />
+          )}
+        </Nav>
+      </Navbar.Collapse> */}
     </Navbar>
   );
 };
