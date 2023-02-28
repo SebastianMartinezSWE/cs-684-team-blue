@@ -18,7 +18,7 @@ const DefaultNavBar = ({
   onSignOutSuccessful,
 }: DefaultNavBarProps) => {
   return (
-    <Navbar bg="dark" variant="dark" expand="sm" sticky="top">
+    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
       <Container fluid>
         <Navbar.Brand>
           <img src={logo} alt="" width="40" height="40" /> The Big Blue Theory
