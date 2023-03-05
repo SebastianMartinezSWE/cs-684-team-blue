@@ -33,9 +33,8 @@ Test Case Id- TBL003
 
 Description: sign-in form implementation
 
-Test Steps: after going to sign-in page to verify the form has a textbox to collect a user name the user name is required .The form a textbox to collect a password and the 
-password shall be required
-and a button to submit the sign-in details.
+Test Steps: after going to sign-in page to verify the form has a textbox to collect a user name, the user name is required .The form a textbox to collect a password and the 
+password is required and a button to submit the sign-in details.
 
 Pre-requistes: to be running the api on the system and to be on the sign-in page
 
@@ -75,5 +74,20 @@ Test Method: manual
 
 Pass/Fail Criteria: displaying an error message after clicking sign-in button is a pass criteria, failure to display an error message is a fail criteria.
 
+
+Test Case Id- TBL006
+
+Description: sign-up form implementation
+
+Test Steps: after going to sign-up page to verify the form has a textbox to collect a user name ,the user name is required .The form a textbox to collect a password and the 
+password is required and a button to submit the sign-up details.
+
+Pre-requistes: to be running the api on the system and to be on the sign-up page
+
+Author
+
+Test Method: manual 
+
+Pass/Fail Criteria: the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
 
 
