@@ -11,3 +11,16 @@ Features to be tested:
 1. Landing page username
 2. Sign-in page requirements(username, password, error massage)
 3. Sign-up page requirements (username, password, success page , error message)
+
+Approach:
+By performing manual testing to verify the requirements
+
+Pass/Fail Criteria:
+
+Testing Tasks:
+
+Responsibilities:
+
+Schedule:
+
+
