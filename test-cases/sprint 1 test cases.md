@@ -53,6 +53,7 @@ Description: if correct combination of user id and password have been submitted,
 Test Steps: entering the username and password and clicking sign-in button 
 
 Pre-requistes: to use the username and password of an already signed-in account
+
 Author
 
 Test Method: manual
