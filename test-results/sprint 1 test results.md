@@ -6,3 +6,9 @@
 |TBL004      |Akshay                        |Pass         |entering an already existing user takes us to the landing page with signedin status
 |TBL005      |Akshay                        |Pass         |by entering a wrong or new credentials in sign-in gives an error message 
 |TBL006      |Akshay                        |Pass         |the sign-up page has the boxes for username and password and the sign-up button
+|TBL007      |Rajiv                         |Pass         |If username fits the requirements it is succesfully created
+|TBL008      |Rajiv                         |Pass         |If password fits the requirements it is succesfully created
+|TBL009      |Rajiv                         |Pass         |both username and paassword fit requirents and account is succesfully created
+|TBL010      |Rajiv                         |Pass         |error message is showen if requiremtns for sign up are not met
+
+
