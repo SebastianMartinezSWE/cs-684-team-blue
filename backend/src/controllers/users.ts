@@ -24,7 +24,11 @@ import UserModel from "../models/user";
 interface SignUpBody {
   username?: string;
   password?: string;
+  confirmPassword?: string;
 }
+
+const passwordPattern =
+  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/i;
 
 export const signUp: RequestHandler<
   unknown,
@@ -34,6 +38,7 @@ export const signUp: RequestHandler<
 > = async (req, res, next) => {
   const username = req.body.username;
   const rawPassword = req.body.password;
+  const confirmPassword = req.body.confirmPassword;
 
   try {
     if (!username || !rawPassword) {
@@ -43,11 +48,23 @@ export const signUp: RequestHandler<
       );
     }
 
-    if (username.length < 8 || rawPassword.length < 8) {
+    if (username.length < 8) {
+      throw createHttpError(400, "Username must be at least 8 characters");
+    }
+
+    if (rawPassword.length < 8) {
+      throw createHttpError(400, "Password must be at least 8 characters");
+    }
+
+    if (!rawPassword.match(passwordPattern)) {
       throw createHttpError(
         400,
-        "Username and Password must be at least 8 characters"
+        "Password must include at least 1 captial letter, number and special character [!@#$%]"
       );
+    }
+
+    if (rawPassword !== confirmPassword) {
+      throw createHttpError(400, "Passwords do not match");
     }
 
     const existingUsername = await UserModel.findOne({

@@ -5,7 +5,7 @@ import * as UserApi from "../../api/user";
 import { UserCredentials } from "../../api/user";
 import { User } from "../../models/user";
 import styleUtils from "../../styles/utils/util.module.css";
-import { ConflictError } from "../../utils/HttpErrors";
+import { BadRequestError, ConflictError } from "../../utils/HttpErrors";
 import PasswordWarning from "../utils/PasswordWarning";
 import TextInputField from "../utils/TextInputField";
 import UserNameWarning from "../utils/UserNameWarning";
@@ -30,6 +30,8 @@ const SignUpModal = ({ onDismiss, onSignUpSuccessful }: SignUpModalProps) => {
       onSignUpSuccessful(newUser);
     } catch (error) {
       if (error instanceof ConflictError) {
+        setErrorText(error.message);
+      } else if (error instanceof BadRequestError) {
         setErrorText(error.message);
       } else {
         alert(error);
@@ -65,12 +67,22 @@ const SignUpModal = ({ onDismiss, onSignUpSuccessful }: SignUpModalProps) => {
             registerOptions={{
               required: "Required",
               min: 8,
-              pattern:
-                /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/i,
             }}
             error={errors.password}
           />
           <PasswordWarning />
+          <TextInputField
+            name="confirmPassword"
+            label="Confirm Password *"
+            type="password"
+            placeholder="Re-enter Password"
+            register={register}
+            registerOptions={{
+              required: "Required",
+              min: 8,
+            }}
+            error={errors.confirmPassword}
+          />
           <Button
             type="submit"
             disabled={isSubmitting}
