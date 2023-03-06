@@ -22,7 +22,7 @@ Test Steps:to verify the username on the landing page and the sign-out button
 
 Pre-requistes: to be running the api on local system and to be logged in
 
-Author
+Author: Akshay
 
 Test Method: manual
 
@@ -38,7 +38,7 @@ password is required and a button to submit the sign-in details.
 
 Pre-requistes: to be running the api on the system and to be on the sign-in page
 
-Author
+Author : Akshay
 
 Test Method: manual 
 
@@ -53,7 +53,7 @@ Test Steps: entering the username and password and clicking sign-in button
 
 Pre-requistes: to use the username and password of an already signed-in account
 
-Author
+Author : Akshay
 
 Test Method: manual
 
@@ -68,7 +68,7 @@ Test Steps: entering a pair of incorrect username and password and clicking sign
 
 Pre-requistes: to run the api on system and be on sign-in page
 
-Author
+Author : Akshay
 
 Test Method: manual
 
@@ -84,7 +84,7 @@ password is required and a button to submit the sign-up details.
 
 Pre-requistes: to be running the api on the system and to be on the sign-up page
 
-Author
+Author : Akshay
 
 Test Method: manual 
 
