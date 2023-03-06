@@ -94,7 +94,7 @@ Test Case Id-TB007
 
 Description: Collect username for sign-up page
 
-Test Steps: when the user enters a username for the first time, it must fit some requirements. The username must a string that is 8 characters long, the username shall not include any spaces, and leading and trailing spaces should be trimmed.
+Test Steps: when the user enters a username for the first time, it must fit some requirements. The username must a string that is atleast 8 characters long, the username shall not include any spaces, and leading and trailing spaces should be trimmed.
 
 Pre-requistes: to be running the api on the system and to be on the sign-up page
 
@@ -107,3 +107,13 @@ Pass/Fail Criteria: the presence of all the above mentioned requirements is a pa
 Test Case Id-TB008
 
 Despciption: Collect password for sign-up page
+
+Test steps: when the user creates a password for the first time, it must fit some requirements. The password should be at least 8 characters long, shall not include any spaces, and leading and trailing spaces shoudl be trimmed. The passwword must also contain one upper-case latter, one lowercase letter, and one character that is not a letter
+
+Pre-requistes: to be running the api on the system and to be on the sign-up page
+
+Author: Rajiv Dave
+
+Test Method: Manual
+
+Pass/Fail Criteria: the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
