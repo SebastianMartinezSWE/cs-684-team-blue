@@ -15,12 +15,18 @@ Features to be tested:
 Approach:
 By performing manual testing to verify the requirements
 
-Pass/Fail Criteria:
-
-Testing Tasks:
+Testing Tasks: 
+1. Testing API response codes
+2. Testing the UI
+3. Testing the data in database
 
 Responsibilities:
+Rajiv Dave - testing
+Mutunoor Akshay Kumar - testing
 
-Schedule:
-
+Schedule: 
+02/27/23 : Test cases  
+02/28/23 - 03/04/23 : tesing
+03/04/23 : sharing test results
+03/05/23 : pushing test folders to the main 
 
