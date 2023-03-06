@@ -90,6 +90,7 @@ Test Method: manual
 
 Pass/Fail Criteria: the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
 
+
 Test Case Id-TBL007
 
 Description: Collect username for sign-up page
@@ -103,6 +104,7 @@ Author: Rajiv Dave
 Test Method: Manual
 
 Pass/Fail Criteria: the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
+
 
 Test Case Id-TBL008
 
@@ -118,6 +120,7 @@ Test Method: Manual
 
 Pass/Fail Criteria: the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
 
+
 Test Case Id-TBL009
 
 Despription: If both the user-created username and password meet the criteria, create an account and navigate to the Landing Page as signed in
@@ -131,6 +134,7 @@ Author: Rajiv Dave
 Test Method: Manual 
 
 Pass/Fail Criteria: Pass criteria is successfully signing up for an account,fail criteria is failing to create an account even if both the username and password follow the requieremnts and absence of sign up button
+
 
 Test Case Id-TBL010
 
