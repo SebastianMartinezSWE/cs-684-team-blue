@@ -6,7 +6,7 @@ Test Steps: Enter username and pasword for authorized user
 
 Pre-requistes: having the repository cloned and running the api on local system and to be not signed-in
 
-Author: Rajiv Dave
+Author: Rajiv Dave , Akshay
 
 Test Method: manual
 
@@ -21,7 +21,7 @@ Test Steps:  Enter username and pasword that for a user that is not authorized
 
 Pre-requistes: having the repository cloned and running the api on local system and to be not signed-in
 
-Author: Rajiv Dave
+Author: Rajiv Dave , Akshay
 
 Test Method: manual
 
@@ -36,7 +36,7 @@ Test Steps: Enter username and password that meet requirements
 
 Pre-requistes: having the repository cloned and running the api on local system and to not be signed-up
 
-Author: Rajiv Dave
+Author: Rajiv Dave , Akshay
 
 Test Method: manual
 
@@ -51,7 +51,7 @@ Test Steps: Enter a username that is already taken
 
 Pre-requistes: having the repository cloned and running the api on local system and to not be signed-up
 
-Author: Rajiv Dave
+Author: Rajiv Dave , Akshay
 
 Test Method: manual
 
@@ -66,7 +66,7 @@ Test Steps: Press sign out button
 
 Pre-requistes: having the repository cloned and running the api on local system and b elogged in and be landing page
 
-Author: Rajiv Dave
+Author: Rajiv Dave , Akshay
 
 Test Method: manual
 
