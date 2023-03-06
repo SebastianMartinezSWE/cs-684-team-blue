@@ -24,7 +24,7 @@ Responsibilities:
 Rajiv Dave - testing
 Mutunoor Akshay Kumar - testing
 
-Schedule-
+Schedule:
 02/27/23 : Test cases  
 02/28/23 - 03/04/23 : tesing
 03/04/23 : sharing test results
