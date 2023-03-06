@@ -10,10 +10,10 @@
 |TBL008      |Rajiv                         |Pass         |If password fits the requirements it is succesfully created
 |TBL009      |Rajiv                         |Pass         |both username and paassword fit requirents and account is succesfully created
 |TBL010      |Rajiv                         |Pass         |error message is showen if requiremtns for sign up are not met
-|TBL011      |                              |             |
-|TBL012      |                              |             |
-|TBL013      |                              |             |
-|TBL014      |                              |             |
-|TBL015      |                              |             |
+|TBL011      |Rajiv, Akshay                 |Pass         |status code 200 received 
+|TBL012      |Rajiv, Akshay                 |Pass         |status code 401 unauthorised received
+|TBL013      |Rajiv, Akshay                 |Pass         |status code 201 created received
+|TBL014      |Rajiv, Akshay                 |Pass         |status code 409 conflict received
+|TBL015      |Rajiv, Akshay                 |Pass         |status code 200 ok received
 |TBL016      |Rajiv                         |Pass         | The data for usernames and passwords entered are sucessfully stored in the database
 
