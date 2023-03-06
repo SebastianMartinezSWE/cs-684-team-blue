@@ -27,8 +27,9 @@ interface SignUpBody {
   confirmPassword?: string;
 }
 
-const passwordPattern =
-  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/i;
+const passwordPattern = new RegExp(
+  "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})"
+);
 
 export const signUp: RequestHandler<
   unknown,
@@ -56,7 +57,7 @@ export const signUp: RequestHandler<
       throw createHttpError(400, "Password must be at least 8 characters");
     }
 
-    if (!rawPassword.match(passwordPattern)) {
+    if (!passwordPattern.test(rawPassword)) {
       throw createHttpError(
         400,
         "Password must include at least 1 captial letter, number and special character [!@#$%]"
