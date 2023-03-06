@@ -16,17 +16,17 @@ Approach:
 By performing manual testing to verify the requirements
 
 Testing Tasks: 
-1. Testing API response codes
-2. Testing the UI
-3. Testing the data in database
+1. Testing to see if the API response codes are recieved
+2. Testing the UI requirements
+3. Testing to see if the data entered lands in the database
 
 Responsibilities:
 Rajiv Dave - testing
 Mutunoor Akshay Kumar - testing
 
 Schedule:
-02/27/23 : Test cases  
-02/28/23 - 03/04/23 : tesing
-03/04/23 : sharing test results
-03/05/23 : pushing test folders to the main 
+02/27/23 : Meeting and coming up with test plan and inital test cases  
+02/28/23 - 03/04/23 : Spliting up work and working on testing individually
+03/04/23 : Meeting up again and sharing test results and finalizing details
+03/05/23 : Pushing finalized test folders to the main 
 
