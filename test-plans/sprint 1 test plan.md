@@ -28,7 +28,11 @@ Rajiv Dave - testing
 Mutunoor Akshay Kumar - testing
 
 Schedule:
-02/27/23 : Meeting and coming up with test plan and inital test cases  
+
+02/27/23 : Meeting and coming up with test plan and inital test cases
+
 02/28/23 - 03/04/23 : Spliting up work and working on testing individually
+
 03/04/23 : Meeting up again and sharing test results and finalizing details
+
 03/05/23 : Pushing finalized test folders to the main
