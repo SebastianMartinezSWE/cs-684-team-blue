@@ -1,69 +1,222 @@
-Test Case Id- TBL011
+# Sprint 1: API Test Cases
 
-Description: Signin Api Endpoint, request body with username and password for a user that is authorized and receive correct response code from the API
+---
 
-Test Steps: Enter username and password for authorized user
+## Test Case ID - TBL011
 
-Pre-requisites: having the repository cloned and running the api on local system and to be not signed-in
+**Authors:** _Rajiv Dave_, _Akshay_
 
-Author: Rajiv Dave , Akshay
+**Test Method:** Manual
 
-Test Method: manual
+**Description:** SignIn API Endpoint, Proper authorization of user should include the username and password in the request body along with the correct response code from the API
 
-Pass/Fail Criteria: Pass if the response code 200 is received (which means the user is authorized), fail if it isn't received
+**Pre-requisites:**
 
-Test Case Id- TBL012
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the backend running
+- To be on Postman
 
-Description: Signin Api Endpoint, request body with username and password for a user that is not authorized and receive correct response code from the API
+**Test Steps:**
 
-Test Steps: Enter username and password that for a user that is not authorized
+1. In Postman enter the signin endpoint `localhost:8080/api/users/signin` in the URL search bar
+2. Click on `Body` under the URL search bar
+3. Click on the `raw` radio button
+4. Click the dropdown menu next to the `GraphQL` radio button
+5. Click on JSON
+6. In the text box enter the username and password of a valid user in proper JSON format
 
-Pre-requisites: having the repository cloned and running the api on local system and to be not signed-in
+   ```
+   {
+       "username":"",
+       "password":""
+   }
+   ```
 
-Author: Rajiv Dave , Akshay
+**Pass/Fail Criteria:**
 
-Test Method: manual
+- **Pass:**
 
-Pass/Fail Criteria: Pass if the response code 401 is received,(which means the user is not authorized, fail if it isn't received
+  - Pass if the response code 200 is received (which means the user is authorized)
+  - If the request body includes the username and password of the user that signed in
 
-Test Case Id- TBL013
+- **Fail:**
+  - If the response code is not 200
+  - If the request body does not include the username and password of the user that was created
 
-Description: SignUp API Endpoint, request body with username and password that meets criteria and and receive correct response code from the API
+---
 
-Test Steps: Enter username and password that meet requirements
+## Test Case ID - TBL012
 
-Pre-requisites: having the repository cloned and running the api on local system and to not be signed-up
+**Authors:** _Rajiv Dave_, _Akshay_
 
-Author: Rajiv Dave , Akshay
+**Test Method:** Manual
 
-Test Method: manual
+**Description:** SignIn API Endpoint, Proper error message should be included in the request body if credentials entered were not valid along with the correct response code from the API
 
-Pass/Fail Criteria: Pass if the response code received is 200, which means the user is signed up and authorized, fail if it isn't received
+**Pre-requisites:**
 
-Test Case Id- TBL014
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the backend running
+- To be on Postman
 
-Description: SignUp API Endpoint request body with username that already exists and receive correct response code from the API
+**Test Steps:**
 
-Test Steps: Enter a username that is already taken
+1. In Postman enter the signin endpoint `localhost:8080/api/users/signin` in the URL search bar
+2. Click on `Body` under the URL search bar
+3. Click on the `raw` radio button
+4. Click the dropdown menu next to the `GraphQL` radio button
+5. Click on JSON
+6. In the text box enter an invalid username and password in proper JSON format
 
-Pre-requisites: having the repository cloned and running the api on local system and to not be signed-up
+   ```
+   {
+       "username":"",
+       "password":""
+   }
+   ```
 
-Author: Rajiv Dave , Akshay
+**Pass/Fail Criteria:**
 
-Test Method: manual
+- **Pass:**
 
-Pass/Fail Criteria: Pass if the code 401 is received, which means access denied due to duplicated username. Fail if it doesn't
+  - Pass if the response code 401 is received (which means the user is not authorized)
+  - If the request body includes the proper error message
 
-Test Case Id- TB015
+- **Fail:**
+  - If the response code is not 401
+  - If the request body does not include the proper error message
 
-Description: Signout API Endpoint, signout for the response body of a username and receive the correct response code
+---
 
-Test Steps: Press sign out button
+## Test Case ID - TBL013
 
-Pre-requisites: having the repository cloned and running the api on local system and be logged in and be landing page
+**Authors:** _Rajiv Dave_, _Akshay_
 
-Author: Rajiv Dave , Akshay
+**Test Method:** Manual
 
-Test Method: manual
+**Description:** SignUp API Endpoint, Proper creation of user should include the username and password in the request body along with the correct response code from the API
 
-Pass/Fail Criteria: Pass if the code 200 is received, which means success. Fail if that code is not received
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the backend running
+- To be on Postman
+
+**Test Steps:**
+
+1. In Postman enter the signin endpoint `localhost:8080/api/users/signup` in the URL search bar
+2. Click on `Body` under the URL search bar
+3. Click on the `raw` radio button
+4. Click the dropdown menu next to the `GraphQL` radio button
+5. Click on JSON
+6. In the text box enter a valid username and password in proper JSON format
+
+   ```
+   {
+       "username":"",
+       "password":"",
+       "confirmPassword": ""
+   }
+   ```
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - Pass if the response code 200 is received (which means the user is authorized)
+  - If the request body includes the username and password of the user that was created
+
+- **Fail:**
+  - If the response code is not 200
+  - If the request body does not include the username and password of the user that was created
+
+---
+
+## Test Case ID - TBL014
+
+**Authors:** _Rajiv Dave_, _Akshay_
+
+**Test Method:** Manual
+
+**Description:** SignUp API Endpoint, Proper error message should be included in the request body if username entered is already in the database along with the correct response code from the API
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the backend running
+- To be on Postman
+
+**Test Steps:**
+
+1. In Postman enter the signin endpoint `localhost:8080/api/users/signup` in the URL search bar
+2. Click on `Body` under the URL search bar
+3. Click on the `raw` radio button
+4. Click the dropdown menu next to the `GraphQL` radio button
+5. Click on JSON
+6. In the text box enter an already taken username and a valid password in proper JSON format
+
+   ```
+   {
+       "username":"",
+       "password":"",
+       "confirmPassword": ""
+   }
+   ```
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - Pass if the response code 401 is received (which means access denied due to duplicated username)
+  - Proper error message is included in the request body
+
+- **Fail:**
+  - If the response code is not 401
+  - Proper error message is not included in the request body
+
+---
+
+## Test Case ID - TB015
+
+**Authors:** _Rajiv Dave_, _Akshay_
+
+**Test Method:** Manual
+
+**Description:** SignOut API Endpoint, Successful sign out of user should include the username in the request body along with the correct response code from the API
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the backend running
+- To be on Postman
+
+**Test Steps:**
+
+1. In Postman enter the signin endpoint `localhost:8080/api/users/signout` in the URL search bar
+2. Click on `Body` under the URL search bar
+3. Click on the `raw` radio button
+4. Click the dropdown menu next to the `GraphQL` radio button
+5. Click on JSON
+6. In the text box enter a valid username in proper JSON format
+
+   ```
+   {
+       "username":""
+   }
+   ```
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - If the response code 200 is received (which means successful sign out)
+  - If the request body includes the username of the user who just signed out
+
+- **Fail:**
+  - If the response code is not 200
+  - If the request body does not include the username of the user who just signed out
