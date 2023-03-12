@@ -60,7 +60,7 @@ export const signUp: RequestHandler<
     if (!passwordPattern.test(rawPassword)) {
       throw createHttpError(
         400,
-        "Password must include at least 1 captial letter, number and special character [!@#$%]"
+        "Password must include at least 1 capital letter, number and special character [!@#$%]"
       );
     }
 
