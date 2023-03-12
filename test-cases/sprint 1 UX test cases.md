@@ -214,62 +214,139 @@ Test to verify the landing page to display a method (button or link) to navigate
 
 ## Test Case ID - TBL007
 
-**Description:** Collect username for sign-up page
-
-**Test Steps:** when the user enters a username for the first time, it must fit some requirements. The username must a string that is at least 8 characters long, the username shall not include any spaces, and leading and trailing spaces should be trimmed.
-
-**Pre-requisites:** to be running the api on the system and to be on the sign-up page
-
-**Author:** Rajiv Dave
+**Author:** _Rajiv Dave_
 
 **Test Method:** Manual
 
-**Pass/Fail Criteria:** the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
+**Description:** Checking the username requirements for the sign-up page
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the frontend running
+- To be on the sign-up page
+
+**Test Steps:**
+
+1. Verify that the following username requirements are shown in the sign up page
+   - The username must a string that is at least 8 characters long
+   - The username shall not include any spaces
+   - Leading and trailing spaces should be trimmed.
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - The presence of all the above mentioned requirements
+
+- **Fail:**
+
+  - The absence of any of the above mentioned requirements
 
 ---
 
 ## Test Case ID - TBL008
 
-**Description:** Collect password for sign-up page
-
-**Test Steps:** when the user creates a password for the first time, it must fit some requirements. The password should be at least 8 characters long, shall not include any spaces, and leading and trailing spaces should be trimmed. The password must also contain one upper-case latter, one lowercase letter, and one character that is not a letter
-
-**Pre-requisites:** to be running the api on the system and to be on the sign-up page
-
-**Author:** Rajiv Dave
+**Author:** _Rajiv Dave_
 
 **Test Method:** Manual
 
-**Pass/Fail Criteria:** the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
+**Description:** Checking the password requirements for the sign-up page
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the frontend running
+- To be on the sign-up page
+
+**Test Steps:**
+
+1. Verify that the following password requirements are shown in the sign up page
+   - The password should be at least 8 characters long
+   - Shall not include any spaces
+   - Leading and trailing spaces should be trimmed
+   - Must include one upper-case latter
+   - Must include one lowercase letter
+   - Must include one character that is not a letter
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - The presence of all the above mentioned requirements
+
+- **Fail:**
+
+  - The absence of any of the above mentioned requirements
 
 ---
 
 ## Test Case ID - TBL009
 
-**Description:** If both the user-created username and password meet the criteria, create an account and navigate to the Landing Page as signed in
-
-**Test Steps:** Creating a username and password and then pressing the sign up button
-
-**Pre-requisites:** use the newly created username and password
-
-**Author:** Rajiv Dave
+**Author:** _Rajiv Dave_
 
 **Test Method:** Manual
 
-**Pass/Fail Criteria:** Pass criteria is successfully signing up for an account,fail criteria is failing to create an account even if both the username and password follow the requirements and absence of sign up button
+**Description:** If both the user-created username and password meet the criteria, create an account and navigate to the home page
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the backend running
+- Have the frontend running
+- To be on the sign-up page
+
+**Test Steps:**
+
+1. Enter a valid username
+2. Enter a valid password
+3. Confirm password
+4. Click on sign up button
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - Successfully signing up for an account and navigating to the home page
+
+- **Fail:**
+  - Failing to create an account even if both the username and password follow the requirements
+  - Absence of sign up button
 
 ---
 
 ## Test Case ID - TBL010
 
-**Description:** If the user created password and username don't meet the requirements, display error message
-
-**Test Steps:** entering username and password that don't meet the requirements and press sign up
-
-**Pre-requisites:** to run the api on system and be on sign-up page
-
-**Author:** Rajiv Dave
+**Author:** _Rajiv Dave_
 
 **Test Method:** Manual
 
-**Pass/Fail Criteria:** Displaying an error message is a pass, not displaying one is a fail
+**Description:** If the user created password and username don't meet the requirements, display an error message
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the backend running
+- Have the frontend running
+- To be on the sign-up page
+
+**Test Steps:**
+
+1. Enter a username that doesn't meet the requirements
+2. Click on the sign up button
+3. Enter a password that doesn't meet the requirements
+4. Click on the sign up button
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - Displaying the appropriate error message
+
+- **Fail:**
+  - Not displaying the appropriate error message
+  - Not displaying a appropriate error message
