@@ -1,4 +1,4 @@
-# Sprint 1: UI/UX Test Cases
+# Sprint 1: UX Test Cases
 
 ---
 
