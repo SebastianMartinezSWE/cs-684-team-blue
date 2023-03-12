@@ -1,141 +1,275 @@
-Test Case Id- TBL001
+# Sprint 1: UI/UX Test Cases
 
-Description: test to verify the landing page to display a method (button or link) to navigate to a “Sign-in” page
+---
 
-Test Steps: after running the api on local system the landing page is loaded
+## Test Case ID: TBL001
 
-Pre-requisites: having the repository cloned and running the api on local system and to be not signed-in
+**Author:** _Akshay_
 
-Author: Akshay
+**Test Method:** Manual
 
-Test Method: manual
+**Description:**
+Test to verify the landing page to display a method (button or link) to navigate to a “Sign-in” page
 
-Pass/Fail Criteria: the presence of sign-in and transition to sign-in page is the pass criteria. absence of the sign-in button and not navigating to the sign-in page are the fail criteria.
+**Pre-requisites:**
 
-Test Case Id- TBL002
+- Have the repository cloned
+- Properly installed the project dependencies
+- To not be signed-in
 
-Description: to test when signed in the landing page shall display the user’s name and the landing page shall display a method to sign out
+**Test Steps:**
 
-Test Steps:to verify the username on the landing page and the sign-out button
+1. cd into the frontend folder and run `npm start`
+2. An instance of a web browser will launch after running npm start in the frontend folder and the landing page will load
 
-Pre-requisites: to be running the api on local system and to be logged in
+**Pass/Fail Criteria:**
 
-Author: Akshay
+- **Pass:**
 
-Test Method: manual
+  - The presence of sign-in and transition to sign-in page
 
-Pass/Fail Criteria: presence of username used to signin and the sign-out button and clicking it to sign out are the pass criteria. The absence of any two and unable to sign out are fail criteria.
+- **Fail:**
 
-Test Case Id- TBL003
+  - Absence of the sign-in button and not navigating to the sign-in page
 
-Description: sign-in form implementation
+---
 
-Test Steps: after going to sign-in page to verify the form has a textbox to collect a user name, the user name is required .The form a textbox to collect a password and the
-password is required and a button to submit the sign-in details.
+## Test Case ID - TBL002
 
-Pre-requisites: to be running the api on the system and to be on the sign-in page
+**Author:** _Akshay_
 
-Author : Akshay
+**Test Method:** Manual
 
-Test Method: manual
+**Description:** To test when signed in, the landing page displays the username and a method to sign out
 
-Pass/Fail Criteria: the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
+**Pre-requisites:**
 
-Test Case Id- TBL004
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the backend running
+- Have the frontend running
+- To be signed in into a valid account
 
-Description: if correct combination of user id and password have been submitted, navigate to the Landing Page as signed in
+**Test Steps:**
 
-Test Steps: entering the username and password and clicking sign-in button
+1. Username should be displayed on the top right along with the sign out button in the nav bar after signing in
+2. Click on the sign out button to sign out of the account and be redirected to landing page
 
-Pre-requisites: to use the username and password of an already signed-in account
+**Pass/Fail Criteria:**
 
-Author : Akshay
+- **Pass:**
 
-Test Method: manual
+  - Username used to sign in and the sign-out button is displayed after signing in
+  - Being able to sign out
 
-Pass/Fail Criteria: failure to sign-in even after entering an already existing account and the absence of sign-in button are the failure criteria. successful sign-in and transition to the landing page as signed-in is a pass criteria
+- **Fail:**
 
-Test Case Id- TBL005
+  - The absence of either username or sign out button
+  - Being unable to sign out
 
-Description: by entering an incorrect combination of user id and password have been submitted, display an appropriate message
+---
 
-Test Steps: entering a pair of incorrect username and password and clicking sign-in button
+## Test Case ID - TBL003
 
-Pre-requisites: to run the api on system and be on sign-in page
+**Author:** _Akshay_
 
-Author : Akshay
+**Test Method:** Manual
 
-Test Method: manual
+**Description:** Sign-in form implementation
 
-Pass/Fail Criteria: displaying an error message after clicking sign-in button is a pass criteria, failure to display an error message is a fail criteria.
+**Pre-requisites:**
 
-Test Case Id- TBL006
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the frontend running
+- To be on the sign-in page
 
-Description: sign-up form implementation
+**Test Steps:**
 
-Test Steps: after going to sign-up page to verify the form has a textbox to collect a user name ,the user name is required .The form a textbox to collect a password and the
-password is required and a button to submit the sign-up details.
+1. Verify the form has
+   - A textbox to collect a user name
+   - The user name is required
+   - A textbox to collect a password
+   - The password is required
+   - A button to submit the sign-in details.
 
-Pre-requisites: to be running the api on the system and to be on the sign-up page
+**Pass/Fail Criteria:**
 
-Author : Akshay
+- **Pass:**
 
-Test Method: manual
+  - The presence of all the above mentioned requirements
 
-Pass/Fail Criteria: the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
+- **Fail:**
 
-Test Case Id-TBL007
+  - Any of the above mentioned requirements are missing
 
-Description: Collect username for sign-up page
+---
 
-Test Steps: when the user enters a username for the first time, it must fit some requirements. The username must a string that is at least 8 characters long, the username shall not include any spaces, and leading and trailing spaces should be trimmed.
+## Test Case ID - TBL004
 
-Pre-requisites: to be running the api on the system and to be on the sign-up page
+**Author:** _Akshay_
 
-Author: Rajiv Dave
+**Test Method:** Manual
 
-Test Method: Manual
+**Description:** Entering proper account credentials and navigating to the home page.
 
-Pass/Fail Criteria: the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
+**Pre-requisites:**
 
-Test Case Id-TBL008
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the backend running
+- Have the frontend running
+- Have a valid account already made
 
-Description: Collect password for sign-up page
+**Test Steps:**
 
-Test steps: when the user creates a password for the first time, it must fit some requirements. The password should be at least 8 characters long, shall not include any spaces, and leading and trailing spaces should be trimmed. The password must also contain one upper-case latter, one lowercase letter, and one character that is not a letter
+1. Enter the username and password
+2. Click on the sign in button
 
-Pre-requisites: to be running the api on the system and to be on the sign-up page
+**Pass/Fail Criteria:**
 
-Author: Rajiv Dave
+- **Pass:**
 
-Test Method: Manual
+  - Successful sign-in and transition to the home page
 
-Pass/Fail Criteria: the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
+- **Fail:**
 
-Test Case Id-TBL009
+  - Failing to sign in after entering valid credentials
+  - Absence of sign-in button
 
-Description: If both the user-created username and password meet the criteria, create an account and navigate to the Landing Page as signed in
+---
 
-Test steps: Creating a username and password and then pressing the sign up button
+## Test Case ID - TBL005
 
-Pre-requisites: use the newly created username and password
+**Author:** _Akshay_
 
-Author: Rajiv Dave
+**Test Method:** Manual
 
-Test Method: Manual
+**Description:** Entering an incorrect combination of a username and password, and displaying an appropriate message
 
-Pass/Fail Criteria: Pass criteria is successfully signing up for an account,fail criteria is failing to create an account even if both the username and password follow the requirements and absence of sign up button
+**Pre-requisites:**
 
-Test Case Id-TBL010
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the backend running
+- Have the frontend running
+- To be on sign-in page
 
-Description: If the user created password and username don't meet the requirements, display error message
+**Test Steps:**
 
-Test steps: entering username and password that don't meet the requirements and press sign up
+1. Enter a incorrect username and password
+2. Click on sign-in button
+3. Appropriate error message should display at the top
 
-Pre-requisites: to run the api on system and be on sign-up page
+**Pass/Fail Criteria:**
 
-Author: Rajiv Dave
+- **Pass:**
 
-Test Method: Manual
+  - Displaying an error message after clicking sign-in button
 
-Pass/fail Criteria: Displaying an error message is a pass, not displaying one is a fail
+- **Fail:**
+
+  - Failure to display a error message
+  - Failure to display the appropriate error message
+
+---
+
+## Test Case ID - TBL006
+
+**Author:** _Akshay_
+
+**Test Method:** Manual
+
+**Description:** Sign-up form implementation
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the frontend running
+- To be on the sign-up page
+
+**Test Steps:**
+
+1. Verify the form has
+   - A textbox to collect a user name
+   - The user name is required
+   - A textbox to collect a password
+   - The password is required
+   - A textbox to collect the confirmed password
+   - The confirm password is required
+   - A button to submit the sign-up details.
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - The presence of all the above mentioned requirements
+
+- **Fail:**
+
+  - Any of the above mentioned requirements are missing
+
+---
+
+## Test Case ID - TBL007
+
+**Description:** Collect username for sign-up page
+
+**Test Steps:** when the user enters a username for the first time, it must fit some requirements. The username must a string that is at least 8 characters long, the username shall not include any spaces, and leading and trailing spaces should be trimmed.
+
+**Pre-requisites:** to be running the api on the system and to be on the sign-up page
+
+**Author:** Rajiv Dave
+
+**Test Method:** Manual
+
+**Pass/Fail Criteria:** the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
+
+---
+
+## Test Case ID - TBL008
+
+**Description:** Collect password for sign-up page
+
+**Test Steps:** when the user creates a password for the first time, it must fit some requirements. The password should be at least 8 characters long, shall not include any spaces, and leading and trailing spaces should be trimmed. The password must also contain one upper-case latter, one lowercase letter, and one character that is not a letter
+
+**Pre-requisites:** to be running the api on the system and to be on the sign-up page
+
+**Author:** Rajiv Dave
+
+**Test Method:** Manual
+
+**Pass/Fail Criteria:** the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
+
+---
+
+## Test Case ID - TBL009
+
+**Description:** If both the user-created username and password meet the criteria, create an account and navigate to the Landing Page as signed in
+
+**Test Steps:** Creating a username and password and then pressing the sign up button
+
+**Pre-requisites:** use the newly created username and password
+
+**Author:** Rajiv Dave
+
+**Test Method:** Manual
+
+**Pass/Fail Criteria:** Pass criteria is successfully signing up for an account,fail criteria is failing to create an account even if both the username and password follow the requirements and absence of sign up button
+
+---
+
+## Test Case ID - TBL010
+
+**Description:** If the user created password and username don't meet the requirements, display error message
+
+**Test Steps:** entering username and password that don't meet the requirements and press sign up
+
+**Pre-requisites:** to run the api on system and be on sign-up page
+
+**Author:** Rajiv Dave
+
+**Test Method:** Manual
+
+**Pass/Fail Criteria:** Displaying an error message is a pass, not displaying one is a fail
