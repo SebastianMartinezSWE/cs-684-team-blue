@@ -4,6 +4,8 @@
 
 In this sprint, we will be validating if the landing page and home page have been properly created. As well as the sign in and sign out pages, along with sign out functionality being properly implemented. This includes testing that the database is properly receiving, storing and sending out information.
 
+---
+
 ### Test items:
 
 1. Landing page
