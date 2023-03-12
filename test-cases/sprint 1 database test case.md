@@ -1,13 +1,39 @@
-Test Case Id- TBL016
+# Sprint 1: Database Test Case
 
-Description: Make sure data that is entered into the sign up page is stored in the database
+---
 
-Test Steps: Create a username and password, click sign-up button, and check the database to see if its stored in there
+## Test Case Id- TBL016
 
-Pre-requisites: having the repository cloned and running the api on local system and be on sign up page
+**Author:** _Rajiv Dave_
 
-Author: Rajiv Dave
+**Test Method:** Manual
 
-Test Method: manual
+**Description:** Make sure data that is entered into the sign up page is stored in the database
 
-Pass/Fail Criteria: Pass if the database contains the username and password, fail if it doesn't
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the backend running
+- Have the frontend running
+- Have an instance of MongoDB Atlas open in a web browser and be signed in
+- Be on the sign up page
+
+**Test Steps:**
+
+1. Enter a valid username
+2. Enter a valid password
+3. Confirm password
+4. Click on the sign up button
+5. Go to MongoDB Atlas
+6. Click on Browse Collections
+7. Verify if the credentials were saved
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - If username and password is properly stored in the database
+
+- **Fail:**
+  - If username and password is not properly stored in the database
