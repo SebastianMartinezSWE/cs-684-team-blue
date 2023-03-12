@@ -2,17 +2,15 @@ Test Case Id- TBL001
 
 Description: test to verify the landing page to display a method (button or link) to navigate to a “Sign-in” page
 
-Test Steps: after running the api on local system the landing page is loaded 
+Test Steps: after running the api on local system the landing page is loaded
 
-Pre-requistes: having the repository cloned and running the api on local system and to be not signed-in
+Pre-requisites: having the repository cloned and running the api on local system and to be not signed-in
 
 Author: Akshay
 
 Test Method: manual
 
-Pass/Fail Criteria: the presence of sign-in and transitoin to sign-in page is the pass criteria. absence of the sign-in button  and not navigating to the sign-in page are the fail criteria.
-
-
+Pass/Fail Criteria: the presence of sign-in and transition to sign-in page is the pass criteria. absence of the sign-in button and not navigating to the sign-in page are the fail criteria.
 
 Test Case Id- TBL002
 
@@ -20,53 +18,50 @@ Description: to test when signed in the landing page shall display the user’s 
 
 Test Steps:to verify the username on the landing page and the sign-out button
 
-Pre-requistes: to be running the api on local system and to be logged in
+Pre-requisites: to be running the api on local system and to be logged in
 
 Author: Akshay
 
 Test Method: manual
 
-Pass/Fail Criteria: presence of username used to signin and the sign-out button and clicking it to sign out are the pass criteria. The absence of anyof two and unable to sign out are fail criterias.
-
+Pass/Fail Criteria: presence of username used to signin and the sign-out button and clicking it to sign out are the pass criteria. The absence of any two and unable to sign out are fail criteria.
 
 Test Case Id- TBL003
 
 Description: sign-in form implementation
 
-Test Steps: after going to sign-in page to verify the form has a textbox to collect a user name, the user name is required .The form a textbox to collect a password and the 
+Test Steps: after going to sign-in page to verify the form has a textbox to collect a user name, the user name is required .The form a textbox to collect a password and the
 password is required and a button to submit the sign-in details.
 
-Pre-requistes: to be running the api on the system and to be on the sign-in page
-
-Author : Akshay
-
-Test Method: manual 
-
-Pass/Fail Criteria: the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
-
-
-Test Case Id- TBL004
-
-Description: if correct combination of user id and password have been submitted, navigate to the Landing Page as signed in
-
-Test Steps: entering the username and password and clicking sign-in button 
-
-Pre-requistes: to use the username and password of an already signed-in account
+Pre-requisites: to be running the api on the system and to be on the sign-in page
 
 Author : Akshay
 
 Test Method: manual
 
-Pass/Fail Criteria: failure to sign-in even after entering an already existing account and the absence of sign-in button are the failure criteria. successfull sign-in and transition to the landing page as signed-in is a pass criteria
+Pass/Fail Criteria: the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
 
+Test Case Id- TBL004
+
+Description: if correct combination of user id and password have been submitted, navigate to the Landing Page as signed in
+
+Test Steps: entering the username and password and clicking sign-in button
+
+Pre-requisites: to use the username and password of an already signed-in account
+
+Author : Akshay
+
+Test Method: manual
+
+Pass/Fail Criteria: failure to sign-in even after entering an already existing account and the absence of sign-in button are the failure criteria. successful sign-in and transition to the landing page as signed-in is a pass criteria
 
 Test Case Id- TBL005
 
 Description: by entering an incorrect combination of user id and password have been submitted, display an appropriate message
 
-Test Steps: entering a pair of incorrect username and password and clicking sign-in button 
+Test Steps: entering a pair of incorrect username and password and clicking sign-in button
 
-Pre-requistes: to run the api on system and be on sign-in page
+Pre-requisites: to run the api on system and be on sign-in page
 
 Author : Akshay
 
@@ -74,45 +69,42 @@ Test Method: manual
 
 Pass/Fail Criteria: displaying an error message after clicking sign-in button is a pass criteria, failure to display an error message is a fail criteria.
 
-
 Test Case Id- TBL006
 
 Description: sign-up form implementation
 
-Test Steps: after going to sign-up page to verify the form has a textbox to collect a user name ,the user name is required .The form a textbox to collect a password and the 
+Test Steps: after going to sign-up page to verify the form has a textbox to collect a user name ,the user name is required .The form a textbox to collect a password and the
 password is required and a button to submit the sign-up details.
 
-Pre-requistes: to be running the api on the system and to be on the sign-up page
+Pre-requisites: to be running the api on the system and to be on the sign-up page
 
 Author : Akshay
 
-Test Method: manual 
+Test Method: manual
 
 Pass/Fail Criteria: the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
-
 
 Test Case Id-TBL007
 
 Description: Collect username for sign-up page
 
-Test Steps: when the user enters a username for the first time, it must fit some requirements. The username must a string that is atleast 8 characters long, the username shall not include any spaces, and leading and trailing spaces should be trimmed.
+Test Steps: when the user enters a username for the first time, it must fit some requirements. The username must a string that is at least 8 characters long, the username shall not include any spaces, and leading and trailing spaces should be trimmed.
 
-Pre-requistes: to be running the api on the system and to be on the sign-up page
+Pre-requisites: to be running the api on the system and to be on the sign-up page
 
 Author: Rajiv Dave
 
 Test Method: Manual
 
 Pass/Fail Criteria: the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
-
 
 Test Case Id-TBL008
 
-Despciption: Collect password for sign-up page
+Description: Collect password for sign-up page
 
-Test steps: when the user creates a password for the first time, it must fit some requirements. The password should be at least 8 characters long, shall not include any spaces, and leading and trailing spaces shoudl be trimmed. The passwword must also contain one upper-case latter, one lowercase letter, and one character that is not a letter
+Test steps: when the user creates a password for the first time, it must fit some requirements. The password should be at least 8 characters long, shall not include any spaces, and leading and trailing spaces should be trimmed. The password must also contain one upper-case latter, one lowercase letter, and one character that is not a letter
 
-Pre-requistes: to be running the api on the system and to be on the sign-up page
+Pre-requisites: to be running the api on the system and to be on the sign-up page
 
 Author: Rajiv Dave
 
@@ -120,25 +112,23 @@ Test Method: Manual
 
 Pass/Fail Criteria: the presence of all the above mentioned requirements is a pass criteria, and absence of any one is a fail criteria.
 
-
 Test Case Id-TBL009
 
-Despription: If both the user-created username and password meet the criteria, create an account and navigate to the Landing Page as signed in
+Description: If both the user-created username and password meet the criteria, create an account and navigate to the Landing Page as signed in
 
-Test steps: Creating a username and passwrod and then pressing the sign up buttom
+Test steps: Creating a username and password and then pressing the sign up button
 
 Pre-requisites: use the newly created username and password
 
 Author: Rajiv Dave
 
-Test Method: Manual 
+Test Method: Manual
 
-Pass/Fail Criteria: Pass criteria is successfully signing up for an account,fail criteria is failing to create an account even if both the username and password follow the requieremnts and absence of sign up button
-
+Pass/Fail Criteria: Pass criteria is successfully signing up for an account,fail criteria is failing to create an account even if both the username and password follow the requirements and absence of sign up button
 
 Test Case Id-TBL010
 
-Description: If the user created password and username don't meet the requirements, display error meesage
+Description: If the user created password and username don't meet the requirements, display error message
 
 Test steps: entering username and password that don't meet the requirements and press sign up
 
@@ -149,8 +139,3 @@ Author: Rajiv Dave
 Test Method: Manual
 
 Pass/fail Criteria: Displaying an error message is a pass, not displaying one is a fail
-
-
-
-
-

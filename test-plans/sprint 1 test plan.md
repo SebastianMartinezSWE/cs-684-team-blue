@@ -19,7 +19,7 @@ By performing manual testing to verify the requirements
 
 Testing Tasks:
 
-1. Testing to see if the API response codes are recieved
+1. Testing to see if the API response codes are received
 2. Testing the UI requirements
 3. Testing to see if the data entered lands in the database
 
@@ -29,9 +29,9 @@ Mutunoor Akshay Kumar - testing
 
 Schedule:
 
-02/27/23 : Meeting and coming up with test plan and inital test cases
+02/27/23 : Meeting and coming up with test plan and initial test cases
 
-02/28/23 - 03/04/23 : Spliting up work and working on testing individually
+02/28/23 - 03/04/23 : Splitting up work and working on testing individually
 
 03/04/23 : Meeting up again and sharing test results and finalizing details
 

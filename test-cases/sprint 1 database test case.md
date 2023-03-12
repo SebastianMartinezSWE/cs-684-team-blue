@@ -4,7 +4,7 @@ Description: Make sure data that is entered into the sign up page is stored in t
 
 Test Steps: Create a username and password, click sign-up button, and check the database to see if its stored in there
 
-Pre-requistes: having the repository cloned and running the api on local system and be on sign up page
+Pre-requisites: having the repository cloned and running the api on local system and be on sign up page
 
 Author: Rajiv Dave
 
