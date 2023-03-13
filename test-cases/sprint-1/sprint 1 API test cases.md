@@ -26,10 +26,10 @@
 5. Click on JSON
 6. In the text box enter the username and password of a valid user in proper JSON format
 
-   ```
+   ```json
    {
-       "username":"",
-       "password":""
+     "username": "",
+     "password": ""
    }
    ```
 
@@ -70,10 +70,10 @@
 5. Click on JSON
 6. In the text box enter an invalid username and password in proper JSON format
 
-   ```
+   ```json
    {
-       "username":"",
-       "password":""
+     "username": "",
+     "password": ""
    }
    ```
 
@@ -114,11 +114,11 @@
 5. Click on JSON
 6. In the text box enter a valid username and password in proper JSON format
 
-   ```
+   ```json
    {
-       "username":"",
-       "password":"",
-       "confirmPassword": ""
+     "username": "",
+     "password": "",
+     "confirmPassword": ""
    }
    ```
 
@@ -159,11 +159,11 @@
 5. Click on JSON
 6. In the text box enter an already taken username and a valid password in proper JSON format
 
-   ```
+   ```json
    {
-       "username":"",
-       "password":"",
-       "confirmPassword": ""
+     "username": "",
+     "password": "",
+     "confirmPassword": ""
    }
    ```
 
@@ -204,9 +204,9 @@
 5. Click on JSON
 6. In the text box enter a valid username in proper JSON format
 
-   ```
+   ```json
    {
-       "username":""
+     "username": ""
    }
    ```
 

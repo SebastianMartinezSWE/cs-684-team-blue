@@ -1,12 +1,12 @@
 # Sprint 1: Test Plan
 
-### INTRODUCTION:
+## INTRODUCTION
 
 In this sprint, we will be validating if the landing page and home page have been properly created. As well as the sign in and sign out pages, along with sign out functionality being properly implemented. This includes testing that the database is properly receiving, storing and sending out information.
 
 ---
 
-### Test items:
+### Test items
 
 1. Landing page
 2. Sign-up page
@@ -15,7 +15,7 @@ In this sprint, we will be validating if the landing page and home page have bee
 5. Home page
 6. Sign-out
 
-### Features to be tested:
+### Features to be tested
 
 1. **Landing page**
    - Sign in and Sign out buttons
@@ -34,25 +34,38 @@ In this sprint, we will be validating if the landing page and home page have bee
 6. **Sign-out**
    - Proper sign out functionality
 
-### Approach:
+### Approach
 
-_We will be taking a manual testing approach this sprint to verify the requirements_
+We will be taking a manual testing approach this sprint to verify the requirements
 
-### Testing Tasks:
+### Testing Tasks
 
 1. Testing to see if the API request body and response codes are received and sent
 2. Testing the UX requirements
 3. Testing to see if the data entered is stored in the database
 
-### Responsibilities:
+### Responsibilities
 
 - Testing
 
-  - _Rajiv Dave_
+  - Backend/API/Database
 
-  - _Mutunoor Akshay Kumar_
+    - _Rajiv Dave_
+    - _Mutunoor Akshay Kumar_
 
-### Schedule:
+  - Frontend
+
+    - Landing Page
+
+      - _Rajiv Dave_
+      - _Mutunoor Akshay Kumar_
+
+    - Home Page
+
+    - _Rajiv Dave_
+    - _Mutunoor Akshay Kumar_
+
+### Schedule
 
 **02/27/23:**
 
