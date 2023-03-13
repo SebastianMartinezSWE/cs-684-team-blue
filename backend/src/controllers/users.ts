@@ -157,7 +157,7 @@ export const signOut: RequestHandler = async (req, res, next) => {
   }
 };
 
-// Sign out by destorying the session (Currently not needed)
+// Sign out by destroying the session (Currently not needed)
 // export const signOut: RequestHandler<unknown, unknown, SignInBody, unknown> = (
 //   req,
 //   res,
