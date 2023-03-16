@@ -1,0 +1,30 @@
+.articlePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.articleGrid {
+  width: 100%;
+}
+
+.article {
+  height: 550px;
+  /* min-width: 425px; */
+  min-width: 532px;
+}
+
+.background {
+  background-color: #282c34;
+}
+
+.button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
