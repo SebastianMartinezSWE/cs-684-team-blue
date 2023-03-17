@@ -18,10 +18,16 @@ const DefaultNavBar = ({
   onSignOutSuccessful,
 }: DefaultNavBarProps) => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+    <Navbar bg="dark" variant="dark" expand="sm" sticky="top">
       <Container fluid>
-        <Navbar.Brand>
-          <img src={logo} alt="" width="40" height="40" /> The Big Blue Theory
+        <Navbar.Brand href="#home">
+          <img
+            src={logo}
+            alt="react-logo"
+            height="30"
+            className="d-inline-block align-top"
+          />{" "}
+          The Big Blue Theory
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="main-navbar" />
         <Navbar.Collapse id="main-navbar">
