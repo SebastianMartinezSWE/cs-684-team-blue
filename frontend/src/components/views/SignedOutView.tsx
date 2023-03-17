@@ -23,27 +23,16 @@ const SignedOutView = () => {
 
   return (
     <>
-      <div role="feed" className={styles.background}>
-        <Container className={styles.articlePage} fluid>
-          <h1 className={styles.h1}>General News</h1>
-          <Container className={styles.button}>
-            <Button variant="primary">Refresh</Button>
-          </Container>
-          <Row
-            role="article-grid"
-            xs={1}
-            md={2}
-            xl={3}
-            className={`g-5 ${styles.articleGrid}`}
-          >
-            {articles.map((article) => (
-              <Col key={article.title}>
-                <Article className={styles.article} article={article} />
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </div>
+      <Container fluid>
+        <Row label="article-grid" xs={1} md={2} xl={3} className={`g-4`}>
+          {/* className={`g-4 ${styles.articleGrid} */}
+          {articles.map((article) => (
+            <Col key={article.title}>
+              <Article className={styles.article} article={article} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </>
   );
 };

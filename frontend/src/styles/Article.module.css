@@ -1,22 +1,5 @@
-/* .articleCard {
-  min-height: 30vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60rem;
-} */
-
 .cardBody {
   overflow: hidden;
-}
-
-.img {
-  width: 532px;
-  height: 299px;
-  object-fit: cover;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .cardTitle {
@@ -25,4 +8,8 @@
 
 .cardText {
   white-space: pre-line;
+}
+
+.cardImage {
+  height: 300px;
 }

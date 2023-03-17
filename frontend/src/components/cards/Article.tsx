@@ -10,9 +10,13 @@ interface ArticleProps {
 
 const Article = ({ article, className }: ArticleProps) => {
   return (
-    <Card className={`${styles.articleCard} ${className}`}>
+    <Card className={`${className}`}>
       <Card.Header>{article.source.name}</Card.Header>
-      <Card.Img className={styles.img} variant="top" src={article.urlToImage} />
+      <Card.Img
+        className={styles.cardImage}
+        variant="top"
+        src={article.urlToImage}
+      />
       <Card.Body className={styles.cardBody}>
         <Card.Title className={styles.cardTitle}>{article.title}</Card.Title>
         <Card.Subtitle className={`mb-2 text-muted ${styles.cardTitle}`}>
