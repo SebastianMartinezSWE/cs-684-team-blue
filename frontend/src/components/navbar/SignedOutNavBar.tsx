@@ -1,5 +1,4 @@
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
+import { Nav } from "react-bootstrap";
 interface SignedOutNavBarProps {
   onSignUpClicked: () => void;
   onSignInClicked: () => void;
@@ -11,15 +10,12 @@ const SignedOutNavBar = ({
 }: SignedOutNavBarProps) => {
   return (
     <>
-      <Container fluid>
-        <Button variant="outline-info" onClick={onSignUpClicked}>
-          Sign Up
-        </Button>
-        {"  "}
-        <Button variant="outline-light" onClick={onSignInClicked}>
-          Sign In
-        </Button>
-      </Container>
+      <Nav.Link className="text-info" onClick={onSignUpClicked}>
+        Sign Up
+      </Nav.Link>
+      <Nav.Link className="text-white" onClick={onSignInClicked}>
+        Sign In
+      </Nav.Link>
     </>
   );
 };
