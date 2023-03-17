@@ -3,6 +3,7 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import { News } from "../../models/news";
 import Article from "../cards/Article";
 import styles from "../../styles/NewsPage.module.css";
+import styleUtil from "../../styles/utils/util.module.css";
 import { getNews } from "../../api/news";
 
 const SignedOutView = () => {
@@ -24,6 +25,9 @@ const SignedOutView = () => {
   return (
     <>
       <Container fluid>
+        <Button className={`mb-4 ${styleUtil.centerItem}`} onClick={() => {}}>
+          Refresh
+        </Button>
         <Row xs={1} md={2} xl={3} className={`g-4`}>
           {articles.map((article) => (
             <Col key={article.title}>
