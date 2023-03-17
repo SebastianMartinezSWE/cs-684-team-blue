@@ -2,6 +2,7 @@ import { Button, Card } from "react-bootstrap";
 import { Article as ArticleModel } from "../../models/news";
 import styles from "../../styles/Article.module.css";
 import { formatDate } from "../../utils/formatDate";
+import LinesEllipsis from "react-lines-ellipsis";
 
 interface ArticleProps {
   article: ArticleModel;
@@ -18,11 +19,21 @@ const Article = ({ article, className }: ArticleProps) => {
         src={article.urlToImage}
       />
       <Card.Body className={styles.cardBody}>
-        <Card.Title className={styles.cardTitle}>{article.title}</Card.Title>
+        <Card.Title className={`h1 ${styles.cardTitle}`}>
+          {article.title}
+        </Card.Title>
         <Card.Subtitle className={`mb-2 text-muted ${styles.cardTitle}`}>
           {"Published on: " + formatDate(article.publishedAt)}
         </Card.Subtitle>
-        <Card.Text className={styles.cardText}>{article.description}</Card.Text>
+        <Card.Text className={`lead ${styles.cardText}`}>
+          <LinesEllipsis
+            text={article.description}
+            maxLine="3"
+            ellipsis="..."
+            trimRight
+            basedOn="letters"
+          />
+        </Card.Text>
       </Card.Body>
       <Button
         href={article.url}

@@ -25,6 +25,11 @@ const SignedOutView = () => {
   return (
     <>
       <Container fluid>
+        <h1
+          className={`display-1 mt-4 mb-2 text-center text-white font-weight-bold`}
+        >
+          General News
+        </h1>
         <Button className={`mb-4 ${styleUtil.centerItem}`} onClick={() => {}}>
           Refresh
         </Button>

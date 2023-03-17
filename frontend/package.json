@@ -16,6 +16,7 @@
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.2",
+    "react-lines-ellipsis": "^0.15.3",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
@@ -46,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-lines-ellipsis": "^0.15.1",
     "msw": "^1.1.0"
   }
 }
