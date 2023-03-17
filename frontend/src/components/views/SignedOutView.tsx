@@ -24,7 +24,7 @@ const SignedOutView = () => {
   return (
     <>
       <Container fluid>
-        <Row label="article-grid" xs={1} md={2} xl={3} className={`g-4`}>
+        <Row xs={1} md={2} xl={3} className={`g-4`}>
           {articles.map((article) => (
             <Col key={article.title}>
               <Article className={styles.article} article={article} />
