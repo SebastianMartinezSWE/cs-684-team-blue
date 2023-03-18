@@ -13,7 +13,7 @@ const SettingsModal = ({ onDismiss }: SettingsModalProps) => {
       <Modal.Body>
         <Form.Label>Choose your news preferences:</Form.Label>
         <Form>
-          <Form.Switch id="general-switch" label="General" checked />
+          <Form.Switch id="general-switch" label="General" defaultChecked />
           <Form.Switch id="business-switch" label="Business" />
           <Form.Switch id="entertainment-switch" label="Entertainment" />
           <Form.Switch id="health-switch" label="Health" />
