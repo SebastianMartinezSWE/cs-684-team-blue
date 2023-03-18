@@ -1,8 +1,8 @@
 import { Button, Card } from "react-bootstrap";
+import LinesEllipsis from "react-lines-ellipsis";
 import { Article as ArticleModel } from "../../models/news";
 import styles from "../../styles/Article.module.css";
 import { formatDate } from "../../utils/formatDate";
-import LinesEllipsis from "react-lines-ellipsis";
 
 interface ArticleProps {
   article: ArticleModel;
@@ -26,12 +26,16 @@ const Article = ({ article, className }: ArticleProps) => {
           {"Published on: " + formatDate(article.publishedAt)}
         </Card.Subtitle>
         <LinesEllipsis
-          text={article.description}
+          className={`lead ${styles.cardText}`}
           maxLine="3"
           ellipsis="..."
           trimRight
           basedOn="letters"
-          className={`lead ${styles.cardText}`}
+          text={
+            article.description === null
+              ? "Article did not provide a description"
+              : article.description
+          }
         />
       </Card.Body>
       <Button
