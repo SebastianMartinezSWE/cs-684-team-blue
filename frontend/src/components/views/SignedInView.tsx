@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { getNews } from "../../api/news";
 import { News } from "../../models/news";
-// import styleUtil from "../../styles/utils/util.module.css";
-import Article from "../cards/Article";
-// import styleUtil from "../../styles/utils/util.module.css";
 import styles from "../../styles/NewsPage.module.css";
+import Article from "../cards/Article";
+import SettingsModal from "../modals/SettingsModal";
 
 const SignedInView = () => {
   const [articles, setArticles] = useState<News["articles"]>([]);
+  const [showSettingsModal, setShowSettingsModal] = useState(false);
 
   useEffect(() => {
     async function loadArticles() {
@@ -25,26 +25,35 @@ const SignedInView = () => {
 
   return (
     <>
-      <h1
-        className={`display-1 mt-4 mb-2 text-center text-white font-weight-bold`}
-      >
-        General News
-      </h1>
-      <Row className="mb-4 justify-content-md-center">
+      <Row className="mb-2 justify-content-md-center">
+        <h1 className={`display-1 text-center text-white font-weight-bold`}>
+          General News
+        </h1>
+      </Row>
+      <Row className="justify-content-md-center">
         <Col xs="auto">
           <Button onClick={() => {}}>Refresh</Button>
         </Col>
         <Col xs="auto">
-          <Button onClick={() => {}}>Settings</Button>
+          <Button
+            onClick={() => {
+              setShowSettingsModal(true);
+            }}
+          >
+            Settings
+          </Button>
         </Col>
       </Row>
-      <Row xs={1} md={2} xl={3} className={`g-4`}>
+      <Row xs={1} sm={1} md={1} lg={3} className={`mt-4 g-4`}>
         {articles?.map((article) => (
           <Col key={article.title}>
             <Article className={styles.article} article={article} />
           </Col>
         ))}
       </Row>
+      {showSettingsModal && (
+        <SettingsModal onDismiss={() => setShowSettingsModal(false)} />
+      )}
     </>
   );
 };
