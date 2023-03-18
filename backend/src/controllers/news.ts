@@ -10,7 +10,9 @@ export const generalNews: RequestHandler = async (req, res, next) => {
       const response = await fetch(
         `https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=${env.NEWSAPI_API_KEY}`
       );
+
       const requestedNews = await response.json();
+
       res.status(200).json(requestedNews);
     } else if (
       await UserModel.findOne({
@@ -20,7 +22,9 @@ export const generalNews: RequestHandler = async (req, res, next) => {
       const response = await fetch(
         `https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=${env.NEWSAPI_API_KEY}`
       );
+
       const requestedNews = await response.json();
+
       res.status(200).json(requestedNews);
     } else {
       throw createHttpError(401, "User not authorized");
