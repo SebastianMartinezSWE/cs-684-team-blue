@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
+import { getNews } from "../../api/news";
 import { News } from "../../models/news";
-import Article from "../cards/Article";
 import styles from "../../styles/NewsPage.module.css";
 import styleUtil from "../../styles/utils/util.module.css";
-import { getNews } from "../../api/news";
+import Article from "../cards/Article";
 
 const SignedOutView = () => {
   const [articles, setArticles] = useState<News["articles"]>([]);
