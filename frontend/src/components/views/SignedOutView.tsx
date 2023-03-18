@@ -12,7 +12,7 @@ const SignedOutView = () => {
   useEffect(() => {
     async function loadArticles() {
       try {
-        const news = await getNews();
+        const news = await getNews("default");
         setArticles(news.articles);
       } catch (error) {
         console.error(error);

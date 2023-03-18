@@ -29,8 +29,8 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
   }
 }
 
-export async function getNews(): Promise<News> {
-  const response = await fetchData("/api/news/", {
+export async function getNews(user: String): Promise<News> {
+  const response = await fetchData(`/api/news/${user}`, {
     method: "GET",
   });
   return response.json();
