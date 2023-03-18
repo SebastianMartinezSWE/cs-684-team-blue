@@ -1,13 +1,21 @@
+import { Container } from "react-bootstrap";
 import SignedInView from "../components/views/SignedInView";
 import SignedOutView from "../components/views/SignedOutView";
 import { User } from "../models/user";
+// import styles from "../styles/NewsPage.module.css";
 
 interface HomePageProps {
   signedInUser: User | null;
 }
 
 const HomePage = ({ signedInUser }: HomePageProps) => {
-  return <>{signedInUser ? <SignedInView /> : <SignedOutView />}</>;
+  return (
+    <>
+      <Container fluid>
+        {signedInUser ? <SignedInView /> : <SignedOutView />}
+      </Container>
+    </>
+  );
 };
 
 export default HomePage;

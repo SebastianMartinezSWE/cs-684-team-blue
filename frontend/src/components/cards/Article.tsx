@@ -11,7 +11,7 @@ interface ArticleProps {
 
 const Article = ({ article, className }: ArticleProps) => {
   return (
-    <Card className={`${className}`}>
+    <Card border="dark" className={`${className}`}>
       <Card.Header>{article.source.name}</Card.Header>
       <Card.Img
         className={styles.cardImage}
@@ -25,15 +25,14 @@ const Article = ({ article, className }: ArticleProps) => {
         <Card.Subtitle className={`mb-2 text-muted ${styles.cardTitle}`}>
           {"Published on: " + formatDate(article.publishedAt)}
         </Card.Subtitle>
-        <Card.Text className={`lead ${styles.cardText}`}>
-          <LinesEllipsis
-            text={article.description}
-            maxLine="3"
-            ellipsis="..."
-            trimRight
-            basedOn="letters"
-          />
-        </Card.Text>
+        <LinesEllipsis
+          text={article.description}
+          maxLine="3"
+          ellipsis="..."
+          trimRight
+          basedOn="letters"
+          className={`lead ${styles.cardText}`}
+        />
       </Card.Body>
       <Button
         href={article.url}
