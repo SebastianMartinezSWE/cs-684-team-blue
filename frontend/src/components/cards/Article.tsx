@@ -16,7 +16,11 @@ const Article = ({ article, className }: ArticleProps) => {
       <Card.Img
         className={styles.cardImage}
         variant="top"
-        src={article.urlToImage}
+        src={
+          article.urlToImage === null
+            ? "https://artsmidnorthcoast.com/wp-content/uploads/2014/05/no-image-available-icon-6.png"
+            : article.urlToImage
+        }
       />
       <Card.Body className={styles.cardBody}>
         <Card.Title className={`h1 ${styles.cardTitle}`}>
