@@ -4,8 +4,9 @@ import express, { NextFunction, Request, Response } from "express";
 // import session from "express-session";
 import createHttpError, { isHttpError } from "http-errors";
 import morgan from "morgan";
-import userRoutes from "./routes/users";
 import newsRoutes from "./routes/news";
+import settingsRoutes from "./routes/settings";
+import userRoutes from "./routes/users";
 // import env from "./util/validateEnv";
 
 const app = express();
@@ -37,6 +38,9 @@ app.use("/api/users", userRoutes);
 
 // All the routes pertaining to news
 app.use("/api/news", newsRoutes);
+
+// All the routes pertaining to settings
+app.use("/api/settings", settingsRoutes);
 
 // Error Handling Middleware
 app.use((req, res, next) => {

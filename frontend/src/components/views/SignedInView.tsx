@@ -2,11 +2,16 @@ import { useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { getNews } from "../../api/news";
 import { News } from "../../models/news";
+import { User } from "../../models/user";
 import styles from "../../styles/NewsPage.module.css";
 import Article from "../cards/Article";
 import SettingsModal from "../modals/SettingsModal";
 
-const SignedInView = () => {
+interface SignedInViewProps {
+  user: User;
+}
+
+const SignedInView = ({ user }: SignedInViewProps) => {
   const [articles, setArticles] = useState<News["articles"]>([]);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
 
@@ -52,7 +57,10 @@ const SignedInView = () => {
         ))}
       </Row>
       {showSettingsModal && (
-        <SettingsModal onDismiss={() => setShowSettingsModal(false)} />
+        <SettingsModal
+          onDismiss={() => setShowSettingsModal(false)}
+          userData={user}
+        />
       )}
     </>
   );

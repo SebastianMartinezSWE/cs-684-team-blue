@@ -12,7 +12,11 @@ const HomePage = ({ signedInUser }: HomePageProps) => {
   return (
     <>
       <Container fluid>
-        {signedInUser ? <SignedInView /> : <SignedOutView />}
+        {signedInUser ? (
+          <SignedInView user={signedInUser} />
+        ) : (
+          <SignedOutView />
+        )}
       </Container>
     </>
   );

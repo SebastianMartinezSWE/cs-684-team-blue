@@ -1,10 +1,11 @@
 import { Button, Form, Modal } from "react-bootstrap";
-
+import { User } from "../../models/user";
 interface SettingsModalProps {
   onDismiss: () => void;
+  userData: User;
 }
 
-const SettingsModal = ({ onDismiss }: SettingsModalProps) => {
+const SettingsModal = ({ onDismiss, userData }: SettingsModalProps) => {
   return (
     <Modal show onHide={onDismiss} centered>
       <Modal.Header closeButton>
@@ -13,20 +14,20 @@ const SettingsModal = ({ onDismiss }: SettingsModalProps) => {
       <Modal.Body>
         <Form.Label>Choose your news preferences:</Form.Label>
         <Form>
-          <Form.Switch id="general-switch" label="General" defaultChecked />
-          <Form.Switch id="business-switch" label="Business" />
-          <Form.Switch id="entertainment-switch" label="Entertainment" />
-          <Form.Switch id="health-switch" label="Health" />
-          <Form.Switch id="science-switch" label="Science" />
-          <Form.Switch id="sports-switch" label="Sports" />
-          <Form.Switch id="technology-switch" label="Technology" />
+          <Form.Check id="general-checkbox" label="General" defaultChecked />
+          <Form.Check id="business-checkbox" label="Business" />
+          <Form.Check id="entertainment-checkbox" label="Entertainment" />
+          <Form.Check id="health-checkbox" label="Health" />
+          <Form.Check id="science-checkbox" label="Science" />
+          <Form.Check id="sports-checkbox" label="Sports" />
+          <Form.Check id="technology-checkbox" label="Technology" />
         </Form>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={onDismiss}>
           Close
         </Button>
-        <Button variant="primary" onClick={onDismiss}>
+        <Button type="submit" variant="primary" onClick={onDismiss}>
           Save Changes
         </Button>
       </Modal.Footer>
