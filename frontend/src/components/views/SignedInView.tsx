@@ -56,12 +56,13 @@ const SignedInView = ({ user }: SignedInViewProps) => {
           </Col>
         ))}
       </Row>
-      {showSettingsModal && (
+      {
         <SettingsModal
           onDismiss={() => setShowSettingsModal(false)}
           userData={user}
+          showSettingsModal={showSettingsModal}
         />
-      )}
+      }
     </>
   );
 };
