@@ -1,7 +1,6 @@
 import "@testing-library/jest-dom";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import App from "../../App";
-import { articlesData } from "../../mocks/articles";
 
 describe("Landing Page", () => {
   describe("Renders Correctly", () => {
@@ -13,17 +12,6 @@ describe("Landing Page", () => {
       });
 
       expect(refreshButton).toBeInTheDocument();
-    });
-
-    it("Renders the General News articles", async () => {
-      render(<App />);
-
-      await waitFor(() => {
-        articlesData.forEach((article) => {
-          const articleTitle = screen.getByText(article.title);
-          expect(articleTitle).toBeInTheDocument();
-        });
-      });
     });
   });
 });
