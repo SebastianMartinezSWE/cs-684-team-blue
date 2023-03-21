@@ -69,6 +69,27 @@ describe("Landing Page", () => {
 
         expect(settingsButton).toBeInTheDocument();
       });
+
+      it("Render the General News articles", async () => {
+        const user = userEvent.setup();
+        render(<App />);
+
+        user.click(screen.getByRole("button", { name: "Sign In" }));
+
+        user.type(
+          await screen.findByPlaceholderText("Username"),
+          "waldotheoctopus"
+        );
+        user.type(await screen.findByPlaceholderText("Password"), "nickJr41!");
+        user.click(await screen.findByTestId("Sign-In"));
+
+        await waitFor(() => {
+          articlesData.forEach((article) => {
+            const articleTitle = screen.getByText(article.title);
+            expect(articleTitle).toBeInTheDocument();
+          });
+        });
+      });
     });
   });
 });
