@@ -44,6 +44,7 @@ const SignedInView = ({ user }: SignedInViewProps) => {
             onClick={() => {
               setShowSettingsModal(true);
             }}
+            data-testid="Settings"
           >
             Settings
           </Button>

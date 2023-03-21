@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
-import { User } from "../../models/user";
 import * as SettingsApi from "../../api/settings";
+import { User } from "../../models/user";
 interface SettingsModalProps {
   onDismiss: () => void;
   userData: User;
@@ -44,7 +44,7 @@ const SettingsModal = ({
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title>Settings</Modal.Title>
+        <Modal.Title data-testid="Settings-Modal">Settings</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form.Label>Choose your news preferences:</Form.Label>
