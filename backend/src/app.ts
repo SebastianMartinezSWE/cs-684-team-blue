@@ -4,6 +4,7 @@ import express, { NextFunction, Request, Response } from "express";
 // import session from "express-session";
 import createHttpError, { isHttpError } from "http-errors";
 import morgan from "morgan";
+import newsRoutes from "./routes/news";
 import userRoutes from "./routes/users";
 // import env from "./util/validateEnv";
 
@@ -33,6 +34,9 @@ app.use(express.json());
 
 // All the routes pertaining to users
 app.use("/api/users", userRoutes);
+
+// All the routes pertaining to news
+app.use("/api/news", newsRoutes);
 
 // Error Handling Middleware
 app.use((req, res, next) => {
