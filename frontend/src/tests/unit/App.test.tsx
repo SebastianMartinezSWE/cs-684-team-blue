@@ -1,5 +1,6 @@
 import "@testing-library/jest-dom";
 import { render, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import App from "../../App";
 import { articlesData } from "../../mocks/articles";
 
@@ -23,6 +24,30 @@ describe("Landing Page", () => {
           const articleTitle = screen.getByText(article.title);
           expect(articleTitle).toBeInTheDocument();
         });
+      });
+    });
+  });
+
+  describe("Home Page", () => {
+    describe("Renders Correctly", () => {
+      it("Renders the Refresh button", async () => {
+        const user = userEvent.setup();
+        render(<App />);
+
+        user.click(screen.getByRole("button", { name: "Sign In" }));
+
+        user.type(
+          await screen.findByPlaceholderText("Username"),
+          "waldotheoctopus"
+        );
+        user.type(await screen.findByPlaceholderText("Password"), "nickJr41!");
+        user.click(await screen.findByTestId("Sign-In"));
+
+        const refreshButton = await screen.findByRole("button", {
+          name: "Refresh",
+        });
+
+        expect(refreshButton).toBeInTheDocument();
       });
     });
   });
