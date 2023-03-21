@@ -49,6 +49,26 @@ describe("Landing Page", () => {
 
         expect(refreshButton).toBeInTheDocument();
       });
+
+      it("Renders the Settings button", async () => {
+        const user = userEvent.setup();
+        render(<App />);
+
+        user.click(screen.getByRole("button", { name: "Sign In" }));
+
+        user.type(
+          await screen.findByPlaceholderText("Username"),
+          "waldotheoctopus"
+        );
+        user.type(await screen.findByPlaceholderText("Password"), "nickJr41!");
+        user.click(await screen.findByTestId("Sign-In"));
+
+        const settingsButton = await screen.findByRole("button", {
+          name: "Settings",
+        });
+
+        expect(settingsButton).toBeInTheDocument();
+      });
     });
   });
 });
