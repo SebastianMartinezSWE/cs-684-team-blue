@@ -28,6 +28,7 @@ const SettingsModal = ({
   async function saveSettings(updatedSettings: User["settings"]) {
     try {
       await SettingsApi.updateSettings(userData._id, updatedSettings);
+      userData.settings = updatedSettings;
     } catch (error) {
       console.error(error);
       alert(error);
