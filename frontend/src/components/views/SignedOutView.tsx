@@ -29,7 +29,12 @@ const SignedOutView = () => {
       >
         General News
       </h1>
-      <Button className={`mb-4 ${styleUtil.centerItem}`} onClick={() => {}}>
+      <Button
+        className={`mb-4 ${styleUtil.centerItem}`}
+        onClick={() => {
+          window.location.reload();
+        }}
+      >
         Refresh
       </Button>
       <Row xs={1} md={2} xl={3} className={`g-4`}>
