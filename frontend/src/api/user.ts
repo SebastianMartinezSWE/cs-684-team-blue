@@ -30,7 +30,9 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
 }
 
 export async function getSignedInUser(): Promise<User> {
-  const response = await fetchData("/api/users", { method: "GET" });
+  const response = await fetchData("http://localhost:8080/api/users", {
+    method: "GET",
+  });
   return response.json();
 }
 
@@ -41,7 +43,7 @@ export interface UserCredentials {
 }
 
 export async function signUp(credentials: UserCredentials): Promise<User> {
-  const response = await fetchData("/api/users/signup", {
+  const response = await fetchData("http://localhost:8080/api/users/signup", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -52,7 +54,7 @@ export async function signUp(credentials: UserCredentials): Promise<User> {
 }
 
 export async function signIn(credentials: UserCredentials): Promise<User> {
-  const response = await fetchData("/api/users/signin", {
+  const response = await fetchData("http://localhost:8080/api/users/signin", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

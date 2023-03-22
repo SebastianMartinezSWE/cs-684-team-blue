@@ -43,12 +43,15 @@ export async function updateSettings(
   userId: string,
   settings: Settings
 ): Promise<User> {
-  const response = await fetchData(`/api/settings/${userId}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(settings),
-  });
+  const response = await fetchData(
+    `http://localhost:8080/api/settings/${userId}`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(settings),
+    }
+  );
   return response.json();
 }

@@ -8,6 +8,7 @@ import newsRoutes from "./routes/news";
 import settingsRoutes from "./routes/settings";
 import userRoutes from "./routes/users";
 // import env from "./util/validateEnv";
+import cors from "cors";
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.use(morgan("dev"));
 
 // For express to accept and send JSON
 app.use(express.json());
+
+app.use(cors());
 
 // Session Middleware (Currently not needed)
 // app.use(
