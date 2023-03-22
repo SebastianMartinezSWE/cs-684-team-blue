@@ -37,7 +37,13 @@ const SignedInView = ({ user }: SignedInViewProps) => {
       </Row>
       <Row className="justify-content-md-center">
         <Col xs="auto">
-          <Button onClick={() => {}}>Refresh</Button>
+          <Button
+            onClick={() => {
+              window.location.reload();
+            }}
+          >
+            Refresh
+          </Button>
         </Col>
         <Col xs="auto">
           <Button
