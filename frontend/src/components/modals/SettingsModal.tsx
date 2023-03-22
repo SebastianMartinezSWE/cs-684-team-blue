@@ -13,14 +13,14 @@ const SettingsModal = ({
   userData,
   showSettingsModal,
 }: SettingsModalProps) => {
-  const [settingData, setSettingData] = useState<User["settings"]>(
+  const [settingsData, setSettingsData] = useState<User["settings"]>(
     userData.settings
   );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const name = e.target.name;
     const value = e.target.checked;
-    setSettingData((prevValues) => {
+    setSettingsData((prevValues) => {
       return { ...prevValues, [name]: value };
     });
   };
@@ -39,7 +39,7 @@ const SettingsModal = ({
       show={showSettingsModal}
       onHide={() => {
         onDismiss();
-        setSettingData(userData.settings);
+        setSettingsData(userData.settings);
       }}
       centered
     >
@@ -54,42 +54,42 @@ const SettingsModal = ({
             id="general-checkbox"
             label="General"
             name="general"
-            checked={settingData.general}
+            checked={settingsData.general}
             onChange={handleChange}
           />
           <Form.Check
             label="Business"
-            checked={settingData.business}
+            checked={settingsData.business}
             name="business"
             onChange={handleChange}
           />
           <Form.Check
             label="Entertainment"
-            checked={settingData.entertainment}
+            checked={settingsData.entertainment}
             name="entertainment"
             onChange={handleChange}
           />
           <Form.Check
             label="Health"
-            checked={settingData.health}
+            checked={settingsData.health}
             name="health"
             onChange={handleChange}
           />
           <Form.Check
             label="Science"
-            checked={settingData.science}
+            checked={settingsData.science}
             name="science"
             onChange={handleChange}
           />
           <Form.Check
             label="Sports"
-            checked={settingData.sports}
+            checked={settingsData.sports}
             name="sports"
             onChange={handleChange}
           />
           <Form.Check
             label="Technology"
-            checked={settingData.technology}
+            checked={settingsData.technology}
             name="technology"
             onChange={handleChange}
           />
@@ -99,7 +99,7 @@ const SettingsModal = ({
         <Button
           variant="secondary"
           onClick={() => {
-            setSettingData(userData.settings);
+            setSettingsData(userData.settings);
             onDismiss();
           }}
         >
@@ -109,7 +109,7 @@ const SettingsModal = ({
           type="submit"
           variant="primary"
           onClick={() => {
-            saveSettings(settingData);
+            saveSettings(settingsData);
             onDismiss();
           }}
         >
