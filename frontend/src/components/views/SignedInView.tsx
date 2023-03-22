@@ -50,7 +50,7 @@ const SignedInView = ({ user }: SignedInViewProps) => {
           </Button>
         </Col>
       </Row>
-      <Row xs={1} sm={1} md={1} lg={3} className={`mt-4 g-4`}>
+      <Row xs={1} md={2} xl={3} className={`mt-4 g-4`}>
         {articles?.map((article) => (
           <Col key={article.title}>
             <Article className={styles.article} article={article} />
