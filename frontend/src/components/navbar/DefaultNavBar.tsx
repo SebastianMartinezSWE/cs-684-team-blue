@@ -1,5 +1,5 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
-import logo from "../../logo.svg";
+import logo from "../../assets/react.svg";
 import { User } from "../../models/user";
 import SignedInNavBar from "./SignedInNavBar";
 import SignedOutNavBar from "./SignedOutNavBar";
