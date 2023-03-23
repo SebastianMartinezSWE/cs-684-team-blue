@@ -25,13 +25,8 @@ const Article = ({ article }: ArticleProps) => {
           <Card.Subtitle className={`text-muted text-center`}>
             {"Published on: " + formatDate(article.publishedAt)}
           </Card.Subtitle>
-          <Card.Text>
-            {article.description === null
-              ? "Article did not provide a description"
-              : article.description}
-          </Card.Text>
+          <Card.Text>{article.description}</Card.Text>
         </Card.Body>
-        {/* <Card.Footer>{article.source.name}</Card.Footer> */}
       </Card>
     </a>
   );
