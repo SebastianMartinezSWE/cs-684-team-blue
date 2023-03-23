@@ -31,7 +31,7 @@ const Article = ({ article }: ArticleProps) => {
               : article.description}
           </Card.Text>
         </Card.Body>
-        <Card.Footer>{article.source.name}</Card.Footer>
+        {/* <Card.Footer>{article.source.name}</Card.Footer> */}
       </Card>
     </a>
   );
