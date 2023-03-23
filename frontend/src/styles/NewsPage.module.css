@@ -1,13 +1,3 @@
-.article {
-  height: 650px;
-}
-
-.articleGrid {
-  width: 100%;
-}
-
-.articlesPage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.pageContainer {
+  margin: 2rem auto;
 }

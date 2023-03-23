@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { getNews } from "../../api/news";
 import { News } from "../../models/news";
-import styles from "../../styles/NewsPage.module.css";
-import styleUtil from "../../styles/utils/util.module.css";
+import styles from "../../styles/utils/util.module.css";
 import Article from "../cards/Article";
 
 const SignedOutView = () => {
@@ -30,17 +29,17 @@ const SignedOutView = () => {
         General News
       </h1>
       <Button
-        className={`mb-4 ${styleUtil.centerItem}`}
+        className={`mb-4 ${styles.centerItem}`}
         onClick={() => {
           window.location.reload();
         }}
       >
         Refresh
       </Button>
-      <Row xs={1} md={2} xl={3} className={`g-4`}>
-        {articles?.map((article) => (
-          <Col key={article.title}>
-            <Article className={styles.article} article={article} />
+      <Row xs={1} sm={2} xl={3} className={`g-4`}>
+        {articles.map((article) => (
+          <Col key={article.url}>
+            <Article article={article} />
           </Col>
         ))}
       </Row>
