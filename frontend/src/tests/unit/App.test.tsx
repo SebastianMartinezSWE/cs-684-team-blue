@@ -1,6 +1,6 @@
-import "@testing-library/jest-dom";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { describe, it, expect } from "vitest";
 import App from "../../App";
 import { articlesData } from "../../mocks/articles";
 

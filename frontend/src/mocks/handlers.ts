@@ -3,7 +3,7 @@ import { articlesData } from "./articles";
 
 export const handlers = [
   // Handles a POST /api/users/signin request
-  rest.post("/api/users/signin", (req, res, ctx) => {
+  rest.post("http://localhost:8080/api/users/signin", (req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json({
@@ -27,7 +27,7 @@ export const handlers = [
   }),
 
   // Handles a GET /api/news/ request
-  rest.get("/api/news/default", (req, res, ctx) => {
+  rest.get("http://localhost:8080/api/news/default", (req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json({
