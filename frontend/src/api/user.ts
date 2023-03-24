@@ -30,7 +30,9 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
 }
 
 export async function getSignedInUser(): Promise<User> {
-  const response = await fetchData("/api/users", { method: "GET" });
+  const response = await fetchData("http://localhost:8080/api/users", {
+    method: "GET",
+  });
   return response.json();
 }
 
