@@ -1,4 +1,4 @@
-import { Card, Image } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { Article as ArticleModel } from "../../models/news";
 import styles from "../../styles/Article.module.css";
 import { formatDate } from "../../utils/formatDate";
