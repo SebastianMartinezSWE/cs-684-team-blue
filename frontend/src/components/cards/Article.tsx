@@ -1,7 +1,7 @@
 import { Card } from "react-bootstrap";
 import { Article as ArticleModel } from "../../models/news";
 import styles from "../../styles/Article.module.css";
-import { formatDate } from "../../utils/formatDate";
+import { formatDate } from "../../utils/FormatDate";
 
 interface ArticleProps {
   article: ArticleModel;
@@ -28,7 +28,7 @@ const Article = ({ article }: ArticleProps) => {
           <Card.Text>{article.description}</Card.Text>
         </Card.Body>
       </Card>
-    </a
+    </a>
   );
 };
 
