@@ -58,7 +58,7 @@ const SettingsModal = ({
             checked={settingsData.general}
             onChange={handleChange}
           />
-          <Form.Chec
+          <Form.Check
             type="checkbox"
             id="business-checkbox"
             label="Business"
