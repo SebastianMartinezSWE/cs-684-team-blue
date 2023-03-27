@@ -3,7 +3,6 @@ import { Button, Col, Row } from "react-bootstrap";
 import { getNews } from "../../api/news";
 import { News } from "../../models/news";
 import { User } from "../../models/user";
-import styles from "../../styles/NewsPage.module.css";
 import Article from "../cards/Article";
 import SettingsModal from "../modals/SettingsModal";
 
@@ -59,7 +58,7 @@ const SignedInView = ({ user }: SignedInViewProps) => {
       <Row xs={1} md={2} xl={3} className={`mt-4 g-4`}>
         {articles?.map((article) => (
           <Col key={article.title}>
-            <Article className={styles.article} article={article} />
+            <Article article={article} />
           </Col>
         ))}
       </Row>
