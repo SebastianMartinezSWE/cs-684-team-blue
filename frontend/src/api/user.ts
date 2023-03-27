@@ -65,5 +65,7 @@ export async function signIn(credentials: UserCredentials): Promise<User> {
 }
 
 export async function signout() {
-  await fetchData("/api/users/signout", { method: "POST" });
+  await fetchData("http://localhost:8080/api/users/signout", {
+    method: "POST",
+  });
 }
