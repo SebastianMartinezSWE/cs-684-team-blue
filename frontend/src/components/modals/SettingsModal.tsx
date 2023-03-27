@@ -59,36 +59,48 @@ const SettingsModal = ({
             onChange={handleChange}
           />
           <Form.Check
+            type="checkbox"
+            id="business-checkbox"
             label="Business"
             checked={settingsData.business}
             name="business"
             onChange={handleChange}
           />
           <Form.Check
+            type="checkbox"
+            id="entertainment-checkbox"
             label="Entertainment"
             checked={settingsData.entertainment}
             name="entertainment"
             onChange={handleChange}
           />
           <Form.Check
+            type="checkbox"
+            id="health-checkbox"
             label="Health"
             checked={settingsData.health}
             name="health"
             onChange={handleChange}
           />
           <Form.Check
+            type="checkbox"
+            id="science-checkbox"
             label="Science"
             checked={settingsData.science}
             name="science"
             onChange={handleChange}
           />
           <Form.Check
+            type="checkbox"
+            id="sports-checkbox"
             label="Sports"
             checked={settingsData.sports}
             name="sports"
             onChange={handleChange}
           />
           <Form.Check
+            type="checkbox"
+            id="technology-checkbox"
             label="Technology"
             checked={settingsData.technology}
             name="technology"

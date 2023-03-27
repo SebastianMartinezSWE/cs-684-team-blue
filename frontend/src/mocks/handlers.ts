@@ -2,6 +2,30 @@ import { rest } from "msw";
 import { articlesData } from "./articles";
 
 export const handlers = [
+  // Handles a POST /api/users/signup request
+  rest.post("http://localhost:8080/api/users/signup", (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        _id: "641743ceb31c26d215c25f4a",
+        username: "waldotheoctopus",
+        password:
+          "$2b$10$8Co.OeNFwywZc4HekGfDFebkX0/3oJGnR/i/upEhtggZwYkpBZQt6",
+        settings: {
+          general: true,
+          business: false,
+          entertainment: false,
+          health: false,
+          science: false,
+          sports: false,
+          technology: false,
+          _id: "641743ceb31c26d215c25f4b",
+        },
+        __v: 0,
+      })
+    );
+  }),
+
   // Handles a POST /api/users/signin request
   rest.post("http://localhost:8080/api/users/signin", (req, res, ctx) => {
     return res(
@@ -22,6 +46,16 @@ export const handlers = [
           _id: "641743ceb31c26d215c25f4b",
         },
         __v: 0,
+      })
+    );
+  }),
+
+  // Handles a POST /api/users/signout request
+  rest.post("http://localhost:8080/api/users/signout", (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        username: "waldotheoctopus",
       })
     );
   }),

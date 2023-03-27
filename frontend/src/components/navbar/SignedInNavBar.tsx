@@ -25,7 +25,11 @@ const SignedInNavBar = ({
   return (
     <>
       <Navbar.Text className="pe-2">Signed in as: {user.username}</Navbar.Text>
-      <Nav.Link className="text-danger" onClick={signout}>
+      <Nav.Link
+        data-testid="Sign-Out"
+        className="text-danger"
+        onClick={signout}
+      >
         Sign Out
       </Nav.Link>
     </>
