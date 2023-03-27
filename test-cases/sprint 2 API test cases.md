@@ -2,7 +2,7 @@
 
 ---
 
-## Test Case ID - TBL0
+## Test Case ID - TBL001
 
 **Authors:** _Sebastian_
 
@@ -33,7 +33,7 @@
 
 ---
 
-## Test Case ID - TBL
+## Test Case ID - TBL002
 
 **Authors:** _Sebastian_
 
