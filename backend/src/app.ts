@@ -5,6 +5,7 @@ import express, { NextFunction, Request, Response } from "express";
 import createHttpError, { isHttpError } from "http-errors";
 import morgan from "morgan";
 import newsRoutes from "./routes/news";
+import settingsRoutes from "./routes/settings";
 import userRoutes from "./routes/users";
 // import env from "./util/validateEnv";
 import cors from "cors";
@@ -17,7 +18,6 @@ app.use(morgan("dev"));
 // For express to accept and send JSON
 app.use(express.json());
 
-// To allow fetching from port 8080
 app.use(cors());
 
 // Session Middleware (Currently not needed)
@@ -41,6 +41,9 @@ app.use("/api/users", userRoutes);
 
 // All the routes pertaining to news
 app.use("/api/news", newsRoutes);
+
+// All the routes pertaining to settings
+app.use("/api/settings", settingsRoutes);
 
 // Error Handling Middleware
 app.use((req, res, next) => {

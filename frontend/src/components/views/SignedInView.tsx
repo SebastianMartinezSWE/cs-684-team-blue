@@ -4,6 +4,7 @@ import { getNews } from "../../api/news";
 import { News } from "../../models/news";
 import { User } from "../../models/user";
 import Article from "../cards/Article";
+import SettingsModal from "../modals/SettingsModal";
 
 interface SignedInViewProps {
   user: User;
@@ -61,6 +62,13 @@ const SignedInView = ({ user }: SignedInViewProps) => {
           </Col>
         ))}
       </Row>
+      {
+        <SettingsModal
+          onDismiss={() => setShowSettingsModal(false)}
+          userData={user}
+          showSettingsModal={showSettingsModal}
+        />
+      }
     </>
   );
 };
