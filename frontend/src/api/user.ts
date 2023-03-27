@@ -22,7 +22,7 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
       throw Error(
         "Request failed with status: " +
           response.status +
-          "message: " +
+          ", message: " +
           errorMessage
       );
     }

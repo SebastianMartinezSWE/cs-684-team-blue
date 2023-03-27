@@ -68,6 +68,7 @@ const SignInModal = ({ onDismiss, onSigninSuccessful }: SignInModalProps) => {
             type="submit"
             disabled={isSubmitting}
             className={styleUtils.width100}
+            data-testid="Sign-In"
           >
             Sign In
           </Button>

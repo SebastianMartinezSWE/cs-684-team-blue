@@ -1,15 +1,5 @@
-.cardBody {
-  overflow: hidden;
-}
 
-.cardTitle {
-  text-align: center;
-}
-
-.cardText {
-  white-space: pre-line;
-}
-
-.cardImage {
+.image {
   height: 350px;
+  object-fit: cover;
 }

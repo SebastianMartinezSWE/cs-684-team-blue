@@ -1,4 +1,4 @@
-import Button from "react-bootstrap/Button";
+import { Nav } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import * as UserApi from "../../api/user";
 import { User } from "../../models/user";
@@ -25,9 +25,13 @@ const SignedInNavBar = ({
   return (
     <>
       <Navbar.Text className="pe-2">Signed in as: {user.username}</Navbar.Text>
-      <Button variant="outline-danger" onClick={signout}>
+      <Nav.Link
+        data-testid="Sign-Out"
+        className="text-danger"
+        onClick={signout}
+      >
         Sign Out
-      </Button>
+      </Nav.Link>
     </>
   );
 };
