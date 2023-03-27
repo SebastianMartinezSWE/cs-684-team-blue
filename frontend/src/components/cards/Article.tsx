@@ -28,7 +28,7 @@ const Article = ({ article }: ArticleProps) => {
           <Card.Text>{article.description}</Card.Text>
         </Card.Body>
       </Card>
-    </a>
+    </a
   );
 };
 

@@ -35,4 +35,3 @@ export async function getNews(user: String): Promise<News> {
   });
   return response.json();
 }
-// "proxy": "http://localhost:8080",
