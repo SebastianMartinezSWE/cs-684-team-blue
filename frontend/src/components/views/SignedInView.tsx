@@ -2,12 +2,16 @@ import { useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { getNews } from "../../api/news";
 import { News } from "../../models/news";
-import styles from "../../styles/NewsPage.module.css";
-import styleUtil from "../../styles/utils/util.module.css";
+import { User } from "../../models/user";
 import Article from "../cards/Article";
 
-const SignedOutView = () => {
+interface SignedInViewProps {
+  user: User;
+}
+
+const SignedInView = ({ user }: SignedInViewProps) => {
   const [articles, setArticles] = useState<News["articles"]>([]);
+  const [showSettingsModal, setShowSettingsModal] = useState(false);
 
   useEffect(() => {
     async function loadArticles() {
@@ -24,18 +28,36 @@ const SignedOutView = () => {
 
   return (
     <>
-      <h1
-        className={`display-1 mt-4 mb-2 text-center text-white font-weight-bold`}
-      >
-        General News
-      </h1>
-      <Button className={`mb-4 ${styleUtil.centerItem}`} onClick={() => {}}>
-        Refresh
-      </Button>
-      <Row xs={1} md={2} xl={3} className={`g-4`}>
+      <Row className="mb-2 justify-content-md-center">
+        <h1 className={`display-1 text-center text-white font-weight-bold`}>
+          General News
+        </h1>
+      </Row>
+      <Row className="justify-content-md-center">
+        <Col xs="auto">
+          <Button
+            onClick={() => {
+              window.location.reload();
+            }}
+          >
+            Refresh
+          </Button>
+        </Col>
+        <Col xs="auto">
+          <Button
+            onClick={() => {
+              setShowSettingsModal(true);
+            }}
+            data-testid="Settings"
+          >
+            Settings
+          </Button>
+        </Col>
+      </Row>
+      <Row xs={1} md={2} xl={3} className={`mt-4 g-4`}>
         {articles?.map((article) => (
           <Col key={article.title}>
-            <Article className={styles.article} article={article} />
+            <Article article={article} />
           </Col>
         ))}
       </Row>
@@ -43,4 +65,4 @@ const SignedOutView = () => {
   );
 };
 
-export default SignedOutView;
+export default SignedInView;
