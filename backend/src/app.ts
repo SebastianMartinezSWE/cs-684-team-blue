@@ -16,7 +16,7 @@ const app = express();
 app.use(morgan("dev"));
 
 // For express to use CORS
-app.use(cors());
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 // For express to accept and send JSON
 app.use(express.json());
