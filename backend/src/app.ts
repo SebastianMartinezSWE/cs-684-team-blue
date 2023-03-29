@@ -1,14 +1,14 @@
-// import MongoStore from "connect-mongo";
+import MongoStore from "connect-mongo";
 import "dotenv/config";
 import express, { NextFunction, Request, Response } from "express";
-// import session from "express-session";
+import session from "express-session";
 import createHttpError, { isHttpError } from "http-errors";
 import morgan from "morgan";
+import { requiresAuth } from "./middleware/auth";
 import newsRoutes from "./routes/news";
 import settingsRoutes from "./routes/settings";
 import userRoutes from "./routes/users";
-// import env from "./util/validateEnv";
-import cors from "cors";
+import env from "./util/validateEnv";
 
 const app = express();
 
@@ -18,23 +18,21 @@ app.use(morgan("dev"));
 // For express to accept and send JSON
 app.use(express.json());
 
-app.use(cors());
-
-// Session Middleware (Currently not needed)
-// app.use(
-//   session({
-//     secret: env.SESSION_SECRET,
-//     resave: false,
-//     saveUninitialized: false,
-//     cookie: {
-//       maxAge: 60 * 60 * 1000,
-//     },
-//     rolling: true,
-//     store: MongoStore.create({
-//       mongoUrl: env.MONGO_CONNECTION_STRING,
-//     }),
-//   })
-// );
+// Session Middleware
+app.use(
+  session({
+    secret: env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 60 * 60 * 1000,
+    },
+    rolling: true,
+    store: MongoStore.create({
+      mongoUrl: env.MONGO_CONNECTION_STRING,
+    }),
+  })
+);
 
 // All the routes pertaining to users
 app.use("/api/users", userRoutes);
@@ -43,7 +41,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/news", newsRoutes);
 
 // All the routes pertaining to settings
-app.use("/api/settings", settingsRoutes);
+app.use("/api/settings", requiresAuth, settingsRoutes);
 
 // Error Handling Middleware
 app.use((req, res, next) => {

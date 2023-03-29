@@ -2,6 +2,7 @@ import { RequestHandler } from "express";
 import createHttpError from "http-errors";
 import mongoose from "mongoose";
 import UserModel from "../models/user";
+import { assertIsDefined } from "../util/assertIsDefined";
 
 interface UpdateSettingsParams {
   userId: string;
@@ -23,6 +24,8 @@ export const updateSettings: RequestHandler<
   UpdateSettingsBody,
   unknown
 > = async (req, res, next) => {
+  const authenticatedUserId = req.session.userId;
+
   const userId = req.params.userId;
   const general = req.body.general;
   const business = req.body.business;
@@ -32,6 +35,8 @@ export const updateSettings: RequestHandler<
   const sports = req.body.sports;
   const technology = req.body.technology;
   try {
+    assertIsDefined(authenticatedUserId);
+
     if (!mongoose.isValidObjectId(userId)) {
       throw createHttpError(400, "Invalid User ID");
     }
@@ -40,6 +45,10 @@ export const updateSettings: RequestHandler<
 
     if (!user) {
       throw createHttpError(404, "User not found");
+    }
+
+    if (!user._id.equals(authenticatedUserId)) {
+      throw createHttpError(401, "You cannot modify these settings");
     }
 
     user.settings.general = general;

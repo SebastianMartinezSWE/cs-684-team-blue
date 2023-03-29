@@ -30,7 +30,7 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
 }
 
 export async function getNews(user: String): Promise<News> {
-  const response = await fetchData(`http://localhost:8080/api/news/${user}`, {
+  const response = await fetchData(`/api/news/${user}`, {
     method: "GET",
   });
   return response.json();

@@ -2,23 +2,16 @@ import bcrypt from "bcrypt";
 import { RequestHandler } from "express";
 import createHttpError from "http-errors";
 import UserModel from "../models/user";
-// import session = require("express-session");
 
-// To get authenticated user from session (Currently not needed)
-// export const getAuthenticatedUser: RequestHandler = async (req, res, next) => {
-//   const authenticatedUserId = req.session.userId;
-
-//   try {
-//     if (!authenticatedUserId) {
-//       throw createHttpError(401, "User not authenticated");
-//     }
-
-//     const user = await UserModel.findById(authenticatedUserId).exec();
-//     res.status(200).json(user);
-//   } catch (error) {
-//     next(error);
-//   }
-// };
+// To get authenticated user from session
+export const getAuthenticatedUser: RequestHandler = async (req, res, next) => {
+  try {
+    const user = await UserModel.findById(req.session.userId).exec();
+    res.status(200).json(user);
+  } catch (error) {
+    next(error);
+  }
+};
 
 // User Sign Up
 interface SignUpBody {
@@ -86,8 +79,8 @@ export const signUp: RequestHandler<
       password: hashedPassword,
     });
 
-    // Setting up sessions to keep user logged in (Currently not needed)
-    // req.session.userId = newUser._id;
+    // Setting up sessions to keep user logged in
+    req.session.userId = newUser._id;
 
     res.status(201).json(newUser);
   } catch (error) {
@@ -132,8 +125,8 @@ export const signIn: RequestHandler<
       throw createHttpError(401, "Invalid Username or Password");
     }
 
-    // Setting up sessions to keep user logged in (Currently not needed)
-    // req.session.userId = user._id;
+    // Setting up sessions to keep user logged in
+    req.session.userId = user._id;
 
     res.status(201).json(user);
   } catch (error) {
@@ -141,33 +134,26 @@ export const signIn: RequestHandler<
   }
 };
 
-export const signOut: RequestHandler = async (req, res, next) => {
+// User Sign Out
+interface SignOutBody {
+  username: string;
+}
+// Sign out by destroying the session
+export const signOut: RequestHandler<
+  unknown,
+  unknown,
+  SignOutBody,
+  unknown
+> = async (req, res, next) => {
   const username = req.body.username;
 
-  try {
-    const user = await UserModel.findOne({
-      username: username,
-    }).exec();
-
-    res.status(200).json({
-      username: user?.username,
-    });
-  } catch (error) {
-    next(error);
-  }
+  req.session.destroy((error) => {
+    if (error) {
+      next(error);
+    } else {
+      res.status(200).json({
+        username: username,
+      });
+    }
+  });
 };
-
-// Sign out by destroying the session (Currently not needed)
-// export const signOut: RequestHandler<unknown, unknown, SignInBody, unknown> = (
-//   req,
-//   res,
-//   next
-// ) => {
-//   req.session.destroy((error) => {
-//     if (error) {
-//       next(error);
-//     } else {
-//       res.sendStatus(200);
-//     }
-//   });
-// };

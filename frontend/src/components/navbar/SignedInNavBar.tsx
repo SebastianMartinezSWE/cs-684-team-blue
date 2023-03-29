@@ -14,7 +14,7 @@ const SignedInNavBar = ({
 }: SignedInNavBarInProps) => {
   async function signout() {
     try {
-      await UserApi.signout();
+      await UserApi.signout(user);
       onSignOutSuccessful();
     } catch (error) {
       alert(error);
