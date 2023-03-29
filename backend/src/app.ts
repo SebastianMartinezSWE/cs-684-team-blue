@@ -1,5 +1,4 @@
 import MongoStore from "connect-mongo";
-import cors from "cors";
 import "dotenv/config";
 import express, { NextFunction, Request, Response } from "express";
 import session from "express-session";
@@ -14,9 +13,6 @@ const app = express();
 
 // For logging purposes
 app.use(morgan("dev"));
-
-// For express to use CORS
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 // For express to accept and send JSON
 app.use(express.json());
