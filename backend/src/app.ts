@@ -4,6 +4,7 @@ import express, { NextFunction, Request, Response } from "express";
 import session from "express-session";
 import createHttpError, { isHttpError } from "http-errors";
 import morgan from "morgan";
+import { requiresAuth } from "./middleware/auth";
 import newsRoutes from "./routes/news";
 import settingsRoutes from "./routes/settings";
 import userRoutes from "./routes/users";
@@ -40,7 +41,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/news", newsRoutes);
 
 // All the routes pertaining to settings
-app.use("/api/settings", settingsRoutes);
+app.use("/api/settings", requiresAuth, settingsRoutes);
 
 // Error Handling Middleware
 app.use((req, res, next) => {
