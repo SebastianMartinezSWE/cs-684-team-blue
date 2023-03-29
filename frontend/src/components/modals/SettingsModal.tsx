@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Form, Modal } from "react-bootstrap";
+import { Alert, Button, Form, Modal } from "react-bootstrap";
 import * as SettingsApi from "../../api/settings";
 import { User } from "../../models/user";
 interface SettingsModalProps {
@@ -34,7 +34,6 @@ const SettingsModal = ({
             alert(error);
         }
     }
-
     return (
         <Modal
             show={showSettingsModal}
