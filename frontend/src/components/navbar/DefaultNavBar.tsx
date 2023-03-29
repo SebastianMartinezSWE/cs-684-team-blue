@@ -1,8 +1,8 @@
-import { Container, Nav, Navbar } from 'react-bootstrap';
-import logo from '../../assets/react.svg';
-import { User } from '../../models/user';
-import SignedInNavBar from './SignedInNavBar';
-import SignedOutNavBar from './SignedOutNavBar';
+import { Container, Nav, Navbar } from "react-bootstrap";
+import logo from "../../assets/react.svg";
+import { User } from "../../models/user";
+import SignedInNavBar from "./SignedInNavBar";
+import SignedOutNavBar from "./SignedOutNavBar";
 
 interface DefaultNavBarProps {
     signedInUser: User | null;
@@ -26,7 +26,7 @@ const DefaultNavBar = ({
                         alt="react-logo"
                         height="30"
                         className="d-inline-block align-top"
-                    />{' '}
+                    />{" "}
                     The Big Blue Theory
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="main-navbar" />

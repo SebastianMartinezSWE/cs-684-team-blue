@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { Button, Form, Modal } from 'react-bootstrap';
-import * as SettingsApi from '../../api/settings';
-import { User } from '../../models/user';
+import { useState } from "react";
+import { Button, Form, Modal } from "react-bootstrap";
+import * as SettingsApi from "../../api/settings";
+import { User } from "../../models/user";
 interface SettingsModalProps {
     onDismiss: () => void;
     userData: User;
@@ -13,7 +13,7 @@ const SettingsModal = ({
     userData,
     showSettingsModal,
 }: SettingsModalProps) => {
-    const [settingsData, setSettingsData] = useState<User['settings']>(
+    const [settingsData, setSettingsData] = useState<User["settings"]>(
         userData.settings
     );
 
@@ -25,7 +25,7 @@ const SettingsModal = ({
         });
     };
 
-    async function saveSettings(updatedSettings: User['settings']) {
+    async function saveSettings(updatedSettings: User["settings"]) {
         try {
             await SettingsApi.updateSettings(userData._id, updatedSettings);
             userData.settings = updatedSettings;

@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { Alert, Button, Form, Modal } from 'react-bootstrap';
-import { useForm } from 'react-hook-form';
-import * as UserApi from '../../api/user';
-import { UserCredentials } from '../../api/user';
-import { User } from '../../models/user';
-import styleUtils from '../../styles/utils/util.module.css';
-import { BadRequestError, ConflictError } from '../../utils/HttpErrors';
-import PasswordWarning from '../utils/PasswordWarning';
-import TextInputField from '../utils/TextInputField';
-import UserNameWarning from '../utils/UserNameWarning';
+import { useState } from "react";
+import { Alert, Button, Form, Modal } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import * as UserApi from "../../api/user";
+import { UserCredentials } from "../../api/user";
+import { User } from "../../models/user";
+import styleUtils from "../../styles/utils/util.module.css";
+import { BadRequestError, ConflictError } from "../../utils/HttpErrors";
+import PasswordWarning from "../utils/PasswordWarning";
+import TextInputField from "../utils/TextInputField";
+import UserNameWarning from "../utils/UserNameWarning";
 
 interface SignUpModalProps {
     onDismiss: () => void;
@@ -54,7 +54,7 @@ const SignUpModal = ({ onDismiss, onSignUpSuccessful }: SignUpModalProps) => {
                         type="text"
                         placeholder="Username"
                         register={register}
-                        registerOptions={{ required: 'Required', min: 8 }}
+                        registerOptions={{ required: "Required", min: 8 }}
                         error={errors.username}
                     />
                     <UserNameWarning />
@@ -65,7 +65,7 @@ const SignUpModal = ({ onDismiss, onSignUpSuccessful }: SignUpModalProps) => {
                         placeholder="Password"
                         register={register}
                         registerOptions={{
-                            required: 'Required',
+                            required: "Required",
                             min: 8,
                         }}
                         error={errors.password}
@@ -78,7 +78,7 @@ const SignUpModal = ({ onDismiss, onSignUpSuccessful }: SignUpModalProps) => {
                         placeholder="Re-enter Password"
                         register={register}
                         registerOptions={{
-                            required: 'Required',
+                            required: "Required",
                             min: 8,
                         }}
                         error={errors.confirmPassword}

@@ -1,7 +1,7 @@
-import { Card } from 'react-bootstrap';
-import { Article as ArticleModel } from '../../models/news';
-import styles from '../../styles/Article.module.css';
-import { formatDate } from '../../utils/FormatDate';
+import { Card } from "react-bootstrap";
+import { Article as ArticleModel } from "../../models/news";
+import styles from "../../styles/Article.module.css";
+import { formatDate } from "../../utils/FormatDate";
 
 interface ArticleProps {
     article: ArticleModel;
@@ -16,7 +16,7 @@ const Article = ({ article }: ArticleProps) => {
                     variant="top"
                     src={
                         article.urlToImage === null
-                            ? 'https://artsmidnorthcoast.com/wp-content/uploads/2014/05/no-image-available-icon-6.png'
+                            ? "https://artsmidnorthcoast.com/wp-content/uploads/2014/05/no-image-available-icon-6.png"
                             : article.urlToImage
                     }
                 />
@@ -25,7 +25,7 @@ const Article = ({ article }: ArticleProps) => {
                         {article.title}
                     </Card.Title>
                     <Card.Subtitle className={`text-muted text-center`}>
-                        {'Published on: ' + formatDate(article.publishedAt)}
+                        {"Published on: " + formatDate(article.publishedAt)}
                     </Card.Subtitle>
                     <Card.Text>{article.description}</Card.Text>
                 </Card.Body>

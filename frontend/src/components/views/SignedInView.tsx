@@ -1,23 +1,23 @@
-import { useEffect, useState } from 'react';
-import { Button, Col, Row } from 'react-bootstrap';
-import { getNews } from '../../api/news';
-import { News } from '../../models/news';
-import { User } from '../../models/user';
-import Article from '../cards/Article';
-import SettingsModal from '../modals/SettingsModal';
+import { useEffect, useState } from "react";
+import { Button, Col, Row } from "react-bootstrap";
+import { getNews } from "../../api/news";
+import { News } from "../../models/news";
+import { User } from "../../models/user";
+import Article from "../cards/Article";
+import SettingsModal from "../modals/SettingsModal";
 
 interface SignedInViewProps {
     user: User;
 }
 
 const SignedInView = ({ user }: SignedInViewProps) => {
-    const [articles, setArticles] = useState<News['articles']>([]);
+    const [articles, setArticles] = useState<News["articles"]>([]);
     const [showSettingsModal, setShowSettingsModal] = useState(false);
 
     useEffect(() => {
         async function loadArticles() {
             try {
-                const news = await getNews('default');
+                const news = await getNews("default");
                 setArticles(news.articles);
             } catch (error) {
                 console.error(error);

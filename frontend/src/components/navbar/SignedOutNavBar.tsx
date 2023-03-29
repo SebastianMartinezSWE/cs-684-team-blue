@@ -1,4 +1,4 @@
-import { Nav } from 'react-bootstrap';
+import { Nav } from "react-bootstrap";
 interface SignedOutNavBarProps {
     onSignUpClicked: () => void;
     onSignInClicked: () => void;

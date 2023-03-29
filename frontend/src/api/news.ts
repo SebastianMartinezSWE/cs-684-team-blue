@@ -1,9 +1,9 @@
-import { News } from '../models/news';
+import { News } from "../models/news";
 import {
     BadRequestError,
     ConflictError,
     UnauthorizedError,
-} from '../utils/HttpErrors';
+} from "../utils/HttpErrors";
 
 async function fetchData(input: RequestInfo, init?: RequestInit) {
     const response = await fetch(input, init);
@@ -20,9 +20,9 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
             throw new ConflictError(errorMessage);
         } else {
             throw Error(
-                'Request failed with status: ' +
+                "Request failed with status: " +
                     response.status +
-                    ', message: ' +
+                    ", message: " +
                     errorMessage
             );
         }
@@ -31,7 +31,7 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
 
 export async function getNews(user: String): Promise<News> {
     const response = await fetchData(`/api/news/${user}`, {
-        method: 'GET',
+        method: "GET",
     });
     return response.json();
 }

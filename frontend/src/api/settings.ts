@@ -1,9 +1,9 @@
-import { User } from '../models/user';
+import { User } from "../models/user";
 import {
     BadRequestError,
     ConflictError,
     UnauthorizedError,
-} from '../utils/HttpErrors';
+} from "../utils/HttpErrors";
 
 async function fetchData(input: RequestInfo, init?: RequestInit) {
     const response = await fetch(input, init);
@@ -20,9 +20,9 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
             throw new ConflictError(errorMessage);
         } else {
             throw Error(
-                'Request failed with status: ' +
+                "Request failed with status: " +
                     response.status +
-                    ', message: ' +
+                    ", message: " +
                     errorMessage
             );
         }
@@ -44,9 +44,9 @@ export async function updateSettings(
     settings: Settings
 ): Promise<User> {
     const response = await fetchData(`/api/settings/${userId}`, {
-        method: 'PATCH',
+        method: "PATCH",
         headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
         },
         body: JSON.stringify(settings),
     });

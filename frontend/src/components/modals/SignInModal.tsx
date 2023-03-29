@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { Alert, Button, Form, Modal } from 'react-bootstrap';
-import { useForm } from 'react-hook-form';
-import * as UserApi from '../../api/user';
-import { UserCredentials } from '../../api/user';
-import { User } from '../../models/user';
-import styleUtils from '../../styles/utils/util.module.css';
-import { UnauthorizedError } from '../../utils/HttpErrors';
-import TextInputField from '../utils/TextInputField';
+import { useState } from "react";
+import { Alert, Button, Form, Modal } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import * as UserApi from "../../api/user";
+import { UserCredentials } from "../../api/user";
+import { User } from "../../models/user";
+import styleUtils from "../../styles/utils/util.module.css";
+import { UnauthorizedError } from "../../utils/HttpErrors";
+import TextInputField from "../utils/TextInputField";
 
 interface SignInModalProps {
     onDismiss: () => void;
@@ -50,7 +50,7 @@ const SignInModal = ({ onDismiss, onSigninSuccessful }: SignInModalProps) => {
                         type="text"
                         placeholder="Username"
                         register={register}
-                        registerOptions={{ required: 'Required' }}
+                        registerOptions={{ required: "Required" }}
                         error={errors.username}
                     />
                     <TextInputField
@@ -60,7 +60,7 @@ const SignInModal = ({ onDismiss, onSigninSuccessful }: SignInModalProps) => {
                         placeholder="Password"
                         register={register}
                         registerOptions={{
-                            required: 'Required',
+                            required: "Required",
                         }}
                         error={errors.password}
                     />

@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react';
-import { Button, Col, Row } from 'react-bootstrap';
-import { getNews } from '../../api/news';
-import { News } from '../../models/news';
-import styles from '../../styles/utils/util.module.css';
-import Article from '../cards/Article';
+import { useEffect, useState } from "react";
+import { Button, Col, Row } from "react-bootstrap";
+import { getNews } from "../../api/news";
+import { News } from "../../models/news";
+import styles from "../../styles/utils/util.module.css";
+import Article from "../cards/Article";
 
 const SignedOutView = () => {
-    const [articles, setArticles] = useState<News['articles']>([]);
+    const [articles, setArticles] = useState<News["articles"]>([]);
 
     useEffect(() => {
         async function loadArticles() {
             try {
-                const news = await getNews('default');
+                const news = await getNews("default");
                 setArticles(news.articles);
             } catch (error) {
                 console.error(error);

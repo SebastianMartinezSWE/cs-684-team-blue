@@ -1,13 +1,13 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import * as UserApi from './api/user';
-import SignInModal from './components/modals/SignInModal';
-import SignUpModal from './components/modals/SignUpModal';
-import DefaultNavBar from './components/navbar/DefaultNavBar';
-import { User } from './models/user';
-import HomePage from './pages/HomePage';
-import NotFoundPage from './pages/NotFoundPage';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import * as UserApi from "./api/user";
+import SignInModal from "./components/modals/SignInModal";
+import SignUpModal from "./components/modals/SignUpModal";
+import DefaultNavBar from "./components/navbar/DefaultNavBar";
+import { User } from "./models/user";
+import HomePage from "./pages/HomePage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
     const [signedInUser, setSignedInUser] = useState<User | null>(null);

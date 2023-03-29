@@ -1,9 +1,9 @@
-import { User } from '../models/user';
+import { User } from "../models/user";
 import {
     BadRequestError,
     ConflictError,
     UnauthorizedError,
-} from '../utils/HttpErrors';
+} from "../utils/HttpErrors";
 
 async function fetchData(input: RequestInfo, init?: RequestInit) {
     const response = await fetch(input, init);
@@ -20,9 +20,9 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
             throw new ConflictError(errorMessage);
         } else {
             throw Error(
-                'Request failed with status: ' +
+                "Request failed with status: " +
                     response.status +
-                    ', message: ' +
+                    ", message: " +
                     errorMessage
             );
         }
@@ -30,8 +30,8 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
 }
 
 export async function getSignedInUser(): Promise<User> {
-    const response = await fetchData('/api/users', {
-        method: 'GET',
+    const response = await fetchData("/api/users", {
+        method: "GET",
     });
     return response.json();
 }
@@ -43,27 +43,27 @@ export interface UserCredentials {
 }
 
 export async function signUp(credentials: UserCredentials): Promise<User> {
-    const response = await fetchData('/api/users/signup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+    const response = await fetchData("/api/users/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(credentials),
     });
     return response.json();
 }
 
 export async function signIn(credentials: UserCredentials): Promise<User> {
-    const response = await fetchData('/api/users/signin', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+    const response = await fetchData("/api/users/signin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(credentials),
     });
     return response.json();
 }
 
 export async function signout(signedInUser: User) {
-    const response = await fetchData('/api/users/signout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+    const response = await fetchData("/api/users/signout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: signedInUser.username }),
     });
     return response.json();
