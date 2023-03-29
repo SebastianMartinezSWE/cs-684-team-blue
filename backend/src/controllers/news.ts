@@ -33,5 +33,3 @@ export const generalNews: RequestHandler = async (req, res, next) => {
         next(error)
     }
 }
-
-// If the user id is found send the news with userId, if not userId=#
