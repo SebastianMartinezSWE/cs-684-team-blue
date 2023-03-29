@@ -1,14 +1,14 @@
-import express from 'express'
-import * as UsersController from '../controllers/users'
-import { requiresAuth } from '../middleware/auth'
+import express from "express";
+import * as UsersController from "../controllers/users";
+import { requiresAuth } from "../middleware/auth";
 
-const router = express.Router()
+const router = express.Router();
 
 // To get authenticated user from session (Currently not needed)
-router.get('/', requiresAuth, UsersController.getAuthenticatedUser)
+router.get("/", requiresAuth, UsersController.getAuthenticatedUser);
 
-router.post('/signup', UsersController.signUp)
-router.post('/signin', UsersController.signIn)
-router.post('/signout', UsersController.signOut)
+router.post("/signup", UsersController.signUp);
+router.post("/signin", UsersController.signIn);
+router.post("/signout", UsersController.signOut);
 
-export default router
+export default router;

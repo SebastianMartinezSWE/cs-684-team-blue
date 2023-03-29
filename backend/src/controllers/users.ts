@@ -1,28 +1,28 @@
-import bcrypt from 'bcrypt'
-import { RequestHandler } from 'express'
-import createHttpError from 'http-errors'
-import UserModel from '../models/user'
+import bcrypt from "bcrypt";
+import { RequestHandler } from "express";
+import createHttpError from "http-errors";
+import UserModel from "../models/user";
 
 // To get authenticated user from session
 export const getAuthenticatedUser: RequestHandler = async (req, res, next) => {
     try {
-        const user = await UserModel.findById(req.session.userId).exec()
-        res.status(200).json(user)
+        const user = await UserModel.findById(req.session.userId).exec();
+        res.status(200).json(user);
     } catch (error) {
-        next(error)
+        next(error);
     }
-}
+};
 
 // User Sign Up
 interface SignUpBody {
-    username?: string
-    password?: string
-    confirmPassword?: string
+    username?: string;
+    password?: string;
+    confirmPassword?: string;
 }
 
 const passwordPattern = new RegExp(
-    '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})'
-)
+    "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})"
+);
 
 export const signUp: RequestHandler<
     unknown,
@@ -30,68 +30,74 @@ export const signUp: RequestHandler<
     SignUpBody,
     unknown
 > = async (req, res, next) => {
-    const username = req.body.username
-    const rawPassword = req.body.password
-    const confirmPassword = req.body.confirmPassword
+    const username = req.body.username;
+    const rawPassword = req.body.password;
+    const confirmPassword = req.body.confirmPassword;
 
     try {
         if (!username || !rawPassword) {
             throw createHttpError(
                 400,
-                'You have to include the Username and Password'
-            )
+                "You have to include the Username and Password"
+            );
         }
 
         if (username.length < 8) {
-            throw createHttpError(400, 'Username must be at least 8 characters')
+            throw createHttpError(
+                400,
+                "Username must be at least 8 characters"
+            );
         }
 
         if (rawPassword.length < 8) {
-            throw createHttpError(400, 'Password must be at least 8 characters')
+            throw createHttpError(
+                400,
+                "Password must be at least 8 characters"
+            );
         }
 
         if (!passwordPattern.test(rawPassword)) {
             throw createHttpError(
                 400,
-                'Password must include at least 1 capital letter, number and special character [!@#$%]'
-            )
+                "Password must include at least 1 capital letter, number and special character [!@#$%]"
+            );
         }
 
         if (rawPassword !== confirmPassword) {
-            throw createHttpError(400, 'Passwords do not match')
+            throw createHttpError(400, "Passwords do not match");
         }
 
         const existingUsername = await UserModel.findOne({
             username: username,
-        }).exec()
+        }).exec();
 
         if (existingUsername) {
             throw createHttpError(
                 409,
-                'Username already exists, please choose a different one or sign in instead'
-            )
+                "Username already exists, please choose a different one or sign in instead"
+            );
         }
 
-        const hashedPassword = await bcrypt.hash(rawPassword, 10)
+        const hashedPassword = await bcrypt.hash(rawPassword, 10);
 
         const newUser = await UserModel.create({
             username: username,
             password: hashedPassword,
-        })
+        });
 
         // Setting up sessions to keep user logged in
-        req.session.userId = newUser._id
+        req.session.userId = newUser._id;
 
-        res.status(201).json(newUser)
+        res.status(201).json(newUser);
     } catch (error) {
-        next(error)
+        next(error);
     }
-}
+};
 
 // User Sign in
 interface SignInBody {
-    username?: string
-    password?: string
+    username?: string;
+    password?: string;
 }
 
 export const signIn: RequestHandler<
@@ -100,43 +106,43 @@ export const signIn: RequestHandler<
     SignInBody,
     unknown
 > = async (req, res, next) => {
-    const username = req.body.username
-    const password = req.body.password
+    const username = req.body.username;
+    const password = req.body.password;
 
     try {
         if (!username || !password) {
             throw createHttpError(
                 400,
-                'You have to include the Username and Password'
-            )
+                "You have to include the Username and Password"
+            );
         }
 
         const user = await UserModel.findOne({
             username: username,
-        }).exec()
+        }).exec();
 
         if (!user) {
-            throw createHttpError(401, 'Invalid Username or Password')
+            throw createHttpError(401, "Invalid Username or Password");
         }
 
-        const matchedPassword = await bcrypt.compare(password, user.password)
+        const matchedPassword = await bcrypt.compare(password, user.password);
 
         if (!matchedPassword) {
-            throw createHttpError(401, 'Invalid Username or Password')
+            throw createHttpError(401, "Invalid Username or Password");
         }
 
         // Setting up sessions to keep user logged in
-        req.session.userId = user._id
+        req.session.userId = user._id;
 
-        res.status(201).json(user)
+        res.status(201).json(user);
     } catch (error) {
-        next(error)
+        next(error);
     }
-}
+};
 
 // User Sign Out
 interface SignOutBody {
-    username: string
+    username: string;
 }
 // Sign out by destroying the session
 export const signOut: RequestHandler<
@@ -145,15 +151,15 @@ export const signOut: RequestHandler<
     SignOutBody,
     unknown
 > = async (req, res, next) => {
-    const username = req.body.username
+    const username = req.body.username;
 
     req.session.destroy((error) => {
         if (error) {
-            next(error)
+            next(error);
         } else {
             res.status(200).json({
                 username: username,
-            })
+            });
         }
-    })
-}
+    });
+};

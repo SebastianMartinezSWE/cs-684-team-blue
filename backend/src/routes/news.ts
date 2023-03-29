@@ -1,9 +1,9 @@
-import express from 'express'
-import * as NewsController from '../controllers/news'
-import { requiresAuth } from '../middleware/auth'
+import express from "express";
+import * as NewsController from "../controllers/news";
+import { requiresAuth } from "../middleware/auth";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/:user', requiresAuth, NewsController.generalNews)
+router.get("/:user", requiresAuth, NewsController.generalNews);
 
-export default router
+export default router;

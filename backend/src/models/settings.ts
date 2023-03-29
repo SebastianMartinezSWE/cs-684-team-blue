@@ -6,4 +6,4 @@ export const settingsSchema = {
     science: { type: Boolean, default: false },
     sports: { type: Boolean, default: false },
     technology: { type: Boolean, default: false },
-}
+};

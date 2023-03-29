@@ -1,8 +1,8 @@
-import express from 'express'
-import * as SettingsController from '../controllers/settings'
+import express from "express";
+import * as SettingsController from "../controllers/settings";
 
-const router = express.Router()
+const router = express.Router();
 
-router.patch('/:userId', SettingsController.updateSettings)
+router.patch("/:userId", SettingsController.updateSettings);
 
-export default router
+export default router;
