@@ -45,9 +45,8 @@ export interface UserCredentials {
 export async function signUp(credentials: UserCredentials): Promise<User> {
   const response = await fetchData("http://localhost:8080/api/users/signup", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
+    credentials: "include",
     body: JSON.stringify(credentials),
   });
   return response.json();
@@ -56,16 +55,19 @@ export async function signUp(credentials: UserCredentials): Promise<User> {
 export async function signIn(credentials: UserCredentials): Promise<User> {
   const response = await fetchData("http://localhost:8080/api/users/signin", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
+    credentials: "include",
     body: JSON.stringify(credentials),
   });
   return response.json();
 }
 
-export async function signout() {
-  await fetchData("http://localhost:8080/api/users/signout", {
+export async function signout(signedInUser: User) {
+  const response = await fetchData("http://localhost:8080/api/users/signout", {
     method: "POST",
+    headers: { "Content-Type": "application/json" },
+    credentials: "include",
+    body: JSON.stringify({ username: signedInUser.username }),
   });
+  return response.json();
 }

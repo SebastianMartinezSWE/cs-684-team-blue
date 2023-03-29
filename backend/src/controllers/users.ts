@@ -131,7 +131,7 @@ export const signIn: RequestHandler<
       throw createHttpError(401, "Invalid Username or Password");
     }
 
-    // Setting up sessions to keep user logged in (Currently not needed)
+    // Setting up sessions to keep user logged in
     req.session.userId = user._id;
 
     res.status(201).json(user);
@@ -140,20 +140,25 @@ export const signIn: RequestHandler<
   }
 };
 
+// User Sign Out
+interface SignOutBody {
+  username: string;
+}
 // Sign out by destroying the session
-export const signOut: RequestHandler = (req, res, next) => {
+export const signOut: RequestHandler<
+  unknown,
+  unknown,
+  SignOutBody,
+  unknown
+> = async (req, res, next) => {
   const username = req.body.username;
 
-  req.session.destroy(async (error) => {
+  req.session.destroy((error) => {
     if (error) {
       next(error);
     } else {
-      const user = await UserModel.findOne({
-        username: username,
-      }).exec();
-
       res.status(200).json({
-        username: user?.username,
+        username: username,
       });
     }
   });

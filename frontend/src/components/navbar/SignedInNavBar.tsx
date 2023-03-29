@@ -1,6 +1,7 @@
 import { Nav } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import * as UserApi from "../../api/user";
+// import { Username } from "../../api/user";
 import { User } from "../../models/user";
 
 interface SignedInNavBarInProps {
@@ -14,7 +15,7 @@ const SignedInNavBar = ({
 }: SignedInNavBarInProps) => {
   async function signout() {
     try {
-      await UserApi.signout();
+      await UserApi.signout(user);
       onSignOutSuccessful();
     } catch (error) {
       alert(error);
