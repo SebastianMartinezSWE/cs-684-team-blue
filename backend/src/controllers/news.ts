@@ -26,8 +26,6 @@ export const userNews: RequestHandler = async (req, res, next) => {
     try {
         assertIsDefined(authenticatedUsername);
 
-        console.log(username);
-
         const user = await UserModel.findOne({
             username: username,
         }).exec();
