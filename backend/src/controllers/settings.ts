@@ -5,7 +5,7 @@ import UserModel from "../models/user";
 import { assertIsDefined } from "../util/assertIsDefined";
 
 interface UpdateSettingsParams {
-    userId: string;
+    username: string;
 }
 
 interface UpdateSettingsBody {
@@ -24,9 +24,9 @@ export const updateSettings: RequestHandler<
     UpdateSettingsBody,
     unknown
 > = async (req, res, next) => {
-    const authenticatedUserId = req.session.userId;
+    const authenticatedUsername = req.session.username;
 
-    const userId = req.params.userId;
+    const username = req.params.username;
     const general = req.body.general;
     const business = req.body.business;
     const entertainment = req.body.entertainment;
@@ -35,19 +35,15 @@ export const updateSettings: RequestHandler<
     const sports = req.body.sports;
     const technology = req.body.technology;
     try {
-        assertIsDefined(authenticatedUserId);
+        assertIsDefined(authenticatedUsername);
 
-        if (!mongoose.isValidObjectId(userId)) {
-            throw createHttpError(400, "Invalid User ID");
-        }
-
-        const user = await UserModel.findById(userId).exec();
+        const user = await UserModel.findOne({ username: username }).exec();
 
         if (!user) {
             throw createHttpError(404, "User not found");
         }
 
-        if (!user._id.equals(authenticatedUserId)) {
+        if (user.username !== authenticatedUsername) {
             throw createHttpError(401, "You cannot modify these settings");
         }
 

@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.get("/default", NewsController.defaultNews);
 
-router.get("/:userId", requiresAuth, NewsController.userNews);
+router.get("/:username", requiresAuth, NewsController.userNews);
 
 export default router;

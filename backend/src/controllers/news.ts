@@ -20,25 +20,23 @@ export const defaultNews: RequestHandler = async (req, res, next) => {
 };
 
 export const userNews: RequestHandler = async (req, res, next) => {
-    const authenticatedUserId = req.session.userId;
-    const userId = req.params.userId;
+    const authenticatedUsername = req.session.username;
+    const username = req.params.username;
 
     try {
-        assertIsDefined(authenticatedUserId);
+        assertIsDefined(authenticatedUsername);
 
-        console.log(userId);
+        console.log(username);
 
-        if (!mongoose.isValidObjectId(userId)) {
-            throw createHttpError(400, "Invalid User ID");
-        }
-
-        const user = await UserModel.findById(userId).exec();
+        const user = await UserModel.findOne({
+            username: username,
+        }).exec();
 
         if (!user) {
             throw createHttpError(404, "User not found");
         }
 
-        if (!user._id.equals(authenticatedUserId)) {
+        if (user.username !== authenticatedUsername) {
             throw createHttpError(
                 401,
                 "You are not allowed to view these articles"
