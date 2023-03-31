@@ -6,6 +6,7 @@ import createHttpError, { isHttpError } from "http-errors";
 import morgan from "morgan";
 import { requiresAuth } from "./middleware/auth";
 import newsRoutes from "./routes/news";
+import categoryRoutes from "./routes/category";
 import settingsRoutes from "./routes/settings";
 import userRoutes from "./routes/users";
 import env from "./util/validateEnv";
@@ -42,6 +43,9 @@ app.use("/api/news", newsRoutes);
 
 // All the routes pertaining to settings
 app.use("/api/settings", requiresAuth, settingsRoutes);
+
+// All the routes pertaining to categories
+app.use("/api/category", categoryRoutes);
 
 // Error Handling Middleware
 app.use((req, res, next) => {
