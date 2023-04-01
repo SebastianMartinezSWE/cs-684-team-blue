@@ -4,7 +4,7 @@ import { requiresAuth } from "../middleware/auth";
 
 const router = express.Router();
 
-// To get authenticated user from session (Currently not needed)
+// To get authenticated user from session
 router.get("/", requiresAuth, UsersController.getAuthenticatedUser);
 
 router.post("/signup", UsersController.signUp);
