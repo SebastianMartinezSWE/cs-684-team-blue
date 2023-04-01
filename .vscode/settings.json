@@ -16,5 +16,6 @@
     "tsbuildinfo",
     "Vadlamudi",
     "waldotheoctopus"
-  ]
+  ],
+  "githubPullRequests.ignoredPullRequestBranches": ["main"]
 }
