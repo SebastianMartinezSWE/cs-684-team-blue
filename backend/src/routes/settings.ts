@@ -3,6 +3,6 @@ import * as SettingsController from "../controllers/settings";
 
 const router = express.Router();
 
-router.patch("/:userId", SettingsController.updateSettings);
+router.patch("/:username", SettingsController.updateSettings);
 
 export default router;

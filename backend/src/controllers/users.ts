@@ -6,7 +6,9 @@ import UserModel from "../models/user";
 // To get authenticated user from session
 export const getAuthenticatedUser: RequestHandler = async (req, res, next) => {
     try {
-        const user = await UserModel.findById(req.session.userId).exec();
+        const user = await UserModel.findOne({
+            username: req.session.username,
+        }).exec();
         res.status(200).json(user);
     } catch (error) {
         next(error);
@@ -86,7 +88,7 @@ export const signUp: RequestHandler<
         });
 
         // Setting up sessions to keep user logged in
-        req.session.userId = newUser._id;
+        req.session.username = newUser.username;
 
         res.status(201).json(newUser);
     } catch (error) {
@@ -132,7 +134,7 @@ export const signIn: RequestHandler<
         }
 
         // Setting up sessions to keep user logged in
-        req.session.userId = user._id;
+        req.session.username = user.username;
 
         res.status(201).json(user);
     } catch (error) {
