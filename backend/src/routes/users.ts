@@ -9,6 +9,6 @@ router.get("/", requiresAuth, UsersController.getAuthenticatedUser);
 
 router.post("/signup", UsersController.signUp);
 router.post("/signin", UsersController.signIn);
-router.post("/signout", UsersController.signOut);
+router.post("/signout", requiresAuth, UsersController.signOut);
 
 export default router;
