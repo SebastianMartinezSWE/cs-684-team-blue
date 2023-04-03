@@ -103,7 +103,14 @@ export const userNews: RequestHandler<any, any, UserNewsBody, any> = async (
             news = [...news, ...element.articles];
         }
 
-        res.status(200).json(news);
+        // Sort articles in descending order
+        const sortedNews = news.sort((a, b) => {
+            const dateA = new Date(a.publishedAt);
+            const dateB = new Date(b.publishedAt);
+            return dateB.getTime() - dateA.getTime();
+        });
+
+        res.status(200).json(sortedNews);
     } catch (error) {
         next(error);
     }
