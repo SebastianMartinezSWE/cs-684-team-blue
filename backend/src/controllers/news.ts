@@ -85,7 +85,7 @@ export const userNews: RequestHandler<any, any, UserNewsBody, any> = async (
         for (const [key, value] of settingsSelected) {
             if (value === true) {
                 urls.push(
-                    `https://newsapi.org/v2/top-headlines?country=us&category=${key}&apiKey=${env.NEWSAPI_API_KEY}`
+                    `https://newsapi.org/v2/top-headlines?country=us&category=${key}&pageSize=100&apiKey=${env.NEWSAPI_API_KEY}`
                 );
             }
         }
@@ -110,7 +110,10 @@ export const userNews: RequestHandler<any, any, UserNewsBody, any> = async (
             return dateB.getTime() - dateA.getTime();
         });
 
-        res.status(200).json(sortedNews);
+        // Limits number of articles to 250
+        const articles = sortedNews.slice(0, 250);
+
+        res.status(200).json(articles);
     } catch (error) {
         next(error);
     }
