@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
-import { getNews } from "../../api/news";
+import { getDefaultNews, getNews } from "../../api/news";
 import { News } from "../../models/news";
 import styles from "../../styles/utils/util.module.css";
 import Article from "../cards/Article";
@@ -11,7 +11,7 @@ const SignedOutView = () => {
     useEffect(() => {
         async function loadArticles() {
             try {
-                const news = await getNews("default");
+                const news = await getDefaultNews();
                 setArticles(news.articles);
             } catch (error) {
                 console.error(error);

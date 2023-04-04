@@ -17,8 +17,8 @@ const SignedInView = ({ user }: SignedInViewProps) => {
     useEffect(() => {
         async function loadArticles() {
             try {
-                const news = await getNews("default");
-                setArticles(news.articles);
+                const news = await getNews(user.username);
+                setArticles(news);
             } catch (error) {
                 console.error(error);
                 alert(error);

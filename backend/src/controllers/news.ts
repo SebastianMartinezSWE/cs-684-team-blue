@@ -7,7 +7,7 @@ import { assertIsDefined } from "../util/assertIsDefined";
 export const defaultNews: RequestHandler = async (req, res, next) => {
     try {
         const response = await fetch(
-            `https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=${env.NEWSAPI_API_KEY}`
+            `https://newsapi.org/v2/top-headlines?country=us&category=general&pageSize=100&apiKey=${env.NEWSAPI_API_KEY}`
         );
 
         const requestedNews = await response.json();
@@ -17,15 +17,6 @@ export const defaultNews: RequestHandler = async (req, res, next) => {
         next(error);
     }
 };
-interface UserNewsBody {
-    general: boolean;
-    business: boolean;
-    entertainment: boolean;
-    health: boolean;
-    science: boolean;
-    sports: boolean;
-    technology: boolean;
-}
 
 interface News {
     status: string;
@@ -49,23 +40,24 @@ interface Source {
     name: string;
 }
 
-export const userNews: RequestHandler<any, any, UserNewsBody, any> = async (
-    req,
-    res,
-    next
-) => {
+export const userNews: RequestHandler = async (req, res, next) => {
     const authenticatedUsername = req.session.username;
     const username = req.params.username;
-    const settings = req.body;
+
     let news: Article[] = [];
     const urls: string[] = [];
     let newsArticles: News[] = [];
+
     try {
         assertIsDefined(authenticatedUsername);
 
-        const user = await UserModel.findOne({
-            username: username,
-        }).exec();
+        const user = await UserModel.findOne(
+            {
+                username: username,
+            },
+            {},
+            { lean: true }
+        ).exec();
 
         if (!user) {
             throw createHttpError(404, "User not found");
@@ -79,10 +71,10 @@ export const userNews: RequestHandler<any, any, UserNewsBody, any> = async (
         }
 
         // Converts Setting Object to an array of key value pairs
-        const settingsSelected = Object.entries(settings);
+        const userSettings = Object.entries(user!.settings).slice(0, -1);
 
         // Loops through array and appends url strings into url array
-        for (const [key, value] of settingsSelected) {
+        for (const [key, value] of userSettings) {
             if (value === true) {
                 urls.push(
                     `https://newsapi.org/v2/top-headlines?country=us&category=${key}&pageSize=100&apiKey=${env.NEWSAPI_API_KEY}`
