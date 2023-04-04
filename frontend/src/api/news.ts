@@ -29,7 +29,14 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
     }
 }
 
-export async function getNews(user: String): Promise<News> {
+export async function getDefaultNews(): Promise<News> {
+    const response = await fetchData(`/api/news/default`, {
+        method: "GET",
+    });
+    return response.json();
+}
+
+export async function getNews(user: String): Promise<News["articles"]> {
     const response = await fetchData(`/api/news/${user}`, {
         method: "GET",
     });
