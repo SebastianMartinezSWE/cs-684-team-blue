@@ -37,13 +37,11 @@ const SettingsModal = ({
     };
 
     async function saveSettings(updatedSettings: User["settings"]) {
-        const settingsSelected = Object.values(updatedSettings).slice(0, -1);
-        const checkSelectedSettings = settingsSelected.every(
-            (setting) => setting === false
-        );
-
         try {
-            await SettingsApi.updateSettings(userData._id, updatedSettings);
+            await SettingsApi.updateSettings(
+                userData.username,
+                updatedSettings
+            );
             userData.settings = updatedSettings;
         } catch (error) {
             console.error(error);

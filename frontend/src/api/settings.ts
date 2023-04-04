@@ -40,10 +40,10 @@ export interface Settings {
 }
 
 export async function updateSettings(
-    userId: string,
+    username: string,
     settings: Settings
 ): Promise<User> {
-    const response = await fetchData(`/api/settings/${userId}`, {
+    const response = await fetchData(`/api/settings/${username}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
