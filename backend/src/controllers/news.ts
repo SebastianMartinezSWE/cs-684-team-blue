@@ -7,7 +7,7 @@ import { assertIsDefined } from "../util/assertIsDefined";
 export const defaultNews: RequestHandler = async (req, res, next) => {
     try {
         const response = await fetch(
-            `https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=${env.NEWSAPI_API_KEY}`
+            `https://newsapi.org/v2/top-headlines?country=us&category=general&pageSize=100&apiKey=${env.NEWSAPI_API_KEY}`
         );
 
         const requestedNews = await response.json();
