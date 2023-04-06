@@ -38,7 +38,7 @@ const SignedOutView = () => {
 
     async function loadEntertainmentArticles() {
         try {
-            const news = await getCategory("business");
+            const news = await getCategory("entertainment");
             setEntertainmentArticles(news.articles);
         } catch (error) {
             console.error(error);
@@ -58,7 +58,7 @@ const SignedOutView = () => {
 
     async function loadHealthArticles() {
         try {
-            const news = await getCategory("business");
+            const news = await getCategory("health");
             setHealthArticles(news.articles);
         } catch (error) {
             console.error(error);
@@ -67,7 +67,7 @@ const SignedOutView = () => {
     }
     async function loadScienceArticles() {
         try {
-            const news = await getCategory("business");
+            const news = await getCategory("science");
             setScienceArticles(news.articles);
         } catch (error) {
             console.error(error);
@@ -76,7 +76,7 @@ const SignedOutView = () => {
     }
     async function loadSportsArticles() {
         try {
-            const news = await getCategory("business");
+            const news = await getCategory("sports");
             setSportsArticles(news.articles);
         } catch (error) {
             console.error(error);
@@ -85,7 +85,7 @@ const SignedOutView = () => {
     }
     async function loadTechnologyArticles() {
         try {
-            const news = await getCategory("business");
+            const news = await getCategory("technology");
             setTechnologyArticles(news.articles);
         } catch (error) {
             console.error(error);
@@ -95,6 +95,12 @@ const SignedOutView = () => {
 
     useEffect(() => {
         loadGeneralArticles();
+        loadBusinessArticles();
+        loadEntertainmentArticles();
+        loadHealthArticles();
+        loadScienceArticles();
+        loadSportsArticles();
+        loadTechnologyArticles();
     }, []);
 
     return (
