@@ -6,12 +6,14 @@ interface SettingsModalProps {
     onDismiss: () => void;
     userData: User;
     showSettingsModal: boolean;
+    settingsChanged: (changed: boolean) => void;
 }
 
 const SettingsModal = ({
     onDismiss,
     userData,
     showSettingsModal,
+    settingsChanged,
 }: SettingsModalProps) => {
     const [settingsData, setSettingsData] = useState<User["settings"]>(
         userData.settings
@@ -42,6 +44,7 @@ const SettingsModal = ({
                 userData.username,
                 updatedSettings
             );
+            settingsChanged(true);
             userData.settings = updatedSettings;
         } catch (error) {
             console.error(error);
@@ -55,6 +58,7 @@ const SettingsModal = ({
                 show={showSettingsModal}
                 onHide={() => {
                     onDismiss();
+                    settingsChanged(false);
                     setSettingsData(userData.settings);
                 }}
                 centered
@@ -134,8 +138,9 @@ const SettingsModal = ({
                     <Button
                         variant="secondary"
                         onClick={() => {
-                            setSettingsData(userData.settings);
                             onDismiss();
+                            settingsChanged(false);
+                            setSettingsData(userData.settings);
                         }}
                     >
                         Close

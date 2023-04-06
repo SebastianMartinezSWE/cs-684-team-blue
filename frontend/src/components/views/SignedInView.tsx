@@ -13,6 +13,7 @@ interface SignedInViewProps {
 const SignedInView = ({ user }: SignedInViewProps) => {
     const [articles, setArticles] = useState<News["articles"]>([]);
     const [showSettingsModal, setShowSettingsModal] = useState(false);
+    const [settingsChanged, setSettingsChanged] = useState(false);
 
     useEffect(() => {
         async function loadArticles() {
@@ -25,7 +26,7 @@ const SignedInView = ({ user }: SignedInViewProps) => {
             }
         }
         loadArticles();
-    }, []);
+    }, [settingsChanged]);
 
     return (
         <>
@@ -69,6 +70,7 @@ const SignedInView = ({ user }: SignedInViewProps) => {
                     onDismiss={() => setShowSettingsModal(false)}
                     userData={user}
                     showSettingsModal={showSettingsModal}
+                    settingsChanged={setSettingsChanged}
                 />
             }
         </>
