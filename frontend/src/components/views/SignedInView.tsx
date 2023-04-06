@@ -32,23 +32,7 @@ const SignedInView = ({ user }: SignedInViewProps) => {
 
     return (
         <>
-            <Tabs
-                defaultActiveKey="home"
-                id="category-tabs"
-                fill
-                className="mb-3"
-            >
-                <Tab eventKey="home" title="Home"></Tab>
-                <Tab eventKey="business" title="Business"></Tab>
-                <Tab eventKey="entertainment" title="Entertainment"></Tab>
-                <Tab eventKey="general" title="General"></Tab>
-                <Tab eventKey="health" title="Health"></Tab>
-                <Tab eventKey="science" title="Science"></Tab>
-                <Tab eventKey="sports" title="Sports"></Tab>
-                <Tab eventKey="technology" title="Technology"></Tab>
-            </Tabs>
-
-            <Row className="d-flex flex-row-reverse bd-highlight mt-1 mb-2">
+            <Row className="d-flex flex-row-reverse bd-highlight mb-3">
                 <Col xs="auto">
                     <ButtonGroup aria-label="Refresh-Settings">
                         <Button
@@ -70,6 +54,21 @@ const SignedInView = ({ user }: SignedInViewProps) => {
                     </ButtonGroup>
                 </Col>
             </Row>
+            <Tabs
+                defaultActiveKey="home"
+                id="category-tabs"
+                fill
+                className="mb-3"
+            >
+                <Tab eventKey="home" title="Home"></Tab>
+                <Tab eventKey="business" title="Business"></Tab>
+                <Tab eventKey="entertainment" title="Entertainment"></Tab>
+                <Tab eventKey="general" title="General"></Tab>
+                <Tab eventKey="health" title="Health"></Tab>
+                <Tab eventKey="science" title="Science"></Tab>
+                <Tab eventKey="sports" title="Sports"></Tab>
+                <Tab eventKey="technology" title="Technology"></Tab>
+            </Tabs>
 
             <Row xs={1} md={2} xl={3} className={`g-4`}>
                 {articles?.map((article) => (
