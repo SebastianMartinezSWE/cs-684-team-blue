@@ -95,7 +95,6 @@ const SignedOutView = () => {
 
     useEffect(() => {
         loadGeneralArticles();
-        loadBusinessArticles();
     }, []);
 
     return (
