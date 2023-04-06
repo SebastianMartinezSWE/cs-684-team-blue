@@ -44,7 +44,6 @@ const SettingsModal = ({
                 userData.username,
                 updatedSettings
             );
-            settingsChanged(true);
             userData.settings = updatedSettings;
         } catch (error) {
             console.error(error);
@@ -58,7 +57,6 @@ const SettingsModal = ({
                 show={showSettingsModal}
                 onHide={() => {
                     onDismiss();
-                    settingsChanged(false);
                     setSettingsData(userData.settings);
                 }}
                 centered
@@ -139,7 +137,6 @@ const SettingsModal = ({
                         variant="secondary"
                         onClick={() => {
                             onDismiss();
-                            settingsChanged(false);
                             setSettingsData(userData.settings);
                         }}
                     >
@@ -155,6 +152,7 @@ const SettingsModal = ({
                                 saveSettings(settingsData);
                                 setShowAlert(false);
                                 onDismiss();
+                                settingsChanged(true);
                             }
                         }}
                     >

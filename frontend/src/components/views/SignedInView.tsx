@@ -20,6 +20,7 @@ const SignedInView = ({ user }: SignedInViewProps) => {
             try {
                 const news = await getNews(user.username);
                 setArticles(news);
+                setSettingsChanged(false);
             } catch (error) {
                 console.error(error);
                 alert(error);
