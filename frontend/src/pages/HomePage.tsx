@@ -11,7 +11,7 @@ interface HomePageProps {
 const HomePage = ({ signedInUser }: HomePageProps) => {
     return (
         <>
-            <Container fluid className={styles.pageContainer}>
+            <Container className={styles.pageContainer}>
                 {signedInUser ? (
                     <SignedInView user={signedInUser} />
                 ) : (
