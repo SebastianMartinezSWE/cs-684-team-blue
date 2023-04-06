@@ -1,5 +1,4 @@
 import { Container, Navbar } from "react-bootstrap";
-import { ArrowClockwise } from "react-bootstrap-icons";
 import logo from "../../assets/react.svg";
 import { User } from "../../models/user";
 import SignedInNavBar from "./SignedInNavBar";
@@ -28,13 +27,7 @@ const DefaultNavBar = ({
                         height="30"
                         className="d-inline-block align-top"
                     />{" "}
-                    The Big Blue Theory{" "}
-                    <ArrowClockwise
-                        color="gray"
-                        onClick={() => {
-                            window.location.reload();
-                        }}
-                    />
+                    The Big Blue Theory
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="main-navbar" />
                 <Navbar.Collapse id="main-navbar">
