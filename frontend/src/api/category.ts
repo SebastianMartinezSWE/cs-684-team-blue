@@ -29,7 +29,7 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
     }
 }
 
-export async function getCategory(category: String): Promise<News["articles"]> {
+export async function getCategory(category: String): Promise<News> {
     const response = await fetchData(`/api/category/${category}`, {
         method: "GET",
     });
