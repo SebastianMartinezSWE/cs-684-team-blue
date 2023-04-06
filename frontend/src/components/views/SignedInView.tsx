@@ -47,7 +47,7 @@ const SignedInView = ({ user }: SignedInViewProps) => {
                 <Tab eventKey="sports" title="Sports"></Tab>
                 <Tab eventKey="technology" title="Technology"></Tab>
             </Tabs>
-            {/* justify-content-md-center */}
+
             <Row className="d-flex flex-row-reverse bd-highlight mt-1 mb-2">
                 <Col xs="auto">
                     <ButtonGroup aria-label="Refresh-Settings">
