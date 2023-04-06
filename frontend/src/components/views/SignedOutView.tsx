@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { Button, Col, Row } from "react-bootstrap";
-import { getDefaultNews, getNews } from "../../api/news";
+import { Col, Row, Tab, Tabs } from "react-bootstrap";
+import { getDefaultNews } from "../../api/news";
 import { News } from "../../models/news";
-import styles from "../../styles/utils/util.module.css";
 import Article from "../cards/Article";
 
 const SignedOutView = () => {
@@ -23,19 +22,22 @@ const SignedOutView = () => {
 
     return (
         <>
-            <h1
-                className={`display-1 mt-4 mb-2 text-center text-white font-weight-bold`}
+            <Tabs
+                defaultActiveKey="home"
+                id="category-tabs"
+                fill
+                className="mb-3"
             >
-                General News
-            </h1>
-            <Button
-                className={`mb-4 ${styles.centerItem}`}
-                onClick={() => {
-                    window.location.reload();
-                }}
-            >
-                Refresh
-            </Button>
+                <Tab eventKey="home" title="Home"></Tab>
+                <Tab eventKey="business" title="Business"></Tab>
+                <Tab eventKey="entertainment" title="Entertainment"></Tab>
+                <Tab eventKey="general" title="General"></Tab>
+                <Tab eventKey="health" title="Health"></Tab>
+                <Tab eventKey="science" title="Science"></Tab>
+                <Tab eventKey="sports" title="Sports"></Tab>
+                <Tab eventKey="technology" title="Technology"></Tab>
+            </Tabs>
+
             <Row xs={1} sm={2} xl={3} className={`g-4`}>
                 {articles.map((article) => (
                     <Col key={article.url}>
