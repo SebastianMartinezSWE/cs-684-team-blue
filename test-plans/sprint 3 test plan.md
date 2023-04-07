@@ -29,6 +29,7 @@ In this sprint, I will doing integration testing on The Big Blue Theory. This sp
 3. **API Endpoint**
 
    - Category endpoint should return a status code of 200
+   - News endpoint should return articles from user settings, be in descending order and be limited to 250 articles max
 
 ### Approach
 
