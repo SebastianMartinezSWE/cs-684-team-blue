@@ -138,6 +138,7 @@ const SignedInView = ({ user }: SignedInViewProps) => {
                             variant="outline-secondary"
                             onClick={() => {
                                 window.location.reload();
+                                setCurrentPage(1);
                             }}
                         >
                             <ArrowClockwise /> Refresh

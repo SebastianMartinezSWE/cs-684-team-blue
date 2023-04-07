@@ -125,6 +125,7 @@ const SignedOutView = () => {
                             variant="outline-secondary"
                             onClick={() => {
                                 window.location.reload();
+                                setCurrentPage(1);
                             }}
                         >
                             <ArrowClockwise /> Refresh
