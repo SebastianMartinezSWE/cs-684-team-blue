@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Navbar } from "react-bootstrap";
 import logo from "../../assets/react.svg";
 import { User } from "../../models/user";
 import SignedInNavBar from "./SignedInNavBar";
@@ -18,8 +18,8 @@ const DefaultNavBar = ({
     onSignOutSuccessful,
 }: DefaultNavBarProps) => {
     return (
-        <Navbar bg="dark" variant="dark" expand="sm" sticky="top">
-            <Container fluid>
+        <Navbar bg="dark" variant="dark" sticky="top">
+            <Container>
                 <Navbar.Brand href="#home">
                     <img
                         src={logo}
@@ -31,19 +31,17 @@ const DefaultNavBar = ({
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="main-navbar" />
                 <Navbar.Collapse id="main-navbar">
-                    <Nav className="ms-auto">
-                        {signedInUser ? (
-                            <SignedInNavBar
-                                user={signedInUser}
-                                onSignOutSuccessful={onSignOutSuccessful}
-                            />
-                        ) : (
-                            <SignedOutNavBar
-                                onSignInClicked={onSignInClicked}
-                                onSignUpClicked={onSignUpClicked}
-                            />
-                        )}
-                    </Nav>
+                    {signedInUser ? (
+                        <SignedInNavBar
+                            user={signedInUser}
+                            onSignOutSuccessful={onSignOutSuccessful}
+                        />
+                    ) : (
+                        <SignedOutNavBar
+                            onSignInClicked={onSignInClicked}
+                            onSignUpClicked={onSignUpClicked}
+                        />
+                    )}
                 </Navbar.Collapse>
             </Container>
         </Navbar>

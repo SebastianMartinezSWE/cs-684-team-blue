@@ -15,7 +15,7 @@ export const categoryNews: RequestHandler<
 
     try {
         const response = await fetch(
-            `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${env.NEWSAPI_API_KEY}`
+            `https://newsapi.org/v2/top-headlines?country=us&category=${category}&pageSize=100&apiKey=${env.NEWSAPI_API_KEY}`
         );
 
         const requestedNews = await response.json();

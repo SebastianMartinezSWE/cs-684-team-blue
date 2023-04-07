@@ -6,12 +6,14 @@ interface SettingsModalProps {
     onDismiss: () => void;
     userData: User;
     showSettingsModal: boolean;
+    settingsChanged: (changed: boolean) => void;
 }
 
 const SettingsModal = ({
     onDismiss,
     userData,
     showSettingsModal,
+    settingsChanged,
 }: SettingsModalProps) => {
     const [settingsData, setSettingsData] = useState<User["settings"]>(
         userData.settings
@@ -134,8 +136,8 @@ const SettingsModal = ({
                     <Button
                         variant="secondary"
                         onClick={() => {
-                            setSettingsData(userData.settings);
                             onDismiss();
+                            setSettingsData(userData.settings);
                         }}
                     >
                         Close
@@ -150,6 +152,7 @@ const SettingsModal = ({
                                 saveSettings(settingsData);
                                 setShowAlert(false);
                                 onDismiss();
+                                settingsChanged(true);
                             }
                         }}
                     >
