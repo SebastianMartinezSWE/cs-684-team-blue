@@ -1,5 +1,71 @@
 # Sprint 3: UX Test Cases
 
+## Test Case ID - TBL001
+
+**Author:** _Rajiv_
+
+**Test Method:** Manual Integration Test
+
+**Description:** Testing if landing page is set up correctly
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have backend running
+- Have frontend running
+
+**Test Steps:**
+
+1. Open app and login to view landing page
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - The landing page page contians tabs to select the articles displayed
+  - There is a Home tab plus tabs for each category
+
+- **Fail:**
+
+  - Tabs are not present for each category
+  - Home tab is not present
+
+---
+
+## Test Case ID - TBL002
+
+**Author:** _Rajiv_
+
+**Test Method:** Manual Integration Test
+
+**Description:** Testing to see if the currently selected tab is highlighted
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have backend running
+- Have frontend running
+
+**Test Steps:**
+
+1.Select and click on a tab
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - The currently selected tab is highlighted
+  - The home tab is highlighted when first signed in
+
+- **Fail:**
+
+  - The currently selected tab is not highlighted
+  - When first signing in, some other tab is selected besides the home tab
+
+---
+
 ## Test Case ID - TBL003
 
 **Author:** _Sebastian_
