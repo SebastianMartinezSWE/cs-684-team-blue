@@ -9,11 +9,11 @@ const port = env.PORT;
 mongoose.set("strictQuery", false);
 
 mongoose
-  .connect(env.MONGO_CONNECTION_STRING)
-  .then(() => {
-    console.log("Connected to MongoDB");
-    app.listen(port, () => {
-      console.log("Server is running on Port: " + port);
-    });
-  })
-  .catch(console.error);
+    .connect(env.MONGO_CONNECTION_STRING)
+    .then(() => {
+        console.log("Connected to MongoDB");
+        app.listen(port, () => {
+            console.log("Server is running on Port: " + port);
+        });
+    })
+    .catch(console.error);

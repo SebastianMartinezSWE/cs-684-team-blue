@@ -5,21 +5,21 @@ import { User } from "../models/user";
 import styles from "../styles/NewsPage.module.css";
 
 interface HomePageProps {
-  signedInUser: User | null;
+    signedInUser: User | null;
 }
 
 const HomePage = ({ signedInUser }: HomePageProps) => {
-  return (
-    <>
-      <Container fluid className={styles.pageContainer}>
-        {signedInUser ? (
-          <SignedInView user={signedInUser} />
-        ) : (
-          <SignedOutView />
-        )}
-      </Container>
-    </>
-  );
+    return (
+        <>
+            <Container className={styles.pageContainer}>
+                {signedInUser ? (
+                    <SignedInView user={signedInUser} />
+                ) : (
+                    <SignedOutView />
+                )}
+            </Container>
+        </>
+    );
 };
 
 export default HomePage;

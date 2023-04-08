@@ -44,7 +44,7 @@ In this sprint, we will be testing the NewsAPI, We will be testing if the NewsAP
 
 ### Approach
 
-We will be taking a unit testing approach this sprint to verify the requirements using Jest
+We will be taking a unit testing approach this sprint to verify the requirements using Vitest and MSW
 
 ### Testing Tasks
 
