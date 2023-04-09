@@ -23,7 +23,7 @@
 
 - **Pass:**
 
-  - The landing page page contians tabs to select the articles displayed
+  - The landing page page contains tabs to select the articles displayed
   - There is a Home tab plus tabs for each category
 
 - **Fail:**
