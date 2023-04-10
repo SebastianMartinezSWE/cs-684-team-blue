@@ -1,71 +1,61 @@
 # Sprint 3: Test Results
 
-| Test Case ID | Tester    | Pass/fail | Comments                                         |
-| :----------- | :-------- | :-------- | :----------------------------------------------- |
-| TBL001       | Sebastian | Pass      | The news articles were returned                  |
-| TBL002       | Sebastian | Fail      | The settings were not updated                    |
-| TBL003       | Sebastian | Fail      | The settings were not updated                    |
-| TBL004       | Sebastian | Fail      | News articles were not present                   |
-| TBL005       | Sebastian | Fail      | Settings button did not appear nor news articles |
-| TBL006       | Sebastian | Pass      | Settings options were present                    |
-| TBL007       | Sebastian | Fail      | Settings did not save properly                   |
+| Test Case ID | Tester    | Pass/fail | Comments                                                   |
+| :----------- | :-------- | :-------- | :--------------------------------------------------------- |
+| TBL001       | Sebastian | Fail      | Endpoint does not return articles based on user settings   |
+| TBL002       | Sebastian | Fail      | Endpoint does not display category based articles          |
+| TBL003       | Rajiv     | Pass      | Landing Page was set up correctly                          |
+| TBL004       | Rajiv     | Fail      | Currently selected tab is not highlighted                  |
+| TBL005       | Sebastian | Pass      | Clicking on tab swicthes to tab and shows correct articles |
+| TBL006       | Sebastian | Fail      | Pagination does not work                                   |
+| TBL007       | Sebastian | Fail      | Home tab does not display articles based on settings       |
 
-| Test Case ID | Tester    | Pass/fail | Comments                                         |
-| :----------- | :-------- | :-------- | :----------------------------------------------- |
-| TBL001       | Sebastian | Pass      | The news articles were returned                  |
-| TBL002       | Sebastian | Fail      | The settings were not updated                    |
-| TBL003       | Sebastian | Fail      | The settings were not updated                    |
-| TBL004       | Sebastian | Fail      | News articles were not present                   |
-| TBL005       | Sebastian | Fail      | Settings button did not appear nor news articles |
-| TBL006       | Sebastian | Pass      | Settings options were present                    |
-| TBL007       | Sebastian | Fail      | Settings did not save properly                   |
+| Test Case ID | Tester    | Pass/fail | Comments                                                   |
+| :----------- | :-------- | :-------- | :--------------------------------------------------------- |
+| TBL001       | Sebastian | Fail      | Endpoint does not return articles based on user settings   |
+| TBL002       | Sebastian | Fail      | Endpoint does not display category based articles          |
+| TBL003       | Rajiv     | Pass      | Landing Page was set up correctly                          |
+| TBL004       | Rajiv     | Pass      | Currently selected tab is highlighted                      |
+| TBL005       | Sebastian | Pass      | Clicking on tab swicthes to tab and shows correct articles |
+| TBL006       | Sebastian | Fail      | Pagination does not work                                   |
+| TBL007       | Sebastian | Fail      | Home tab does not display articles based on settings       |
 
-| Test Case ID | Tester    | Pass/fail | Comments                                         |
-| :----------- | :-------- | :-------- | :----------------------------------------------- |
-| TBL001       | Sebastian | Pass      | The news articles were returned                  |
-| TBL002       | Sebastian | Fail      | The settings were not updated                    |
-| TBL003       | Sebastian | Fail      | The settings were not updated                    |
-| TBL004       | Sebastian | Fail      | News articles were not present                   |
-| TBL005       | Sebastian | Fail      | Settings button did not appear nor news articles |
-| TBL006       | Sebastian | Pass      | Settings options were present                    |
-| TBL007       | Sebastian | Fail      | Settings did not save properly                   |
+| Test Case ID | Tester    | Pass/fail | Comments                                                   |
+| :----------- | :-------- | :-------- | :--------------------------------------------------------- |
+| TBL001       | Sebastian | Fail      | Endpoint does not return articles based on user settings   |
+| TBL002       | Sebastian | Fail      | Endpoint does not display category based articles          |
+| TBL003       | Rajiv     | Pass      | Landing Page was set up correctly                          |
+| TBL004       | Rajiv     | Pass      | Currently selected tab is highlighted                      |
+| TBL005       | Sebastian | Pass      | Clicking on tab swicthes to tab and shows correct articles |
+| TBL006       | Sebastian | Fail      | Pagination does not work                                   |
+| TBL007       | Sebastian | Pass      | Home tab does display articles based on settings           |
 
-| Test Case ID | Tester    | Pass/fail | Comments                                         |
-| :----------- | :-------- | :-------- | :----------------------------------------------- |
-| TBL001       | Sebastian | Pass      | The news articles were returned                  |
-| TBL002       | Sebastian | Pass      | The settings were updated                        |
-| TBL003       | Sebastian | Fail      | The settings were not updated                    |
-| TBL004       | Sebastian | Fail      | News articles were not present                   |
-| TBL005       | Sebastian | Fail      | Settings button did not appear nor news articles |
-| TBL006       | Sebastian | Pass      | Settings options were present                    |
-| TBL007       | Sebastian | Fail      | Settings did not save properly                   |
+| Test Case ID | Tester    | Pass/fail | Comments                                                   |
+| :----------- | :-------- | :-------- | :--------------------------------------------------------- |
+| TBL001       | Sebastian | Pass      | Endpoint does return articles based on user settings       |
+| TBL002       | Sebastian | Fail      | Endpoint does not display category based articles          |
+| TBL003       | Rajiv     | Pass      | Landing Page was set up correctly                          |
+| TBL004       | Rajiv     | Pass      | Currently selected tab is highlighted                      |
+| TBL005       | Sebastian | Pass      | Clicking on tab swicthes to tab and shows correct articles |
+| TBL006       | Sebastian | Fail      | Pagination does not work                                   |
+| TBL007       | Sebastian | Pass      | Home tab does display articles based on settings           |
 
-| Test Case ID | Tester    | Pass/fail | Comments                                         |
-| :----------- | :-------- | :-------- | :----------------------------------------------- |
-| TBL001       | Sebastian | Pass      | The news articles were returned                  |
-| TBL002       | Sebastian | Pass      | The settings were updated                        |
-| TBL003       | Sebastian | Pass      | The settings were updated                        |
-| TBL004       | Sebastian | Fail      | News articles were not present                   |
-| TBL005       | Sebastian | Fail      | Settings button did not appear nor news articles |
-| TBL006       | Sebastian | Pass      | Settings options were present                    |
-| TBL007       | Sebastian | Fail      | Settings did not save properly                   |
+| Test Case ID | Tester    | Pass/fail | Comments                                                   |
+| :----------- | :-------- | :-------- | :--------------------------------------------------------- |
+| TBL001       | Sebastian | Pass      | Endpoint does return articles based on user settings       |
+| TBL002       | Sebastian | Pass      | Endpoint does display category based articles              |
+| TBL003       | Rajiv     | Pass      | Landing Page was set up correctly                          |
+| TBL004       | Rajiv     | Pass      | Currently selected tab is highlighted                      |
+| TBL005       | Sebastian | Pass      | Clicking on tab swicthes to tab and shows correct articles |
+| TBL006       | Sebastian | Fail      | Pagination does not work                                   |
+| TBL007       | Sebastian | Pass      | Home tab does display articles based on settings           |
 
-| Test Case ID | Tester    | Pass/fail | Comments                        |
-| :----------- | :-------- | :-------- | :------------------------------ |
-| TBL001       | Sebastian | Pass      | The news articles were returned |
-| TBL002       | Sebastian | Pass      | The settings were updated       |
-| TBL003       | Sebastian | Pass      | The settings were updated       |
-| TBL004       | Sebastian | Fail      | News articles were not present  |
-| TBL005       | Sebastian | Fail      | News articles did not appear    |
-| TBL006       | Sebastian | Pass      | Settings options were present   |
-| TBL007       | Sebastian | Pass      | Settings did saved properly     |
-
-| Test Case ID | Tester    | Pass/fail | Comments                        |
-| :----------- | :-------- | :-------- | :------------------------------ |
-| TBL001       | Sebastian | Pass      | The news articles were returned |
-| TBL002       | Sebastian | Pass      | The settings were updated       |
-| TBL003       | Sebastian | Pass      | The settings were updated       |
-| TBL004       | Sebastian | Pass      | News articles present           |
-| TBL005       | Sebastian | Pass      | News articles did appear        |
-| TBL006       | Sebastian | Pass      | Settings options were present   |
-| TBL007       | Sebastian | Pass      | Settings did saved properly     |
+| Test Case ID | Tester    | Pass/fail | Comments                                                   |
+| :----------- | :-------- | :-------- | :--------------------------------------------------------- |
+| TBL001       | Sebastian | Pass      | Endpoint does return articles based on user settings       |
+| TBL002       | Sebastian | Pass      | Endpoint does display category based articles              |
+| TBL003       | Rajiv     | Pass      | Landing Page was set up correctly                          |
+| TBL004       | Rajiv     | Pass      | Currently selected tab is highlighted                      |
+| TBL005       | Sebastian | Pass      | Clicking on tab swicthes to tab and shows correct articles |
+| TBL006       | Sebastian | Pass      | Pagination does work                                       |
+| TBL007       | Sebastian | Pass      | Home tab does display articles based on settings           |
