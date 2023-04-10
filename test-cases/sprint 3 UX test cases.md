@@ -1,6 +1,6 @@
 # Sprint 3: UX Test Cases
 
-## Test Case ID - TBL001
+## Test Case ID - TBL003
 
 **Author:** _Rajiv_
 
@@ -33,7 +33,7 @@
 
 ---
 
-## Test Case ID - TBL002
+## Test Case ID - TBL004
 
 **Author:** _Rajiv_
 
@@ -66,7 +66,7 @@
 
 ---
 
-## Test Case ID - TBL003
+## Test Case ID - TBL005
 
 **Author:** _Sebastian_
 
@@ -98,7 +98,7 @@
 
 ---
 
-## Test Case ID - TBL004
+## Test Case ID - TBL006
 
 **Author:** _Sebastian_
 
@@ -133,7 +133,7 @@
 
 ---
 
-## Test Case ID - TBL005
+## Test Case ID - TBL007
 
 **Author:** _Sebastian_
 
