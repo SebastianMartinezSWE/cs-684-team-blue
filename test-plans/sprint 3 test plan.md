@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this sprint, I will doing integration testing on The Big Blue Theory. This sprint introduces new features such as category tabs for different types of news, a custom "Home" tab to reflect the implementation of the "Settings" Modal from last sprint, and as well as pagination so the user is able to view all of the articles available at the time.
+In this sprint, we will be doing integration testing on The Big Blue Theory. This sprint introduces new features such as category tabs for different types of news, a custom "Home" tab to reflect the implementation of the "Settings" Modal from last sprint, and as well as pagination so the user is able to view all of the articles available at the time.
 
 ---
 
@@ -53,15 +53,15 @@ We will be taking a manual integration testing approach this sprint to verify th
 
     - Landing Page
 
-      - _Sebastian Martinez_
+      - _Sebastian Martinez and Rajiv Dave_
 
     - Home Page
 
-      - _Sebastian Martinez_
+      - _Sebastian Martinez and Rajiv Dave_
 
     - Settings Page
 
-      - _Sebastian Martinez_
+      - _Sebastian Martinez and Rajiv Dave_
 
 ### Schedule
 
