@@ -354,7 +354,7 @@ Test to verify the landing page to display a method (button or link) to navigate
 
   # Sprint 2: UX Test Cases
 
-## Test Case ID - TBL004
+## Test Case ID - TBL020
 
 **Author:** _Sebastian_
 
@@ -386,7 +386,7 @@ Test to verify the landing page to display a method (button or link) to navigate
 
 ---
 
-## Test Case ID - TBL005
+## Test Case ID - TBL021
 
 **Author:** _Sebastian_
 
@@ -419,7 +419,7 @@ Test to verify the landing page to display a method (button or link) to navigate
 
 ---
 
-## Test Case ID - TBL006
+## Test Case ID - TBL022
 
 **Author:** _Sebastian_
 
@@ -449,7 +449,7 @@ Test to verify the landing page to display a method (button or link) to navigate
 
 ---
 
-## Test Case ID - TBL007
+## Test Case ID - TBL023
 
 **Author:** _Sebastian_
 
@@ -483,7 +483,7 @@ Test to verify the landing page to display a method (button or link) to navigate
 
 # Sprint 3: UX Test Cases
 
-## Test Case ID - TBL003
+## Test Case ID - TBL026
 
 **Author:** _Rajiv_
 
@@ -516,7 +516,7 @@ Test to verify the landing page to display a method (button or link) to navigate
 
 ---
 
-## Test Case ID - TBL004
+## Test Case ID - TBL027
 
 **Author:** _Rajiv_
 
@@ -549,7 +549,7 @@ Test to verify the landing page to display a method (button or link) to navigate
 
 ---
 
-## Test Case ID - TBL005
+## Test Case ID - TBL028
 
 **Author:** _Sebastian_
 
@@ -581,7 +581,7 @@ Test to verify the landing page to display a method (button or link) to navigate
 
 ---
 
-## Test Case ID - TBL006
+## Test Case ID - TBL029
 
 **Author:** _Sebastian_
 
@@ -616,7 +616,7 @@ Test to verify the landing page to display a method (button or link) to navigate
 
 ---
 
-## Test Case ID - TBL007
+## Test Case ID - TBL030
 
 **Author:** _Sebastian_
 
