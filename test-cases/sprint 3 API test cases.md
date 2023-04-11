@@ -225,7 +225,7 @@
 
 ---
 
-## Test Case ID - TBL001
+## Test Case ID - TBL017
 
 **Authors:** _Sebastian_
 
@@ -256,7 +256,7 @@
 
 ---
 
-## Test Case ID - TBL002
+## Test Case ID - TBL018
 
 **Authors:** _Sebastian_
 
@@ -305,7 +305,7 @@
 
 # Sprint 3: API Test Cases
 
-## Test Case ID - TBL001
+## Test Case ID - TBL024
 
 **Authors:** _Sebastian_
 
@@ -340,7 +340,7 @@
 
 ---
 
-## Test Case ID - TBL002
+## Test Case ID - TBL025
 
 **Authors:** _Sebastian_
 
