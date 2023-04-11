@@ -1,3 +1,185 @@
+# Sprint 1: Test Plan
+
+## INTRODUCTION
+
+In this sprint, we will be validating if the landing page and home page have been properly created. As well as the sign in and sign out pages, along with sign out functionality being properly implemented. This includes testing that the database is properly receiving, storing and sending out information.
+
+---
+
+### Test items
+
+1. Landing page
+2. Sign-up page
+3. Database
+4. Sign-in page
+5. Home page
+6. Sign-out
+
+### Features to be tested
+
+1. **Landing page**
+   - Sign in and Sign out buttons
+2. **Sign-up page**
+   - Proper sign up form
+   - Username and password requirements
+   - Proper error handling
+3. **Database**
+   - Data is stored and sent properly
+4. **Sign-in page**
+   - Proper sign in form
+   - Username and password requirements
+   - Proper error handling
+5. **Home page**
+   - Displays the username of the user thats currently signed in and sign out button
+6. **Sign-out**
+   - Proper sign out functionality
+
+### Approach
+
+We will be taking a manual testing approach this sprint to verify the requirements
+
+### Testing Tasks
+
+1. Testing to see if the API request body and response codes are received and sent
+2. Testing the UX requirements
+3. Testing to see if the data entered is stored in the database
+
+### Responsibilities
+
+- Testing
+
+  - Backend/API/Database
+
+    - _Rajiv Dave_
+    - _Mutunoor Akshay Kumar_
+
+  - Frontend
+
+    - Landing Page
+
+      - _Rajiv Dave_
+      - _Mutunoor Akshay Kumar_
+
+    - Home Page
+
+    - _Rajiv Dave_
+    - _Mutunoor Akshay Kumar_
+
+### Schedule
+
+**02/27/23:**
+
+- Meeting and coming up with test plan and initial test cases
+
+**02/28/23 - 03/04/23:**
+
+- Splitting up work and working on testing individually
+
+**03/04/23:**
+
+- Meeting up again and sharing test results and finalizing details
+
+**03/05/23:**
+
+- Pushing finalized test folders to the main
+
+# Sprint 2: Test Plan
+
+## INTRODUCTION
+
+In this sprint, we will be testing the NewsAPI, We will be testing if the NewsAPI is being properly called, from the backend which in turn is being called from the landing page and home page. As well as, the inclusion of a new Settings page that will allow users to narrow down their preference of news articles that will eventually be reflected on the home page in the sprint 3. Finally, we will also test that the preferences chosen by users will be saved in MongoDB.
+
+---
+
+### Test items
+
+1. Landing page
+2. Home page
+3. Settings page
+4. NewsAPI functionality
+5. Database
+
+### Features to be tested
+
+1. **Landing page**
+
+   - Displaying a list of news articles from the NewsAPI General category
+   - Displays a refresh button to allow users to refresh the list of articles
+
+2. **Home page**
+
+   - Displays a button linking to the Settings page when a valid user is logged in
+   - Displays a refresh button to allow users to refresh the list of articles
+
+3. **Settings page**
+
+   - Allowing users to choose between the following news article types
+     - General (on by default)
+     - Business
+     - Entertainment
+     - Health
+     - Science
+     - Sports
+     - Technology
+
+4. **NewsAPI functionality**
+   - The new API endpoint in the backend to call the NewsAPI for the frontend
+5. **Database**
+   - After preferences are chosen, they are saved in MongoDB and are tied to a specific user
+
+### Approach
+
+We will be taking a unit testing approach this sprint to verify the requirements using Vitest and MSW
+
+### Testing Tasks
+
+1. Testing to see if the API request body and response codes are received and sent
+2. Testing the UX requirements
+3. Testing to see if the data entered is stored in the database
+
+### Responsibilities
+
+- Testing
+
+  - Backend/API/Database
+
+    - _Jayadeep Vadlamudi_
+    - _Rajiv Dave_
+
+  - Frontend
+
+    - Landing Page
+
+      - _Mutunoor Akshay Kumar_
+      - _Rajiv Dave_
+
+    - Home Page
+
+      - _Mutunoor Akshay Kumar_
+      - _Sebastian Martinez_
+
+    - Settings Page
+      - _Mutunoor Akshay Kumar_
+      - _Jayadeep Vadlamudi_
+
+### Schedule
+
+**03/12/23:**
+
+- Meeting and coming up with test plan and initial test cases
+
+**03/12/23 - 03/23/23:**
+
+- Splitting up work and working on testing individually
+
+**03/25/23:**
+
+- Meeting up again and sharing test results and finalizing details
+
+**03/26/23:**
+
+- Pushing finalized test folders to the main
+
 # Sprint 3: Test Plan
 
 ## Introduction
