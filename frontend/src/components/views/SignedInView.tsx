@@ -1,5 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
-import { Button, ButtonGroup, Col, Row, Tab, Tabs } from "react-bootstrap";
+import {
+    Button,
+    ButtonGroup,
+    Col,
+    Form,
+    Row,
+    Tab,
+    Tabs,
+} from "react-bootstrap";
 import { ArrowClockwise, GearWideConnected } from "react-bootstrap-icons";
 import { getCategory } from "../../api/category";
 import { getDefaultNews, getNews } from "../../api/news";
@@ -152,6 +160,17 @@ const SignedInView = ({ user }: SignedInViewProps) => {
                             <GearWideConnected /> Settings
                         </Button>
                     </ButtonGroup>
+                </Col>
+                <Col>
+                    <Form className="d-flex">
+                        <Form.Control
+                            type="search"
+                            placeholder="Search"
+                            className="me-2"
+                            aria-label="Search"
+                        />
+                        <Button variant="outline-success">Search</Button>
+                    </Form>
                 </Col>
             </Row>
             <Tabs
