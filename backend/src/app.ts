@@ -5,8 +5,9 @@ import session from "express-session";
 import createHttpError, { isHttpError } from "http-errors";
 import morgan from "morgan";
 import { requiresAuth } from "./middleware/auth";
-import newsRoutes from "./routes/news";
 import categoryRoutes from "./routes/category";
+import newsRoutes from "./routes/news";
+import searchRoutes from "./routes/search";
 import settingsRoutes from "./routes/settings";
 import userRoutes from "./routes/users";
 import env from "./util/validateEnv";
@@ -46,6 +47,9 @@ app.use("/api/settings", requiresAuth, settingsRoutes);
 
 // All the routes pertaining to categories
 app.use("/api/category", categoryRoutes);
+
+// All the routes pertaining to search
+app.use("/api/search", requiresAuth, searchRoutes);
 
 // Error Handling Middleware
 app.use((req, res, next) => {
