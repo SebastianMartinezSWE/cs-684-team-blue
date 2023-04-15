@@ -9,6 +9,7 @@ import {
     Tabs,
 } from "react-bootstrap";
 import { ArrowClockwise, GearWideConnected } from "react-bootstrap-icons";
+import { useNavigate } from "react-router-dom";
 import { getCategory } from "../../api/category";
 import { getDefaultNews, getNews } from "../../api/news";
 import { News } from "../../models/news";
@@ -137,6 +138,12 @@ const SignedInView = ({ user }: SignedInViewProps) => {
     const lastArticleIndex = currentPage * articlesPerPage;
     const firstArticleIndex = lastArticleIndex - articlesPerPage;
 
+    let navigate = useNavigate();
+    const routeChange = () => {
+        let path = "/search";
+        navigate(path);
+    };
+
     return (
         <>
             <Row className="d-flex flex-row-reverse bd-highlight mb-3">
@@ -169,7 +176,9 @@ const SignedInView = ({ user }: SignedInViewProps) => {
                             className="me-2"
                             aria-label="Search"
                         />
-                        <Button variant="outline-success">Search</Button>
+                        <Button variant="outline-success" onClick={routeChange}>
+                            Search
+                        </Button>
                     </Form>
                 </Col>
             </Row>
