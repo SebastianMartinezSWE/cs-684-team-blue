@@ -1,9 +1,9 @@
 .width100 {
-    width: 100%;
+  width: 100%;
 }
 
 .centerItem {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
