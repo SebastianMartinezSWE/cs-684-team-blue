@@ -1,4 +1,5 @@
 import { Container, Navbar } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/react.svg";
 import { User } from "../../models/user";
 import SignedInNavBar from "./SignedInNavBar";
@@ -17,10 +18,15 @@ const DefaultNavBar = ({
     onSignInClicked,
     onSignOutSuccessful,
 }: DefaultNavBarProps) => {
+    let navigate = useNavigate();
+    const routeChange = () => {
+        let path = "/";
+        navigate(path);
+    };
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
             <Container>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="#home" onClick={routeChange}>
                     <img
                         src={logo}
                         alt="react-logo"
