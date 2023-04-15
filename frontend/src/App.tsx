@@ -8,6 +8,7 @@ import DefaultNavBar from "./components/navbar/DefaultNavBar";
 import { User } from "./models/user";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
     const [signedInUser, setSignedInUser] = useState<User | null>(null);
@@ -41,6 +42,7 @@ function App() {
                         path="/"
                         element={<HomePage signedInUser={signedInUser} />}
                     />
+                    <Route path="/search" element={<SearchPage />} />
                     <Route path="/*" element={<NotFoundPage />} />
                 </Routes>
                 {showSignUpModal && (
