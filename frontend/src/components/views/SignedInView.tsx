@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { FormEvent, useCallback, useEffect, useState } from "react";
 import {
     Button,
     ButtonGroup,
@@ -8,10 +8,15 @@ import {
     Tab,
     Tabs,
 } from "react-bootstrap";
-import { ArrowClockwise, GearWideConnected } from "react-bootstrap-icons";
+import {
+    ArrowClockwise,
+    ArrowLeft,
+    GearWideConnected,
+} from "react-bootstrap-icons";
 import { useNavigate } from "react-router-dom";
 import { getCategory } from "../../api/category";
 import { getDefaultNews, getNews } from "../../api/news";
+import { getArticlesSearched } from "../../api/search";
 import { News } from "../../models/news";
 import { User } from "../../models/user";
 import Article from "../cards/Article";
@@ -44,6 +49,12 @@ const SignedInView = ({ user }: SignedInViewProps) => {
         News["articles"]
     >([]);
     const [currentPage, setCurrentPage] = useState(1);
+    const [searchResults, setSearchResults] = useState<News["articles"]>([]);
+    const [totalSearchResults, setTotalSearchResults] =
+        useState<News["totalResults"]>();
+    const [showSearchResults, setShowSearchResults] = useState(false);
+    const [showEmptySearchQueryAlert, setShowEmptySearchQueryAlert] =
+        useState(false);
 
     const handlePageChange = useCallback((page: number) => {
         setCurrentPage(page);
@@ -144,6 +155,25 @@ const SignedInView = ({ user }: SignedInViewProps) => {
         navigate(path);
     };
 
+    async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget as HTMLFormElement);
+        const searchQuery = formData.get("searchQuery")!.toString().trim();
+
+        if (searchQuery === null || " ") {
+            setShowEmptySearchQueryAlert(true);
+        } else if (searchQuery) {
+            try {
+                const news = await getArticlesSearched(searchQuery);
+                setSearchResults(news.articles);
+                setTotalSearchResults(news.totalResults);
+            } catch (error) {
+                console.error(error);
+                alert(error);
+            }
+        }
+    }
+
     return (
         <>
             <Row className="d-flex flex-row-reverse bd-highlight mb-3">
@@ -169,69 +199,219 @@ const SignedInView = ({ user }: SignedInViewProps) => {
                     </ButtonGroup>
                 </Col>
                 <Col>
-                    <Form className="d-flex">
+                    <Form className="d-flex" onSubmit={handleSubmit}>
                         <Form.Control
                             type="search"
+                            name="searchQuery"
                             placeholder="Search"
                             className="me-2"
                             aria-label="Search"
                         />
-                        <Button variant="outline-success" onClick={routeChange}>
+                        <Button
+                            type="submit"
+                            variant="outline-success"
+                            onClick={() => {
+                                setShowSearchResults(true);
+                            }}
+                        >
                             Search
                         </Button>
                     </Form>
                 </Col>
             </Row>
-            <Tabs
-                defaultActiveKey="home"
-                id="category-tabs"
-                className="mb-3"
-                justify
-                onSelect={(key) => {
-                    setCurrentPage(1);
-                    if (key === "business") {
-                        loadBusinessArticles();
-                    }
-                    if (key === "entertainment") {
-                        loadEntertainmentArticles();
-                    }
-                    if (key === "general") {
-                        loadGeneralArticles();
-                    }
-                    if (key === "health") {
-                        loadHealthArticles();
-                    }
-                    if (key === "science") {
-                        loadScienceArticles();
-                    }
-                    if (key === "sports") {
-                        loadSportsArticles();
-                    }
-                    if (key === "technology") {
-                        loadTechnologyArticles();
-                    }
-                }}
-            >
-                <Tab eventKey="home" title="Home">
-                    <Row xs={1} md={2} xl={3} className={`g-4`}>
-                        {articles
-                            ?.slice(firstArticleIndex, lastArticleIndex)
-                            .map((article, index) => (
-                                <Col key={index}>
-                                    <Article article={article} />
-                                </Col>
-                            ))}
+            {showEmptySearchQueryAlert && (
+                <p>Please enter a valid search query</p>
+            )}
+            {!showSearchResults ? (
+                <Tabs
+                    defaultActiveKey="home"
+                    id="category-tabs"
+                    className="mb-3"
+                    justify
+                    onSelect={(key) => {
+                        setCurrentPage(1);
+                        if (key === "business") {
+                            loadBusinessArticles();
+                        }
+                        if (key === "entertainment") {
+                            loadEntertainmentArticles();
+                        }
+                        if (key === "general") {
+                            loadGeneralArticles();
+                        }
+                        if (key === "health") {
+                            loadHealthArticles();
+                        }
+                        if (key === "science") {
+                            loadScienceArticles();
+                        }
+                        if (key === "sports") {
+                            loadSportsArticles();
+                        }
+                        if (key === "technology") {
+                            loadTechnologyArticles();
+                        }
+                    }}
+                >
+                    <Tab eventKey="home" title="Home">
+                        <Row xs={1} md={2} xl={3} className={`g-4`}>
+                            {articles
+                                ?.slice(firstArticleIndex, lastArticleIndex)
+                                .map((article, index) => (
+                                    <Col key={index}>
+                                        <Article article={article} />
+                                    </Col>
+                                ))}
+                        </Row>
+                        <ArticlePagination
+                            totalArticles={articles.length}
+                            articlesPerPage={20}
+                            currentPage={currentPage}
+                            onPageChange={handlePageChange}
+                        />
+                    </Tab>
+                    <Tab eventKey="business" title="Business">
+                        <Row xs={1} sm={2} xl={3} className={`g-4`}>
+                            {businessArticles
+                                ?.slice(firstArticleIndex, lastArticleIndex)
+                                .map((article) => (
+                                    <Col key={article.url}>
+                                        <Article article={article} />
+                                    </Col>
+                                ))}
+                        </Row>
+                        <ArticlePagination
+                            totalArticles={businessArticles.length}
+                            articlesPerPage={20}
+                            currentPage={currentPage}
+                            onPageChange={handlePageChange}
+                        />
+                    </Tab>
+                    <Tab eventKey="entertainment" title="Entertainment">
+                        <Row xs={1} sm={2} xl={3} className={`g-4`}>
+                            {entertainmentArticles
+                                ?.slice(firstArticleIndex, lastArticleIndex)
+                                .map((articles) => (
+                                    <Col key={articles.url}>
+                                        <Article article={articles} />
+                                    </Col>
+                                ))}
+                        </Row>
+                        <ArticlePagination
+                            totalArticles={entertainmentArticles.length}
+                            articlesPerPage={20}
+                            currentPage={currentPage}
+                            onPageChange={handlePageChange}
+                        />
+                    </Tab>
+                    <Tab eventKey="general" title="General">
+                        <Row xs={1} sm={2} xl={3} className={`g-4`}>
+                            {generalArticles
+                                ?.slice(firstArticleIndex, lastArticleIndex)
+                                .map((articles) => (
+                                    <Col key={articles.url}>
+                                        <Article article={articles} />
+                                    </Col>
+                                ))}
+                        </Row>
+                        <ArticlePagination
+                            totalArticles={generalArticles.length}
+                            articlesPerPage={20}
+                            currentPage={currentPage}
+                            onPageChange={handlePageChange}
+                        />
+                    </Tab>
+                    <Tab eventKey="health" title="Health">
+                        <Row xs={1} sm={2} xl={3} className={`g-4`}>
+                            {healthArticles
+                                ?.slice(firstArticleIndex, lastArticleIndex)
+                                .map((articles) => (
+                                    <Col key={articles.url}>
+                                        <Article article={articles} />
+                                    </Col>
+                                ))}
+                        </Row>
+                        <ArticlePagination
+                            totalArticles={healthArticles.length}
+                            articlesPerPage={20}
+                            currentPage={currentPage}
+                            onPageChange={handlePageChange}
+                        />
+                    </Tab>
+                    <Tab eventKey="science" title="Science">
+                        <Row xs={1} sm={2} xl={3} className={`g-4`}>
+                            {scienceArticles
+                                ?.slice(firstArticleIndex, lastArticleIndex)
+                                .map((articles) => (
+                                    <Col key={articles.url}>
+                                        <Article article={articles} />
+                                    </Col>
+                                ))}
+                        </Row>
+                        <ArticlePagination
+                            totalArticles={scienceArticles.length}
+                            articlesPerPage={20}
+                            currentPage={currentPage}
+                            onPageChange={handlePageChange}
+                        />
+                    </Tab>
+                    <Tab eventKey="sports" title="Sports">
+                        <Row xs={1} sm={2} xl={3} className={`g-4`}>
+                            {sportsArticles
+                                ?.slice(firstArticleIndex, lastArticleIndex)
+                                .map((articles) => (
+                                    <Col key={articles.url}>
+                                        <Article article={articles} />
+                                    </Col>
+                                ))}
+                        </Row>
+                        <ArticlePagination
+                            totalArticles={sportsArticles.length}
+                            articlesPerPage={20}
+                            currentPage={currentPage}
+                            onPageChange={handlePageChange}
+                        />
+                    </Tab>
+                    <Tab eventKey="technology" title="Technology">
+                        <Row xs={1} sm={2} xl={3} className={`g-4`}>
+                            {technologyArticles
+                                ?.slice(firstArticleIndex, lastArticleIndex)
+                                .map((articles) => (
+                                    <Col key={articles.url}>
+                                        <Article article={articles} />
+                                    </Col>
+                                ))}
+                        </Row>
+                        <ArticlePagination
+                            totalArticles={technologyArticles.length}
+                            articlesPerPage={20}
+                            currentPage={currentPage}
+                            onPageChange={handlePageChange}
+                        />
+                    </Tab>
+                </Tabs>
+            ) : (
+                <>
+                    <Row className="d-flex row justify-content-between bd-highlight mb-3">
+                        <Col xs="auto">
+                            <ButtonGroup aria-label="Go-Back">
+                                <Button
+                                    variant="outline-dark"
+                                    onClick={() => {
+                                        setShowSearchResults(false);
+                                        setShowEmptySearchQueryAlert(false);
+                                    }}
+                                >
+                                    <ArrowLeft /> Go Back
+                                </Button>
+                            </ButtonGroup>
+                        </Col>
+                        <Col xs="auto">
+                            <p>Total Results: {totalSearchResults}</p>
+                        </Col>
                     </Row>
-                    <ArticlePagination
-                        totalArticles={articles.length}
-                        articlesPerPage={20}
-                        currentPage={currentPage}
-                        onPageChange={handlePageChange}
-                    />
-                </Tab>
-                <Tab eventKey="business" title="Business">
                     <Row xs={1} sm={2} xl={3} className={`g-4`}>
-                        {businessArticles
+                        {searchResults
                             ?.slice(firstArticleIndex, lastArticleIndex)
                             .map((article) => (
                                 <Col key={article.url}>
@@ -240,115 +420,13 @@ const SignedInView = ({ user }: SignedInViewProps) => {
                             ))}
                     </Row>
                     <ArticlePagination
-                        totalArticles={businessArticles.length}
+                        totalArticles={searchResults.length}
                         articlesPerPage={20}
                         currentPage={currentPage}
                         onPageChange={handlePageChange}
                     />
-                </Tab>
-                <Tab eventKey="entertainment" title="Entertainment">
-                    <Row xs={1} sm={2} xl={3} className={`g-4`}>
-                        {entertainmentArticles
-                            ?.slice(firstArticleIndex, lastArticleIndex)
-                            .map((articles) => (
-                                <Col key={articles.url}>
-                                    <Article article={articles} />
-                                </Col>
-                            ))}
-                    </Row>
-                    <ArticlePagination
-                        totalArticles={entertainmentArticles.length}
-                        articlesPerPage={20}
-                        currentPage={currentPage}
-                        onPageChange={handlePageChange}
-                    />
-                </Tab>
-                <Tab eventKey="general" title="General">
-                    <Row xs={1} sm={2} xl={3} className={`g-4`}>
-                        {generalArticles
-                            ?.slice(firstArticleIndex, lastArticleIndex)
-                            .map((articles) => (
-                                <Col key={articles.url}>
-                                    <Article article={articles} />
-                                </Col>
-                            ))}
-                    </Row>
-                    <ArticlePagination
-                        totalArticles={generalArticles.length}
-                        articlesPerPage={20}
-                        currentPage={currentPage}
-                        onPageChange={handlePageChange}
-                    />
-                </Tab>
-                <Tab eventKey="health" title="Health">
-                    <Row xs={1} sm={2} xl={3} className={`g-4`}>
-                        {healthArticles
-                            ?.slice(firstArticleIndex, lastArticleIndex)
-                            .map((articles) => (
-                                <Col key={articles.url}>
-                                    <Article article={articles} />
-                                </Col>
-                            ))}
-                    </Row>
-                    <ArticlePagination
-                        totalArticles={healthArticles.length}
-                        articlesPerPage={20}
-                        currentPage={currentPage}
-                        onPageChange={handlePageChange}
-                    />
-                </Tab>
-                <Tab eventKey="science" title="Science">
-                    <Row xs={1} sm={2} xl={3} className={`g-4`}>
-                        {scienceArticles
-                            ?.slice(firstArticleIndex, lastArticleIndex)
-                            .map((articles) => (
-                                <Col key={articles.url}>
-                                    <Article article={articles} />
-                                </Col>
-                            ))}
-                    </Row>
-                    <ArticlePagination
-                        totalArticles={scienceArticles.length}
-                        articlesPerPage={20}
-                        currentPage={currentPage}
-                        onPageChange={handlePageChange}
-                    />
-                </Tab>
-                <Tab eventKey="sports" title="Sports">
-                    <Row xs={1} sm={2} xl={3} className={`g-4`}>
-                        {sportsArticles
-                            ?.slice(firstArticleIndex, lastArticleIndex)
-                            .map((articles) => (
-                                <Col key={articles.url}>
-                                    <Article article={articles} />
-                                </Col>
-                            ))}
-                    </Row>
-                    <ArticlePagination
-                        totalArticles={sportsArticles.length}
-                        articlesPerPage={20}
-                        currentPage={currentPage}
-                        onPageChange={handlePageChange}
-                    />
-                </Tab>
-                <Tab eventKey="technology" title="Technology">
-                    <Row xs={1} sm={2} xl={3} className={`g-4`}>
-                        {technologyArticles
-                            ?.slice(firstArticleIndex, lastArticleIndex)
-                            .map((articles) => (
-                                <Col key={articles.url}>
-                                    <Article article={articles} />
-                                </Col>
-                            ))}
-                    </Row>
-                    <ArticlePagination
-                        totalArticles={technologyArticles.length}
-                        articlesPerPage={20}
-                        currentPage={currentPage}
-                        onPageChange={handlePageChange}
-                    />
-                </Tab>
-            </Tabs>
+                </>
+            )}
             {
                 <SettingsModal
                     onDismiss={() => setShowSettingsModal(false)}
