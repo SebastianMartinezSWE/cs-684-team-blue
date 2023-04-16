@@ -53,13 +53,6 @@ const HomeView = () => {
 
   useEffect(() => {
     loadArticles("home");
-    loadArticles("business");
-    loadArticles("entertainment");
-    loadArticles("general");
-    loadArticles("health");
-    loadArticles("science");
-    loadArticles("sports");
-    loadArticles("technology");
   }, []);
 
   return (
@@ -84,8 +77,11 @@ const HomeView = () => {
         id="category-tabs"
         className="mb-3"
         justify
-        onSelect={() => {
+        onSelect={(key) => {
           setCurrentPage(1);
+          if (key !== null) {
+            loadArticles(key);
+          }
         }}
       >
         {categories.map((category) => (
