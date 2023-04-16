@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { FormEvent, useCallback, useEffect, useState } from "react";
 import {
   Button,
   ButtonGroup,
@@ -9,6 +9,7 @@ import {
   Tabs,
 } from "react-bootstrap";
 import { ArrowClockwise, GearWideConnected } from "react-bootstrap-icons";
+import { useNavigate } from "react-router-dom";
 import { getCategory } from "../../api/category";
 import { getNews } from "../../api/news";
 import { News } from "../../models/news";
@@ -31,6 +32,7 @@ const UserView = ({ user }: UserViewProps) => {
   const [settingsChanged, setSettingsChanged] = useState(false);
   const [categoryArticles, setCategoryArticles] = useState<ArticlesState>({});
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("New York Red Bulls");
 
   const categories = [
     "business",
@@ -63,6 +65,20 @@ const UserView = ({ user }: UserViewProps) => {
 
   const lastArticleIndex = currentPage * articlesPerPage;
   const firstArticleIndex = lastArticleIndex - articlesPerPage;
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    navigate("/results", {
+      state: { searchQuery },
+    });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+  };
 
   useEffect(() => {
     async function loadArticles() {
@@ -103,13 +119,13 @@ const UserView = ({ user }: UserViewProps) => {
           </ButtonGroup>
         </Col>
         <Col>
-          <Form className="d-flex">
+          <Form className="d-flex" onSubmit={handleSubmit}>
             <Form.Control
               type="search"
-              name="searchQuery"
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              onChange={handleChange}
             />
             <Button type="submit" variant="outline-success">
               Search
