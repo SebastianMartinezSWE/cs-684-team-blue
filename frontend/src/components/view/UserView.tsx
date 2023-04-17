@@ -1,5 +1,6 @@
 import { FormEvent, useCallback, useEffect, useState } from "react";
 import {
+  Alert,
   Button,
   ButtonGroup,
   Col,
@@ -32,7 +33,8 @@ const UserView = ({ user }: UserViewProps) => {
   const [settingsChanged, setSettingsChanged] = useState(false);
   const [categoryArticles, setCategoryArticles] = useState<ArticlesState>({});
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchQuery, setSearchQuery] = useState("New York Red Bulls");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
 
   const categories = [
     "business",
@@ -70,9 +72,16 @@ const UserView = ({ user }: UserViewProps) => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    navigate("/results", {
-      state: { searchQuery },
-    });
+
+    if (searchQuery === "" || null) {
+      setShowAlert(true);
+    } else {
+      setShowAlert(false);
+
+      navigate("/results", {
+        state: { searchQuery },
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -96,6 +105,9 @@ const UserView = ({ user }: UserViewProps) => {
 
   return (
     <>
+      {showAlert && (
+        <Alert variant="warning">Please enter a valid search query!</Alert>
+      )}
       <Row className="d-flex flex-row-reverse bd-highlight mb-3">
         <Col xs="auto">
           <ButtonGroup aria-label="Refresh-Settings">
