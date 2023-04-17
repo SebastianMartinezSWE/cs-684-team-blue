@@ -169,7 +169,7 @@ const UserView = ({ user }: UserViewProps) => {
           </Row>
           <ArticlePagination
             totalArticles={articles.length}
-            articlesPerPage={20}
+            articlesPerPage={articlesPerPage}
             currentPage={currentPage}
             onPageChange={handlePageChange}
           />
