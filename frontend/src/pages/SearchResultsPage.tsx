@@ -73,7 +73,7 @@ const SearchResultsPage = () => {
             ))}
         </Row>
         <ArticlePagination
-          totalArticles={articles?.length ?? 0}
+          totalArticles={articles.length}
           articlesPerPage={articlesPerPage}
           currentPage={currentPage}
           onPageChange={handlePageChange}
