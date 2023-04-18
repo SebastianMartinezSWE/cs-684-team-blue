@@ -6,11 +6,6 @@ import { getArticlesSearched } from "../api/search";
 import Article from "../components/card/Article";
 import { ArticlePagination } from "../components/pagination/ArticlePagination";
 import { News } from "../models/news";
-import { User } from "../models/user";
-
-interface HomePageProps {
-  signedInUser: User | null;
-}
 
 const SearchResultsPage = () => {
   const [articles, setArticles] = useState<News["articles"]>([]);
