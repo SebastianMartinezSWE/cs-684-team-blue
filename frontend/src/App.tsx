@@ -8,7 +8,7 @@ import NavBar from "./components/navbar/NavBar";
 import { User } from "./models/user";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
-import SearchResultsPage from "./pages/SearchResultsPage";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   const [signedInUser, setSignedInUser] = useState<User | null>(null);
@@ -39,7 +39,10 @@ function App() {
         />
         <Routes>
           <Route path="/" element={<HomePage signedInUser={signedInUser} />} />
-          <Route path="/results" element={<SearchResultsPage />} />
+          <Route
+            path="/search"
+            element={<SearchPage signedInUser={signedInUser} />}
+          />
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>
         {showSignUpModal && (
