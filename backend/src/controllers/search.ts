@@ -1,8 +1,8 @@
 import { RequestHandler } from "express";
 import createHttpError from "http-errors";
+import env from "../../src/util/validateEnv";
 import UserModel from "../models/user";
 import { assertIsDefined } from "../util/assertIsDefined";
-import env from "../util/validateEnv";
 
 interface SearchQuery {
     q: string;
@@ -38,7 +38,7 @@ export const searchNews: RequestHandler<
         }
 
         const response = await fetch(
-            `https://newsapi.org/v2/everything?q=${searchQuery}&pageSize=100&apiKey=${env.NEWSAPI_API_KEY}`
+            `https://newsapi.org/v2/everything?q=${searchQuery}&apiKey=${env.NEWSAPI_API_KEY}`
         );
 
         const requestedNews = await response.json();
