@@ -35,7 +35,7 @@ const SearchView = () => {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (newQuery === "" || null) {
+    if (!newQuery) {
       setShowAlert(true);
     } else {
       setShowAlert(false);

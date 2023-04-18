@@ -28,15 +28,15 @@ type ArticlesState = {
 };
 
 const UserView = ({ user }: UserViewProps) => {
-  const [articles, setArticles] = useState<News["articles"]>([]);
+  const [articles, setArticles] = useState<ArticlesState>({});
   const [showSettingsModal, setShowSettingsModal] = useState(false);
   const [settingsChanged, setSettingsChanged] = useState(false);
-  const [categoryArticles, setCategoryArticles] = useState<ArticlesState>({});
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
   const [showAlert, setShowAlert] = useState(false);
 
   const categories = [
+    "home",
     "business",
     "entertainment",
     "general",
@@ -46,13 +46,17 @@ const UserView = ({ user }: UserViewProps) => {
     "technology",
   ];
 
-  async function loadCategoryArticles(category: string) {
+  async function loadArticles(category: string) {
     try {
-      const news = await getCategory(category);
-      setCategoryArticles((prevState) => ({
+      const news =
+        category === "home"
+          ? await getNews(user.username)
+          : await getCategory(category);
+      setArticles((prevState) => ({
         ...prevState,
         [category]: news.articles,
       }));
+      setSettingsChanged(false);
     } catch (error) {
       console.error(error);
       alert(error);
@@ -70,19 +74,18 @@ const UserView = ({ user }: UserViewProps) => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (searchQuery === "" || null) {
+    if (!searchQuery) {
       setShowAlert(true);
     } else {
       setShowAlert(false);
-
-      navigate("/results", {
+      navigate("/search", {
         state: { searchQuery },
       });
     }
-  };
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -90,17 +93,7 @@ const UserView = ({ user }: UserViewProps) => {
   };
 
   useEffect(() => {
-    async function loadArticles() {
-      try {
-        const news = await getNews(user.username);
-        setArticles(news);
-        setSettingsChanged(false);
-      } catch (error) {
-        console.error(error);
-        alert(error);
-      }
-    }
-    loadArticles();
+    loadArticles("home");
   }, [settingsChanged]);
 
   return (
@@ -153,27 +146,10 @@ const UserView = ({ user }: UserViewProps) => {
         onSelect={(key) => {
           setCurrentPage(1);
           if (key !== null) {
-            loadCategoryArticles(key);
+            loadArticles(key);
           }
         }}
       >
-        <Tab eventKey="home" title="Home">
-          <Row xs={1} md={2} xl={3} className={`g-4`}>
-            {articles
-              ?.slice(firstArticleIndex, lastArticleIndex)
-              .map((article, index) => (
-                <Col key={index}>
-                  <Article article={article} />
-                </Col>
-              ))}
-          </Row>
-          <ArticlePagination
-            totalArticles={articles.length}
-            articlesPerPage={articlesPerPage}
-            currentPage={currentPage}
-            onPageChange={handlePageChange}
-          />
-        </Tab>
         {categories.map((category) => (
           <Tab
             key={category}
@@ -181,16 +157,16 @@ const UserView = ({ user }: UserViewProps) => {
             title={category[0].toUpperCase() + category.slice(1)}
           >
             <Row xs={1} sm={2} xl={3} className={`g-4`}>
-              {categoryArticles[category]
+              {articles[category]
                 ?.slice(firstArticleIndex, lastArticleIndex)
-                .map((article) => (
-                  <Col key={article.url}>
+                .map((article, index) => (
+                  <Col key={index}>
                     <Article article={article} />
                   </Col>
                 ))}
             </Row>
             <ArticlePagination
-              totalArticles={categoryArticles[category].length}
+              totalArticles={articles[category]?.length ?? 0}
               articlesPerPage={articlesPerPage}
               currentPage={currentPage}
               onPageChange={handlePageChange}
