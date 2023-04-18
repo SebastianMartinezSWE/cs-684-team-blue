@@ -11,12 +11,14 @@ const SearchView = () => {
   const [articles, setArticles] = useState<News["articles"]>([]);
   const [totalResults, setTotalResults] = useState<News["totalResults"]>();
   const [currentPage, setCurrentPage] = useState(1);
+  const [query, setQuery] = useState("");
 
   const { state } = useLocation();
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate("/");
+    setQuery("");
   };
 
   const handlePageChange = useCallback((page: number) => {
@@ -32,6 +34,7 @@ const SearchView = () => {
     async function loadArticles() {
       try {
         const news = await getArticlesSearched(state.searchQuery);
+        setQuery(state.searchQuery);
         setArticles(news.articles);
         setTotalResults(news.totalResults);
       } catch (error) {
@@ -44,7 +47,7 @@ const SearchView = () => {
 
   return (
     <>
-      <h1>Showing Results for "{state.searchQuery}"</h1>
+      <h1>Showing Results for "{query}"</h1>
       <Row className="d-flex justify-content-between bd-highlight mb-3">
         <Col xs="auto">
           <ButtonGroup aria-label="Refresh-Settings">
