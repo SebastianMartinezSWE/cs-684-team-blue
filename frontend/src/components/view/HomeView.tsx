@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from "react";
 import { Button, ButtonGroup, Col, Row, Tab, Tabs } from "react-bootstrap";
 import { ArrowClockwise } from "react-bootstrap-icons";
 import { getCategory } from "../../api/category";
-import { getDefaultNews } from "../../api/news";
 import { News } from "../../models/news";
 import Article from "../card/Article";
 import { ArticlePagination } from "../pagination/ArticlePagination";
@@ -30,7 +29,7 @@ const HomeView = () => {
     try {
       const news =
         category === "home"
-          ? await getDefaultNews()
+          ? await getCategory("general")
           : await getCategory(category);
       setArticles((prevState) => ({
         ...prevState,
