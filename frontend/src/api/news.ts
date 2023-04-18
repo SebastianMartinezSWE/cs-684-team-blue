@@ -36,7 +36,7 @@ export async function getDefaultNews(): Promise<News> {
   return response.json();
 }
 
-export async function getNews(user: String): Promise<News["articles"]> {
+export async function getNews(user: String): Promise<News> {
   const response = await fetchData(`/api/news/${user}`, {
     method: "GET",
   });
