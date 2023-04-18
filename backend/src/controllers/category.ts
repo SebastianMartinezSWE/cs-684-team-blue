@@ -1,5 +1,5 @@
 import { RequestHandler } from "express";
-import env from "../util/validateEnv";
+import env from "../../src/util/validateEnv";
 
 interface CategoryParams {
     category: string;
@@ -15,7 +15,7 @@ export const categoryNews: RequestHandler<
 
     try {
         const response = await fetch(
-            `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${env.NEWSAPI_API_KEY}`
+            `https://newsapi.org/v2/top-headlines?country=us&category=${category}&pageSize=100&apiKey=${env.NEWSAPI_API_KEY}`
         );
 
         const requestedNews = await response.json();
