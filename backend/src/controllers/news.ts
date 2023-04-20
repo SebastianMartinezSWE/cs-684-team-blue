@@ -105,7 +105,11 @@ export const userNews: RequestHandler = async (req, res, next) => {
         // Limits number of articles to 250
         const articles = sortedNews.slice(0, 250);
 
-        res.status(200).json(articles);
+        res.status(200).json({
+            status: "ok",
+            totalResults: articles.length,
+            articles: articles,
+        });
     } catch (error) {
         next(error);
     }
