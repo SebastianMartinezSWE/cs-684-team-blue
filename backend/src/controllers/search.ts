@@ -38,7 +38,9 @@ export const searchNews: RequestHandler<
         }
 
         const response = await fetch(
-            `https://newsapi.org/v2/everything?q=${searchQuery}&apiKey=${env.NEWSAPI_API_KEY}`
+            `https://newsapi.org/v2/everything?q=${searchQuery.toUpperCase()}&apiKey=${
+                env.NEWSAPI_API_KEY
+            }`
         );
 
         const requestedNews = await response.json();
