@@ -83,6 +83,8 @@ We will be taking a manual testing approach this sprint to verify the requiremen
 
 - Pushing finalized test folders to the main
 
+---
+
 # Sprint 2: Test Plan
 
 ## INTRODUCTION
@@ -180,7 +182,9 @@ We will be taking a unit testing approach this sprint to verify the requirements
 
 - Pushing finalized test folders to the main
 
-# Sprint 3: Test Plan
+---
+
+## Sprint 3: Test Plan
 
 ## Introduction
 
@@ -260,5 +264,93 @@ We will be taking a manual integration testing approach this sprint to verify th
 - Conduct integration testing
 
 **04/09/23:**
+
+- Merging finalized test folders to the main
+
+---
+
+# Sprint 4: Test Plan
+
+## Introduction
+
+In this final sprint, we will be conducting end 2 end testing and regression testing on The Big Blue Theory. New features this sprint consist of a new API endpoint to conduct search queries, as well as a search box on the UI for the user to enter the query. Which will show a page of results. This sprint we will be testing the sign in, sign up, sign out, pagination, category tabs, refresh button, settings, and the search box.
+
+---
+
+### Test items
+
+1. Sign up
+2. Sign in
+3. Settings
+4. Home Tab
+5. Category Tabs
+6. Search
+7. Advanced Searching
+
+### Features to be tested
+
+1. **Landing page**
+
+   - Clicking through all category tabs should display news articles
+   - Clicking the refresh button should refresh the page.
+   - Clicking on the pagination number should display next set of articles of the same category
+   - Clicking on the search button after entering a valid search query should lead to a new page with results.
+   - Clicking the sign in button should display a form to allow the user to enter their information and sign in
+   - Clicking the sign up button should display a form to allow the user to enter their information and sign up
+
+2. **Home page**
+
+   - Clicking through all category tabs should display news articles
+   - Clicking on the home tab should display the news articles corresponding to the users settings
+   - Changing the settings should be reflected in the "Home" tab
+   - Clicking on the pagination number should display next set of articles of the same category
+   - Clicking on the search button after entering a valid search query should lead to a new page with results.
+   - Clicking the sign out button should allow user to sign out and display the landing page
+
+### Approach
+
+We will be taking a manual System testing approach this sprint to verify the requirements
+
+### Testing Tasks
+
+1. Complete regression tests on all the functionality of The Big Blue Theory
+
+### Responsibilities
+
+- Testing
+
+  - Backend/API/Database
+
+    - _Sebastian Martinez_
+
+  - Frontend
+
+    - Landing Page
+
+      - _Sebastian Martinez_
+
+    - Home Page
+
+      - _Sebastian Martinez_
+
+    - Settings Page
+
+      - _Sebastian Martinez_
+
+### Schedule
+
+**04/11/23 - 04/12/23:**
+
+- Complete new Backend API requirements
+
+**04/13/23 - 04/17/23:**
+
+- Complete new Frontend UI/UX requirements
+
+**04/17/23 - 04/23/23:**
+
+- Conduct system testing
+
+**04/23/23:**
 
 - Merging finalized test folders to the main
