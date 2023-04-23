@@ -1,6 +1,16 @@
-import { useCallback, useEffect, useState } from "react";
-import { Button, ButtonGroup, Col, Row, Tab, Tabs } from "react-bootstrap";
+import { FormEvent, useCallback, useEffect, useState } from "react";
+import {
+  Alert,
+  Button,
+  ButtonGroup,
+  Col,
+  Form,
+  Row,
+  Tab,
+  Tabs,
+} from "react-bootstrap";
 import { ArrowClockwise } from "react-bootstrap-icons";
+import { useNavigate } from "react-router-dom";
 import { getCategory } from "../../api/category";
 import { News } from "../../models/news";
 import Article from "../card/Article";
@@ -13,6 +23,8 @@ type ArticlesState = {
 const HomeView = () => {
   const [articles, setArticles] = useState<ArticlesState>({});
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
 
   const categories = [
     "home",
@@ -50,13 +62,36 @@ const HomeView = () => {
   const lastArticleIndex = currentPage * articlesPerPage;
   const firstArticleIndex = lastArticleIndex - articlesPerPage;
 
+  const navigate = useNavigate();
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    if (!searchQuery) {
+      setShowAlert(true);
+    } else {
+      setShowAlert(false);
+      navigate("/search", {
+        state: { searchQuery },
+      });
+    }
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+  };
+
   useEffect(() => {
     loadArticles("home");
   }, []);
 
   return (
     <>
-      <Row className="d-flex flex-row-reverse bd-highlight mb-3">
+      {showAlert && (
+        <Alert variant="warning">Please enter a valid search query!</Alert>
+      )}
+      <Row className="d-flex bd-highlight mb-3 flex-row-reverse">
         <Col xs="auto">
           <ButtonGroup aria-label="Refresh-Settings">
             <Button
@@ -69,6 +104,20 @@ const HomeView = () => {
               <ArrowClockwise /> Refresh
             </Button>
           </ButtonGroup>
+        </Col>
+        <Col>
+          <Form className="d-flex" onSubmit={handleSubmit}>
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+              onChange={handleChange}
+            />
+            <Button type="submit" variant="outline-success">
+              Search
+            </Button>
+          </Form>
         </Col>
       </Row>
       <Tabs
