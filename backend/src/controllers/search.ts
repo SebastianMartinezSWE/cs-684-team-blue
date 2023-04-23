@@ -1,8 +1,6 @@
 import { RequestHandler } from "express";
 import createHttpError from "http-errors";
 import env from "../../src/util/validateEnv";
-import UserModel from "../models/user";
-import { assertIsDefined } from "../util/assertIsDefined";
 
 interface SearchQuery {
     q: string;
@@ -19,20 +17,6 @@ export const searchNews: RequestHandler<
     const searchQuery = req.query.q;
 
     try {
-        assertIsDefined(authenticatedUsername);
-
-        const user = await UserModel.findOne({
-            username: authenticatedUsername,
-        }).exec();
-
-        if (!user) {
-            throw createHttpError(404, "User not found");
-        }
-
-        if (user.username !== authenticatedUsername) {
-            throw createHttpError(401, "You cannot search for articles");
-        }
-
         if (!searchQuery) {
             throw createHttpError(400, "Please provide a search query");
         }

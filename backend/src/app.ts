@@ -49,7 +49,7 @@ app.use("/api/settings", requiresAuth, settingsRoutes);
 app.use("/api/category", categoryRoutes);
 
 // All the routes pertaining to search
-app.use("/api/search", requiresAuth, searchRoutes);
+app.use("/api/search", searchRoutes);
 
 // Error Handling Middleware
 app.use((req, res, next) => {

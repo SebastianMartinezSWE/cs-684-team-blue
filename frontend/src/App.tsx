@@ -39,10 +39,7 @@ function App() {
         />
         <Routes>
           <Route path="/" element={<HomePage signedInUser={signedInUser} />} />
-          <Route
-            path="/search"
-            element={<SearchPage signedInUser={signedInUser} />}
-          />
+          <Route path="/search" element={<SearchPage />} />
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>
         {showSignUpModal && (
