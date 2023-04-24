@@ -13,7 +13,7 @@ The Big Blue Theory is a web app that displays a list of news articles using the
 
 - MongoDB
 - Express
-- React with TypeScript
+- React with Vite + SWC and TypeScript
   - React Bootstrap
 - NodeJS with TypeScript
 
