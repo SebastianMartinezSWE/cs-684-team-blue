@@ -177,14 +177,73 @@
 
 ---
 # Sprint 4: Test Results
-### Date: 04/23/23
-| Test Case ID | Tester    | Pass/fail | Comments                                                   |
-| :----------- | :-------- | :-------- | :--------------------------------------------------------- |
-| TBL009       | Akshay    | Pass      | Sign up was successful and directed to home page           |
-| TBL005       | Akshay    | Pass      | Signed in successfully and directed to home page           |
-| TBL023       | Akshay    | Pass      | Settings did saved properly                                |
-| TBL030       | Sebastian | Pass      | Home tab does display articles based on settings           |
-| TBL029       | Rajiv     | Pass      | Pagination does work and displays the set preferences      |
-| TBL028       | Sebastian | Pass      | Clicking on tab switches to tab and shows correct articles |
-| TBL031       | Rajiv     | Pass      | Has a search bar on the home page                          |               
-| TBL032       | Rajiv     | Pass      | Using and, or and parenthesis in the search bar give result|
+
+### Date: 04/14/23
+| Test Case ID | Tester    | Pass/fail | Comments                                                         |
+| :----------- | :-------- | :-------- | :--------------------------------------------------------------- |
+| TBL031       | Akshay    | Fail      | Text box for search does not show on the homepge                 |
+| TBL032       | Akshay    | Fail      | Searching results in no change on the homepage                   |
+| TBL033       | Akshay    | Fail      | Does not show proper search results                              |
+| TBL034       | Akshay    | Fail      |                                                                  |
+| TBL036       | Akshay    | Pass      | Tabs switch through catagories and show correct articles         |
+| TBL037       | Akshay    | Pass      | Refresh , sign-in,sign-out and articles are present              |
+| TBL038       | Akshay    | Pass      | Successfull pagination and shows next set of articles            |               
+| TBL039       | Akshay    | Pass      | Successfull sign-in with all the required text boxes and buttons |
+| TBL040       | Akshay    | Pass      | Successfull sign-up with all the required text boxes and buttons |
+| TBL041       | Akshay    | Pass      | Settings are saved and visible after re-entering the modal       | 
+| TBL042       | Akshay    | Pass      | Articles are shown according to the settings chosen              |
+| TBL043       | Akshay    | Pass      | Homepage shows username after sign-in and able to sign-out       | 
+
+---
+
+### Date: 04/18/2023
+| Test Case ID | Tester    | Pass/fail | Comments                                                         |
+| :----------- | :-------- | :-------- | :--------------------------------------------------------------- |
+| TBL031       | Akshay    | Pass      | Text box for search is present on the homepge                    |
+| TBL032       | Akshay    | Fail      | Searching results in no change on the homepage                   |
+| TBL033       | Akshay    | Fail      | Does not show proper search results                              |
+| TBL034       | Akshay    | Pass      | Shows an appropriate error message                               |
+| TBL036       | Akshay    | Pass      | Tabs switch through catagories and show correct articles         |
+| TBL037       | Akshay    | Pass      | Refresh , sign-in,sign-out and articles are present              |
+| TBL038       | Akshay    | Pass      | Successfull pagination and shows next set of articles            |               
+| TBL039       | Akshay    | Pass      | Successfull sign-in with all the required text boxes and buttons |
+| TBL040       | Akshay    | Pass      | Successfull sign-up with all the required text boxes and buttons |
+| TBL041       | Akshay    | Pass      | Settings are saved and visible after re-entering the modal       | 
+| TBL042       | Akshay    | Pass      | Articles are shown according to the settings chosen              |
+| TBL043       | Akshay    | Pass      | Homepage shows username after sign-in and able to sign-out       | 
+
+---
+
+### Date: 04/20/2023
+| Test Case ID | Tester    | Pass/fail | Comments                                                         |
+| :----------- | :-------- | :-------- | :--------------------------------------------------------------- |
+| TBL031       | Akshay    | Pass      | Text box for search is present on the homepge                    |
+| TBL032       | Akshay    | Fail      | Searching results do not support and , or                        |
+| TBL033       | Akshay    | Pass      | Show proper order of search results                              |
+| TBL034       | Akshay    | Pass      | Shows an appropriate error message                               |
+| TBL036       | Akshay    | Pass      | Tabs switch through catagories and show correct articles         |
+| TBL037       | Akshay    | Pass      | Refresh , sign-in,sign-out and articles are present              |
+| TBL038       | Akshay    | Pass      | Successfull pagination and shows next set of articles            |               
+| TBL039       | Akshay    | Pass      | Successfull sign-in with all the required text boxes and buttons |
+| TBL040       | Akshay    | Pass      | Successfull sign-up with all the required text boxes and buttons |
+| TBL041       | Akshay    | Pass      | Settings are saved and visible after re-entering the modal       | 
+| TBL042       | Akshay    | Pass      | Articles are shown according to the settings chosen              |
+| TBL043       | Akshay    | Pass      | Homepage shows username after sign-in and able to sign-out       | 
+
+---
+
+### Date: 04/20/2023
+| Test Case ID | Tester    | Pass/fail | Comments                                                         |
+| :----------- | :-------- | :-------- | :--------------------------------------------------------------- |
+| TBL031       | Akshay    | Pass      | Text box for search is present on the homepge                    |
+| TBL032       | Akshay    | Pass      | Searching results now support and , or                           |
+| TBL033       | Akshay    | Pass      | Show proper order of search results                              |
+| TBL034       | Akshay    | Pass      | Shows an appropriate error message                               |
+| TBL036       | Akshay    | Pass      | Tabs switch through catagories and show correct articles         |
+| TBL037       | Akshay    | Pass      | Refresh , sign-in,sign-out and articles are present              |
+| TBL038       | Akshay    | Pass      | Successfull pagination and shows next set of articles            |               
+| TBL039       | Akshay    | Pass      | Successfull sign-in with all the required text boxes and buttons |
+| TBL040       | Akshay    | Pass      | Successfull sign-up with all the required text boxes and buttons |
+| TBL041       | Akshay    | Pass      | Settings are saved and visible after re-entering the modal       | 
+| TBL042       | Akshay    | Pass      | Articles are shown according to the settings chosen              |
+| TBL043       | Akshay    | Pass      | Homepage shows username after sign-in and able to sign-out       | 
