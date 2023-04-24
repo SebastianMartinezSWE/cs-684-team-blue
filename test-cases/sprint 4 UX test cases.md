@@ -660,7 +660,7 @@ Test to verify the landing page to display a method (button or link) to navigate
 
 **Author:** _Rajiv_
 
-**Test Method:** Manual Regression Test
+**Test Method:** Manual System Test
 
 **Description:** Checking if there is a text box to enter search items on the landing page
 
@@ -693,7 +693,7 @@ Test to verify the landing page to display a method (button or link) to navigate
 
 **Author:** _Rajiv_
 
-**Test Method:** Manual Regression Test
+**Test Method:** Manual System Test
 
 **Description:** Checking to see if the text box will support AND,OR and NOT and the use of parenthesis
 
@@ -728,7 +728,7 @@ Test to verify the landing page to display a method (button or link) to navigate
 
 **Author:** _Rajiv_
 
-**Test Method:** Manual Regression Test
+**Test Method:** Manual System Test
 
 **Description:** Checking to see if search results appear in descending order with the most recent at top
 
@@ -762,7 +762,7 @@ Test to verify the landing page to display a method (button or link) to navigate
 
 **Author:** _Rajiv_
 
-**Test Method:** Manual Regression Test
+**Test Method:** Manual System Test
 
 **Description:** checking to see if a message is displayed when no search results are there to show
 
