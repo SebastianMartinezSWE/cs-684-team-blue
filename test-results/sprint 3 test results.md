@@ -182,3 +182,6 @@
 | :----------- | :-------- | :-------- | :--------------------------------------------------------- |
 | TBL009       | Akshay    | Pass      | Sign up was successful and directed to home page           |
 | TBL005       | Akshay    | Pass      | Signed in successfully and directed to home page           |
+| TBL023       | Akshay    | Pass      | Settings did saved properly                                |
+| TBL030       | Akshay    | Pass      | Home tab does display articles based on settings           |
+| TBL029       | Akshay    | Pass      | Pagination does work and displays the set preferences      |
