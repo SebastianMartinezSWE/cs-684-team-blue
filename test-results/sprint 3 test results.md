@@ -183,5 +183,8 @@
 | TBL009       | Akshay    | Pass      | Sign up was successful and directed to home page           |
 | TBL005       | Akshay    | Pass      | Signed in successfully and directed to home page           |
 | TBL023       | Akshay    | Pass      | Settings did saved properly                                |
-| TBL030       | Akshay    | Pass      | Home tab does display articles based on settings           |
-| TBL029       | Akshay    | Pass      | Pagination does work and displays the set preferences      |
+| TBL030       | Sebastian | Pass      | Home tab does display articles based on settings           |
+| TBL029       | Rajiv     | Pass      | Pagination does work and displays the set preferences      |
+| TBL028       | Sebastian | Pass      | Clicking on tab switches to tab and shows correct articles |
+| TBL031       | Rajiv     | Pass      | Has a search bar on the home page                          |               
+| TBL032       | Rajiv     | Pass      | Using and, or and parenthesis in the search bar give result|
