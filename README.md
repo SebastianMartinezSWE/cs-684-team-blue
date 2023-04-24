@@ -19,4 +19,8 @@ The Big Blue Theory is a web app that displays a list of news articles using the
 
 ## Testing
 
-- Proper testing has been done such as manual testing, unit testing and integration testing using Jest, along with system testing using Cypress.
+- Methods
+  - Manual Testing
+  - Unit Testing with Vitest
+  - Integration Testing with Playwright
+  - System Testing with Playwright.
