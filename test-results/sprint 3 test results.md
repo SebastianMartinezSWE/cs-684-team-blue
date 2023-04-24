@@ -176,3 +176,9 @@
 | TBL030       | Sebastian | Pass      | Home tab does display articles based on settings           |
 
 ---
+# Sprint 4: Test Results
+### Date: 04/23/23
+| Test Case ID | Tester    | Pass/fail | Comments                                                   |
+| :----------- | :-------- | :-------- | :--------------------------------------------------------- |
+| TBL009       | Akshay    | Pass      | Sign up was successful and directed to home page           |
+| TBL005       | Akshay    | Pass      | Signed in successfully and directed to home page           |
