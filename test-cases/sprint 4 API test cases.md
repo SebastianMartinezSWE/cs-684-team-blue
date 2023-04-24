@@ -408,4 +408,4 @@ most recent
 
 - **Fail:**
   - If the response code is not 200
-  - the articles are not returned inescending order starting with the most recent.
+  - the articles are not returned in descending order starting with the most recent.
