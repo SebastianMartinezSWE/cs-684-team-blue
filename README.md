@@ -22,5 +22,5 @@ The Big Blue Theory is a web app that displays a list of news articles using the
 - Methods
   - Manual Testing
   - Unit Testing with Vitest
-  - Integration Testing with Playwright
-  - System Testing with Playwright.
+  - Integration Testing
+  - System Testing
