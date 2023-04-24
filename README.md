@@ -1,6 +1,6 @@
 # The Big Blue Theory
 
-The Big Blue Theory is a web app that displays a list of news articles using the NewsAPI.
+The Big Blue Theory is a web app that displays a list of news articles using the News API.
 
 ## Features
 
