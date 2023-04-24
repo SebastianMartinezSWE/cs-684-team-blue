@@ -1,7 +1,5 @@
 # Sprint 1: API Test Cases
 
----
-
 ## Test Case ID - TBL011
 
 **Authors:** _Rajiv Dave_, _Akshay_
@@ -221,7 +219,7 @@
   - If the response code is not 200
   - If the request body does not include the username of the user who just signed out
 
-# Sprint 2: API Test Cases
+## Sprint 2: API Test Cases
 
 ---
 
@@ -303,7 +301,7 @@
   - If the response code is not 200
   - If the updated settings are not shown
 
-# Sprint 3: API Test Cases
+## Sprint 3: API Test Cases
 
 ## Test Case ID - TBL024
 
@@ -377,3 +375,35 @@
 - **Fail:**
   - If the response code is not 200
   - If the wrong articles are shown
+
+## Sprint 4: API Test Cases
+
+## Test Case ID - TBL035
+
+**Authors:** _Rajiv_
+
+**Test Method:** Manual
+
+**Description:** Add a new search endpoint, Returns the articles in descending order starting with the
+most recent
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the backend running
+- To be on Postman or Thunder Client in VSCode
+
+**Test Steps:**
+
+1. In Postman or Thunder Client in VSCode enter the category endpoint `localhost:8080/api//search/{ a valid search term}` in the URL search bar
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - Pass if the response is 200 and if the articles are returned in descending order starting with the most recent.
+
+- **Fail:**
+  - If the response code is not 200
+  - the articles are not returned in descending order starting with the most recent.

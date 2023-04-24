@@ -1,4 +1,4 @@
-import { User } from "../models/user";
+import { News } from "../models/news";
 import {
   BadRequestError,
   ConflictError,
@@ -29,26 +29,9 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
   }
 }
 
-export interface Settings {
-  general: boolean;
-  business: boolean;
-  entertainment: boolean;
-  health: boolean;
-  science: boolean;
-  sports: boolean;
-  technology: boolean;
-}
-
-export async function updateSettings(
-  username: string,
-  settings: Settings,
-): Promise<User> {
-  const response = await fetchData(`/api/settings/${username}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(settings),
+export async function getArticlesSearched(searchQuery: String): Promise<News> {
+  const response = await fetchData(`/api/search/?q=${searchQuery}`, {
+    method: "GET",
   });
   return response.json();
 }

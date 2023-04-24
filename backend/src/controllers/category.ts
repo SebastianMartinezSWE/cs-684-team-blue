@@ -1,5 +1,5 @@
 import { RequestHandler } from "express";
-import env from "../util/validateEnv";
+import env from "../../src/util/validateEnv";
 
 interface CategoryParams {
     category: string;

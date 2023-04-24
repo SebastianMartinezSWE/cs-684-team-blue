@@ -1,7 +1,5 @@
 # Sprint 1: UX Test Cases
 
----
-
 ## Test Case ID: TBL001
 
 **Author:** _Akshay_
@@ -352,7 +350,9 @@ Test to verify the landing page to display a method (button or link) to navigate
   - Not displaying the appropriate error message
   - Not displaying a appropriate error message
 
-  # Sprint 2: UX Test Cases
+---
+
+## Sprint 2: UX Test Cases
 
 ## Test Case ID - TBL020
 
@@ -481,7 +481,9 @@ Test to verify the landing page to display a method (button or link) to navigate
 
   - The absence of the settings options that were chosen
 
-# Sprint 3: UX Test Cases
+---
+
+## Sprint 3: UX Test Cases
 
 ## Test Case ID - TBL026
 
@@ -649,3 +651,421 @@ Test to verify the landing page to display a method (button or link) to navigate
 
   - The articles do not display
   - The articles displayed do not reflect the settings chosen
+
+---
+
+## Sprint 4: UX Test Cases
+
+## Test Case ID - TBL031
+
+**Author:** _Rajiv_
+
+**Test Method:** Manual System Test
+
+**Description:** Checking if there is a text box to enter search items on the landing page
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have backend running
+- Have frontend running
+
+**Test Steps:**
+
+1. Sign in
+2. navigate to the landing Page
+3. Find the search option and check if there is a text box for entering search options
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - There is a text box present to enter search options
+
+- **Fail:**
+
+  -There is not a text box present
+
+---
+
+## Test Case ID - TBL032
+
+**Author:** _Rajiv_
+
+**Test Method:** Manual System Test
+
+**Description:** Checking to see if the text box will support AND,OR and NOT and the use of parenthesis
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have backend running
+- Have frontend running
+
+**Test Steps:**
+
+1. Sign in
+2. navigate to the landing Page
+3. Find the search box and enter a search item containing AND and see if the results correspond with those terms.
+4. Find the search box and enter a search item containing OR and see if the results correspond with those terms.
+5. Find the search box and enter a search item containing NOT and see if the results correspond with those terms.
+6. Enter a search containing parenthesis and see if the search results the usage of them
+   **Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - The search box supports use of AND, OR, and NOT and parenthesis
+
+- **Fail:**
+
+  -The search box does not support use of AND, OR, and NOT and parenthesis
+
+---
+
+## Test Case ID - TBL033
+
+**Author:** _Rajiv_
+
+**Test Method:** Manual System Test
+
+**Description:** Checking to see if search results appear in descending order with the most recent at top
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have backend running
+- Have frontend running
+
+**Test Steps:**
+
+1. Sign in
+2. navigate to the landing Page
+3. Find the search box and enter a search item
+4. Check if the first search result has the most recent date
+5. Then check if every item after it has an earlier date in descending order from newer to older
+   **Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - The search results appear in descending order of recent to old
+
+- **Fail:**
+
+  -The search results do not appear in descending order of recent to old
+
+---
+
+## Test Case ID - TBL034
+
+**Author:** _Rajiv_
+
+**Test Method:** Manual System Test
+
+**Description:** checking to see if a message is displayed when no search results are there to show
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have backend running
+- Have frontend running
+
+**Test Steps:**
+
+1. Sign in
+2. navigate to the landing Page
+3. Find the search box and enter a search items till you find one that has no relevant results
+4. Check if a an appropriate message appears
+   **Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - an appropriate message appears if there are no search results
+
+- **Fail:**
+
+  -an appropriate message does not appear if there are no search results
+
+## Test Case ID - TBL036
+
+**Author:** _Rajiv_
+
+**Test Method:** Manual Regression Test
+
+**Description:** Testing if clicking on tab switches to that tab and displays news articles for that category
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have backend running
+- Have frontend running
+
+**Test Steps:**
+
+1. Click on tab
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - Tab switches to the one selected and displays articles for that category
+
+- **Fail:**
+
+  - The tab does not switch
+  - The absence of the news articles and or wrong articles displayed
+
+---
+
+## Test Case ID - TBL037
+
+**Author:** _Rajiv_
+
+**Test Method:** Manual Regression Test
+
+**Description:** Testing if the Landing page is rendering properly
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have frontend running
+
+**Test Steps:**
+
+1. Check if the page has:
+   - Sign in, Sign out buttons
+   - Category Tabs
+   - Articles
+   - Search Box and search button
+   - Refresh Button
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - A refresh button are present
+  - The news articles are present
+  - A sign in and sign out button are present
+  - Search box and search button are present
+
+- **Fail:**
+
+  - The absence of either the refresh button, sign in button, or sign up button
+  - The absence of the news articles
+
+---
+
+## Test Case ID - TBL038
+
+**Author:** _Rajiv_
+
+**Test Method:** Manual Regression Test
+
+**Description:** Testing pagination
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have backend running
+- Have frontend running
+
+**Test Steps:**
+
+1. Scroll to the bottom and click on pagination number
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - If pagination number switched to the one selected
+  - If screen scrolls to the top
+  - If next set of articles are displayed
+
+- **Fail:**
+
+  - The pagination number does not switch
+  - The screen doesn't scroll to the top
+  - The absence of the news articles
+
+---
+
+## Test Case ID - TBL039
+
+**Author:** _Rajiv_
+
+**Test Method:** Manual Regression test
+
+**Description:** Sign-in form implementation
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the frontend running
+- To be on the sign-in page
+
+**Test Steps:**
+
+1. Verify the form has
+   - A textbox to collect a user name
+   - The user name is required
+   - A textbox to collect a password
+   - The password is required
+   - A button to submit the sign-in details.
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - The presence of all the above mentioned requirements
+
+- **Fail:**
+
+  - Any of the above mentioned requirements are missing
+
+---
+
+## Test Case ID - TBL040
+
+**Author:** _Rajiv_
+
+**Test Method:** Manual regression test
+
+**Description:** Sign-up form implementation
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the frontend running
+- To be on the sign-up page
+
+**Test Steps:**
+
+1. Verify the form has
+   - A textbox to collect a user name
+   - The user name is required
+   - A textbox to collect a password
+   - The password is required
+   - A textbox to collect the confirmed password
+   - The confirm password is required
+   - A button to submit the sign-up details.
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - The presence of all the above mentioned requirements
+
+- **Fail:**
+
+  - Any of the above mentioned requirements are missing
+
+---
+
+## Test Case ID - TBL041
+
+**Author:** _Rajiv_
+
+**Test Method:** Manual Regression test
+
+**Description:** Testing if the Settings get properly saved
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the frontend running
+- Have a valid account with The Big Blue Theory
+- To be in the settings modal
+
+**Test Steps:**
+
+1. Choose different types of settings options
+2. Click on the `Save` button
+3. Re-enter the Settings modal
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - If the options chosen after pressing the save button is shown after re-entering the modal
+
+- **Fail:**
+
+  - The absence of the settings options that were chosen
+
+## Test Case ID - TBL042
+
+**Author:** _Rajiv_
+
+**Test Method:** Manual Regression Test
+
+**Description:** Testing if home tab displays articles based on settings
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have backend running
+- Have frontend running
+- Be signed in as a valid user
+
+**Test Steps:**
+
+1. Click on `Settings` button
+2. Change settings
+3. Press `Save`
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - If articles are displayed in home tab
+  - If articles displayed reflect the settings chosen
+
+- **Fail:**
+
+  - The articles do not display
+  - The articles displayed do not reflect the settings chosen
+
+## Test Case ID - TBL043
+
+**Author:** _Rajiv_
+
+**Test Method:** Manual Regression Test
+
+**Description:** To test when signed in, the landing page displays the username and a method to sign out
+
+**Pre-requisites:**
+
+- Have the repository cloned
+- Properly installed the project dependencies
+- Have the backend running
+- Have the frontend running
+- To be signed in into a valid account
+
+**Test Steps:**
+
+1. Username should be displayed on the top right along with the sign out button in the nav bar after signing in
+2. Click on the sign out button to sign out of the account and be redirected to landing page
+
+**Pass/Fail Criteria:**
+
+- **Pass:**
+
+  - Username used to sign in and the sign-out button is displayed after signing in
+  - Being able to sign out
+
+- **Fail:**
+
+  - The absence of either username or sign out button
+  - Being unable to sign out
+
+---
