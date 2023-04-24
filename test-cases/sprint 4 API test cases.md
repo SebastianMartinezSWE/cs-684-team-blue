@@ -1,7 +1,5 @@
 # Sprint 1: API Test Cases
 
----
-
 ## Test Case ID - TBL011
 
 **Authors:** _Rajiv Dave_, _Akshay_
@@ -221,7 +219,7 @@
   - If the response code is not 200
   - If the request body does not include the username of the user who just signed out
 
-# Sprint 2: API Test Cases
+## Sprint 2: API Test Cases
 
 ---
 
@@ -303,7 +301,7 @@
   - If the response code is not 200
   - If the updated settings are not shown
 
-# Sprint 3: API Test Cases
+## Sprint 3: API Test Cases
 
 ## Test Case ID - TBL024
 
@@ -342,7 +340,7 @@
 
 ## Test Case ID - TBL025
 
-**Authors:** _Sebestain_
+**Authors:** _Sebastian_
 
 **Test Method:** Manual
 
@@ -378,7 +376,7 @@
   - If the response code is not 200
   - If the wrong articles are shown
 
-# Sprint 4: API Test Cases
+## Sprint 4: API Test Cases
 
 ## Test Case ID - TBL035
 

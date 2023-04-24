@@ -1,6 +1,6 @@
 # Sprint 1: Test Plan
 
-## INTRODUCTION
+## Introduction
 
 In this sprint, we will be validating if the landing page and home page have been properly created. As well as the sign in and sign out pages, along with sign out functionality being properly implemented. This includes testing that the database is properly receiving, storing and sending out information.
 
@@ -85,9 +85,9 @@ We will be taking a manual testing approach this sprint to verify the requiremen
 
 ---
 
-# Sprint 2: Test Plan
+## Sprint 2: Test Plan
 
-## INTRODUCTION
+## Introduction
 
 In this sprint, we will be testing the NewsAPI, We will be testing if the NewsAPI is being properly called, from the backend which in turn is being called from the landing page and home page. As well as, the inclusion of a new Settings page that will allow users to narrow down their preference of news articles that will eventually be reflected on the home page in the sprint 3. Finally, we will also test that the preferences chosen by users will be saved in MongoDB.
 
@@ -321,21 +321,21 @@ We will be taking a manual System testing approach this sprint to verify the req
 
   - Backend/API/Database
 
-    - _Sebastian Martinez_
+    - _Sebastian Martinez, Rajiv, Akshay_
 
   - Frontend
 
     - Landing Page
 
-      - _Sebastian Martinez_
+      - _Sebastian Martinez, Rajiv, Akshay_
 
     - Home Page
 
-      - _Sebastian Martinez_
+      - _Sebastian Martinez, Rajiv, Akshay_
 
     - Settings Page
 
-      - _Sebastian Martinez_
+      - _Sebastian Martinez, Rajiv, Akshay_
 
 ### Schedule
 

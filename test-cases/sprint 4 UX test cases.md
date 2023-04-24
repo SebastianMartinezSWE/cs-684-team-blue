@@ -1,7 +1,5 @@
 # Sprint 1: UX Test Cases
 
----
-
 ## Test Case ID: TBL001
 
 **Author:** _Akshay_
@@ -352,7 +350,9 @@ Test to verify the landing page to display a method (button or link) to navigate
   - Not displaying the appropriate error message
   - Not displaying a appropriate error message
 
-  # Sprint 2: UX Test Cases
+---
+
+## Sprint 2: UX Test Cases
 
 ## Test Case ID - TBL020
 
@@ -481,7 +481,9 @@ Test to verify the landing page to display a method (button or link) to navigate
 
   - The absence of the settings options that were chosen
 
-# Sprint 3: UX Test Cases
+---
+
+## Sprint 3: UX Test Cases
 
 ## Test Case ID - TBL026
 
@@ -650,7 +652,9 @@ Test to verify the landing page to display a method (button or link) to navigate
   - The articles do not display
   - The articles displayed do not reflect the settings chosen
 
-  # Sprint 4: UX Test Cases
+---
+
+## Sprint 4: UX Test Cases
 
 ## Test Case ID - TBL031
 
@@ -670,7 +674,7 @@ Test to verify the landing page to display a method (button or link) to navigate
 **Test Steps:**
 
 1. Sign in
-2. navigate to the landing Pagae
+2. navigate to the landing Page
 3. Find the search option and check if there is a text box for entering search options
 
 **Pass/Fail Criteria:**
@@ -703,10 +707,10 @@ Test to verify the landing page to display a method (button or link) to navigate
 **Test Steps:**
 
 1. Sign in
-2. navigate to the landing Pagae
-3. Find the search box and enter a search item contianing AND and see if the results correspond with those terms.
-4. Find the search box and enter a search item contianing OR and see if the results correspond with those terms.
-5. Find the search box and enter a search item contianing NOT and see if the results correspond with those terms.
+2. navigate to the landing Page
+3. Find the search box and enter a search item containing AND and see if the results correspond with those terms.
+4. Find the search box and enter a search item containing OR and see if the results correspond with those terms.
+5. Find the search box and enter a search item containing NOT and see if the results correspond with those terms.
 6. Enter a search containing parenthesis and see if the search results the usage of them
    **Pass/Fail Criteria:**
 
@@ -738,10 +742,10 @@ Test to verify the landing page to display a method (button or link) to navigate
 **Test Steps:**
 
 1. Sign in
-2. navigate to the landing Pagae
+2. navigate to the landing Page
 3. Find the search box and enter a search item
 4. Check if the first search result has the most recent date
-5. Then check if every item after it has an eariler date in descending order from newer to older
+5. Then check if every item after it has an earlier date in descending order from newer to older
    **Pass/Fail Criteria:**
 
 - **Pass:**
@@ -760,7 +764,7 @@ Test to verify the landing page to display a method (button or link) to navigate
 
 **Test Method:** Manual System Test
 
-**Description:** checking to see if a messgae is displayed when no search results are there to show
+**Description:** checking to see if a message is displayed when no search results are there to show
 
 **Pre-requisites:**
 
@@ -772,8 +776,8 @@ Test to verify the landing page to display a method (button or link) to navigate
 **Test Steps:**
 
 1. Sign in
-2. navigate to the landing Pagae
-3. Find the search box and enter a search items till youu find one that has no relevant results
+2. navigate to the landing Page
+3. Find the search box and enter a search items till you find one that has no relevant results
 4. Check if a an appropriate message appears
    **Pass/Fail Criteria:**
 
@@ -829,10 +833,16 @@ Test to verify the landing page to display a method (button or link) to navigate
 
 - Have the repository cloned
 - Properly installed the project dependencies
+- Have frontend running
 
 **Test Steps:**
 
-1. run `npm test` in the the frontend
+1. Check if the page has:
+   - Sign in, Sign out buttons
+   - Category Tabs
+   - Articles
+   - Search Box and search button
+   - Refresh Button
 
 **Pass/Fail Criteria:**
 
@@ -841,6 +851,7 @@ Test to verify the landing page to display a method (button or link) to navigate
   - A refresh button are present
   - The news articles are present
   - A sign in and sign out button are present
+  - Search box and search button are present
 
 - **Fail:**
 
@@ -1024,7 +1035,7 @@ Test to verify the landing page to display a method (button or link) to navigate
   - The articles do not display
   - The articles displayed do not reflect the settings chosen
 
-  ## Test Case ID - TBL043
+## Test Case ID - TBL043
 
 **Author:** _Rajiv_
 

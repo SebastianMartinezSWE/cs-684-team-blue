@@ -1,7 +1,5 @@
 # Sprint 1: Database Test Case
 
----
-
 ## Test Case Id- TBL016
 
 **Author:** _Rajiv Dave_
@@ -39,7 +37,7 @@
 
   - If username and password is not properly stored in the database
 
-  # Sprint 2: Database Test Case
+## Sprint 2: Database Test Case
 
 ---
 
