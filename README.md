@@ -7,7 +7,7 @@ The Big Blue Theory is a web app that displays a list of news articles using the
 - Account Creation.
 - Displays the top articles currently trending in the world by default.
 - Allows users to specify their preferences in a settings page that will reflect what type of articles are displayed in the home page.
-- Allows users to search for specific articles.
+- Allows users to search for specific articles/topics from worldwide news scources.
 
 ## Tech Stack
 
